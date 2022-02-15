@@ -24,11 +24,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
          */
-        TxtUtil.setText(mViewBinding.tv1, "#FF0000", (int) getDimen(R.dimen.x65), true, mViewBinding.tv1.getText().toString(), "标签");
+        TxtUtil.setText(mViewBinding.tv1, "#FF0000", (int) getDimen(R.dimen.x75), true, mViewBinding.tv1.getText().toString(), "标签");
         /**
          * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
          */
-        TxtUtil.setText(mViewBinding.tv2, "#FF0000", (int) getDimen(R.dimen.x65), false, mViewBinding.tv2.getText().toString(), "标签");
+        TxtUtil.setText(mViewBinding.tv2, "#FF0000", (int) getDimen(R.dimen.x75), false, mViewBinding.tv2.getText().toString(), "标签");
         /**
          * 多标签上色
          */
