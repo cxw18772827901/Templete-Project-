@@ -12,7 +12,7 @@ import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.greendao.db.util.LocalRepository;
-import com.gson.factory.GsonFactory;
+import com.hjq.gson.GsonFactory;
 import com.hjq.shape.view.horizontal.SmartRefreshHorizontal;
 import com.hjq.toast.CustomToast;
 import com.hjq.toast.ToastStrategy;
