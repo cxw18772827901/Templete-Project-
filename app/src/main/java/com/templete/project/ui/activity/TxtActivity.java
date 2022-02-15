@@ -44,11 +44,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 修改字体粗细,默认值0.3,注意不要跟粗体一起使用
          */
-        TxtUtil.setTextBold(mViewBinding.tv6, "默认0.3宽度的字体");
+        TxtUtil.setTextBold(mViewBinding.tv6, "默认0.3粗细的字体");
         /**
          * 修改字体粗细,修改为2.0,注意不要跟粗体一起使用
          */
-        TxtUtil.setTextBold(mViewBinding.tv7, "2.0宽度的字体", (float) 2.0);
+        TxtUtil.setTextBold(mViewBinding.tv7, "2.0粗细的字体", (float) 2.0);
     }
 
     private void getaVoid() {
