@@ -1,0 +1,97 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+    }
+
+    // 支持 Java JDK 8
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    /*android.libraryVariants.all { variant ->
+        // aar 输出文件名配置
+        variant.outputs.all { output ->
+            outputFileName = "${rootProject.name}-${android.defaultConfig.versionName}.aar"
+        }
+    }*/
+}
+
+/*afterEvaluate {
+    // 排除 BuildConfig.class
+    generateReleaseBuildConfig.enabled = false
+    generateDebugBuildConfig.enabled = false
+}*/
+//常用view控件汇总
+dependencies {
+    //androidx support
+    //noinspection GradleDependency
+    api "com.google.android.material:material:${config.dependencies.material_version}"
+//    api "androidx.appcompat:appcompat:${config.dependencies.appcompat_version}"
+    api "androidx.cardview:cardview:${config.dependencies.cardview_version}"
+    api "androidx.recyclerview:recyclerview:${config.dependencies.recyclerview_version}"
+    //noinspection GradleDependency
+    api "androidx.constraintlayout:constraintlayout:${config.dependencies.constraintlayout_version}"
+    api "androidx.viewpager2:viewpager2:${config.dependencies.viewpager2_version}"
+    api "com.nex3z:flow-layout:${config.dependencies.flow_layout_version}"
+    //垂直刷新
+    api "com.scwang.smart:refresh-layout-kernel:${config.dependencies.smart_refresh_version}"      //核心必须依赖
+    api "com.scwang.smart:refresh-header-classics:${config.dependencies.smart_refresh_version}"    //经典刷新头
+    api "com.scwang.smart:refresh-footer-classics:${config.dependencies.smart_refresh_version}"    //经典加载
+    api "com.scwang.smart:refresh-header-material:${config.dependencies.smart_refresh_version}"
+    //横向刷新
+    //api 'com.scwang.smartrefresh:SmartRefreshHorizontal:1.1.3-x'
+    //api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.3' //必须依赖 版本 1.1.0 以上
+    // 动画解析库：https://github.com/airbnb/lottie-android
+    // 动画资源：https://lottiefiles.com、https://icons8.com/animated-icons
+    api 'com.airbnb.android:lottie:4.1.0'
+    //banner
+    api 'io.github.youth5201314:banner:2.2.2'
+    //AndRatingBar
+    api 'com.github.wdsqjq:AndRatingBar:1.0.6'
+    /*compileOnly*/
+    api "jp.co.cyberagent.android:gpuimage:2.1.0"
+    //drag
+    api 'com.github.open-android:DragFooterView:0.1.0'
+    //flex
+    api 'com.google.android:flexbox:2.0.1'
+    //glide
+    api "com.github.bumptech.glide:glide:${config.dependencies.glide_version}"
+
+}
+
+/*
+// 防止编码问题
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}*/

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.templete.project.ui.activity.SheetActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x60"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.hjq.shape.view.ShapeButton
+            android:id="@+id/btn_bottom_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="@dimen/x40"
+            android:paddingVertical="@dimen/x30"
+            android:text="BottomSheet"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:shape_radius="@dimen/x15"
+            app:shape_solidColor="@color/cl_1692DB"
+            tools:ignore="HardcodedText" />
+
+        <com.hjq.shape.view.ShapeButton
+            android:id="@+id/btn_bottom_sheet_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingHorizontal="@dimen/x40"
+            android:paddingVertical="@dimen/x30"
+            android:text="BottomSheetDialog"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:shape_radius="@dimen/x15"
+            app:shape_solidColor="@color/cl_1692DB"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+    <!--behavior_peekHeight为0不展示-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ll_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1200"
+        app:behavior_peekHeight="80dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_red_light"
+                android:gravity="center"
+                android:text="上拉解锁隐藏功能"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="a"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:text="b"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_green_light"
+                android:gravity="center"
+                android:text="c"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="a"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:text="b"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_green_light"
+                android:gravity="center"
+                android:text="c"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                android:text="a"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:text="b"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@android:color/holo_green_light"
+                android:gravity="center"
+                android:text="c"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

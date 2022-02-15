@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/x40"
+    tools:context=".ui.dialog.base.SelectDialog">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_left"
+        android:layout_width="@dimen/x50"
+        android:layout_height="@dimen/x50"
+        android:layout_marginEnd="@dimen/x30"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pop_iv_right_selector"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv"
+        app:layout_constraintTop_toTopOf="@id/tv"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="@dimen/x10"
+        android:paddingVertical="@dimen/x50"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:layout_constraintLeft_toRightOf="@id/iv_left"
+        app:layout_constraintRight_toLeftOf="@id/iv_right"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="条目" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_right"
+        android:layout_width="@dimen/x50"
+        android:layout_height="@dimen/x50"
+        android:layout_marginStart="@dimen/x30"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pop_iv_right_selector"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv"
+        app:layout_constraintLeft_toRightOf="@id/tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/x1"
+        android:background="@color/white30"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv"
+        app:layout_constraintWidth_percent="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>

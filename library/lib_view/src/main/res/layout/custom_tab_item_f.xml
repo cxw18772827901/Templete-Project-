@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/x20">
+
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/x12"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginEnd="@dimen/x10"
+        android:layout_marginBottom="@dimen/x5"
+        app:layout_constraintBottom_toBottomOf="@id/tv"
+        app:layout_constraintLeft_toLeftOf="@id/tv"
+        app:layout_constraintRight_toRightOf="@id/tv"
+        app:shape_radius="@dimen/x6"
+        app:shape_solidColor="@color/cl_333333"
+        app:shape_solidSelectedColor="@color/red" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="条目"
+        android:textSize="@dimen/x55"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shape_textColor="@color/cl_333333"
+        app:shape_textSelectedColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+{
+  "code": "200",
+  "data": {
+    "datatype": "playlist",
+    "datalist": [
+      {
+        "cover": "http://r4.ykimg.com/0541040852A033086A0A4604D3912652",
+        "datatype": "playlist",
+        "pid": 506,
+        "listtype": "track",
+        "title": "åå¾å¥èº«-ä¸¾è¿",
+        "priority": 1,
+        "content": ""
+      },
+      {
+        "cover": "http://r2.ykimg.com/0541040852A02C296A0A4604E57CCE99",
+        "datatype": "playlist",
+        "pid": 509,
+        "listtype": "track",
+        "title": "åå¾å¥èº«-æ·±è¹²",
+        "priority": 2,
+        "content": ""
+      },
+      {
+        "cover": "http://r3.ykimg.com/05410408529FED746A0A4604E3B10D1E",
+        "datatype": "playlist",
+        "pid": 507,
+        "listtype": "track",
+        "title": "åå¾å¥èº«-æ¡¥",
+        "priority": 3,
+        "content": ""
+      },
+      {
+        "cover": "http://r1.ykimg.com/05410408529FF3FA6A0A424A69F8D21C",
+        "datatype": "playlist",
+        "pid": 508,
+        "listtype": "track",
+        "title": "åå¾å¥èº«-ä¿¯å§æ",
+        "priority": 4,
+        "content": ""
+      },
+      {
+        "cover": "http://r2.ykimg.com/0541040852A030476A0A4123898BD436",
+        "datatype": "playlist",
+        "pid": 510,
+        "listtype": "track",
+        "title": "åå¾å¥èº«-å¼ä½åä¸",
+        "priority": 5,
+        "content": ""
+      },
+      {
+        "cover": "http://r4.ykimg.com/05410408524A1B186A0A4354162C309A",
+        "datatype": "playlist",
+        "pid": 105,
+        "listtype": "track",
+        "title": "åéå¥èº«å¨ä½",
+        "priority": 6,
+        "content": ""
+      },
+      {
+        "cover": "http://r1.ykimg.com/0541040856A64D166A0A472C2AA4704C",
+        "datatype": "playlist",
+        "pid": 514,
+        "listtype": "track",
+        "title": "å¥èº«å¡åè®­ç»",
+        "priority": 7,
+        "content": ""
+      },
+      {
+        "cover": "http://r1.ykimg.com/054104085240886F6A0A467599374834",
+        "datatype": "playlist",
+        "pid": 1044,
+        "listtype": "track",
+        "title": "åºç¡å¥èº«å¨ä½3Dè®²è§£",
+        "priority": 8,
+        "content": ""
+      },
+      {
+        "cover": "http://r1.ykimg.com/0541030852E761246A0A48589C67034B",
+        "datatype": "playlist",
+        "pid": 1045,
+        "listtype": "track",
+        "title": "å¥èº«æ åå¨ä½ä¸å¼å¸",
+        "priority": 9,
+        "content": ""
+      },
+      {
+        "cover": "http://r3.ykimg.com/0541040853E81BCD6A0A460A24DCBB41",
+        "datatype": "playlist",
+        "pid": 107,
+        "listtype": "track",
+        "title": "ç§å­¦å¥èº«ç³»å",
+        "priority": 10,
+        "content": ""
+      },
+      {
+        "cover": "http://r3.ykimg.com/0541040856B6D4FF6A0A472C2A9A5EB2",
+        "datatype": "playlist",
+        "pid": 106,
+        "listtype": "track",
+        "title": "èªéå¥èº«",
+        "priority": 11,
+        "content": ""
+      }
+    ]
+  }
+}

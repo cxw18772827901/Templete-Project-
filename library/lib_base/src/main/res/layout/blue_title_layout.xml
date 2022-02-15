@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_accent_color">
+
+    <com.hjq.shape.view.ratioLayout.StatuesBar
+        android:id="@+id/statues_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_back_no_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/x25"
+        android:text="返回"
+        android:textColor="@color/color_title_back_tv"
+        android:textSize="@dimen/tv_title_size"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        tools:ignore="HardcodedText"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:drawablePadding="@dimen/x10"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/x10"
+        android:text="返回"
+        android:textColor="@color/cl_white"
+        android:textSize="@dimen/tv_title_size"
+        android:textStyle="normal"
+        app:drawableStartCompat="@drawable/ic_white_back_normal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        tools:drawableStart="@drawable/ic_white_back_normal"
+        tools:ignore="HardcodedText" />
+    <!--app:drawableStartCompat="@drawable/sel_blue_title_back_tv"
+    android:textColor="@color/color_title_back_tv"
+    tools:drawableStart="@drawable/sel_blue_title_back_tv"-->
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/title_bar_height"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/cl_white"
+        android:textSize="@dimen/tv_title_size"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statues_bar"
+        app:layout_constraintWidth_percent="0.5"
+        tools:ignore="HardcodedText" />
+    <!--android:textStyle="bold"/>-->
+
+    <LinearLayout
+        android:id="@+id/ll_right"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/x20"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_more_do"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title"
+        tools:ignore="ContentDescription"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

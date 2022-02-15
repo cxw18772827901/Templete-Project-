@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/x30"
+        android:text="item"
+        android:textColor="@color/cl_666"
+        android:textSize="@dimen/x60"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8333"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:padding="@dimen/x30"
+        android:text="影藏item"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x30"
+        app:layout_constraintBottom_toBottomOf="@id/tv"
+        app:layout_constraintLeft_toRightOf="@id/tv"
+        app:layout_constraintTop_toTopOf="@id/tv"
+        app:layout_constraintWidth_percent="0.1667"
+        tools:ignore="HardcodedText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

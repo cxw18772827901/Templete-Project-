@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/x30"
+    android:paddingVertical="@dimen/x24"
+    tools:background="@color/white"
+    tools:context=".ui.dialog.base.SafeDialog">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_safe_phone"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/x45"
+        android:hint="@string/common_phone_input_hint"
+        android:paddingHorizontal="@dimen/x60"
+        android:paddingVertical="@dimen/x30"
+        android:singleLine="true"
+        android:textSize="@dimen/x42"
+        tools:text="12345678910" />
+
+    <View
+        style="@style/HorizontalLineStyle"
+        android:layout_marginHorizontal="@dimen/x30" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x30"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_safe_code"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/x45"
+                android:ellipsize="end"
+                android:hint="@string/common_code_input_hint"
+                android:inputType="number"
+                android:maxLength="@integer/sms_code_length"
+                android:paddingHorizontal="@dimen/x60"
+                android:paddingVertical="@dimen/x30"
+                android:singleLine="true"
+                android:textSize="@dimen/x39" />
+
+            <View
+                style="@style/HorizontalLineStyle"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="@dimen/x30" />
+
+        </FrameLayout>
+
+        <com.hjq.shape.view.textview.CountdownView
+            android:id="@+id/cv_safe_countdown"
+            style="@style/CountdownViewStyle"
+            android:layout_marginHorizontal="@dimen/x15" />
+
+    </LinearLayout>
+
+</LinearLayout>

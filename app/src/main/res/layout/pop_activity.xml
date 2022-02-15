@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/x50"
+    android:visibility="visible"
+    tools:ignore="UselessLeaf"
+    tools:layoutAnimation="@null">
+
+    <TextView
+        android:id="@+id/tv_zuoshang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x20"
+        android:text="智能左上pop"
+        android:textColor="#000"
+        android:textSize="@dimen/x45"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_youshang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="@dimen/x20"
+        android:text="智能右上pop"
+        android:textColor="#000"
+        android:textSize="@dimen/x45"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_zuoxia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/x20"
+        android:text="智能左下pop"
+        android:textColor="#000"
+        android:textSize="@dimen/x45"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_youxia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:padding="@dimen/x20"
+        android:text="智能右下pop"
+        android:textColor="#000"
+        android:textSize="@dimen/x45"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x100"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x600"
+        android:gravity="center"
+        android:paddingStart="@dimen/x60"
+        android:paddingEnd="@dimen/x60"
+        android:text="智能pop"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x60"
+        app:shape_solidColor="#1692db"
+        app:shape_solidPressedColor="#F00"
+        app:shape_textColor="@color/white"
+        app:shape_textPressedColor="@color/mb_white"
+        tools:ignore="HardcodedText" />
+
+    <!--<com.hjq.shape.view.ShapeImageView
+        android:layout_width="@dimen/x300"
+        android:layout_height="@dimen/x300"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x200"
+        app:shape_radius="@dimen/x20"
+        app:shape_solidColor="@color/cl_333333" />-->
+</FrameLayout>

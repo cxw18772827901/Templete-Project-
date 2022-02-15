@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--占位图-->
+    <declare-styleable name="HolderView">
+        <attr name="srcLoadingResource" format="reference" />
+        <attr name="srcNoDataResource" format="reference" />
+        <attr name="srcErrorResource" format="reference" />
+        <attr name="strLoading" format="string" />
+        <attr name="strNoData" format="string" />
+        <attr name="strError" format="string" />
+    </declare-styleable>
+    <!--播放按钮-->
+    <declare-styleable name="PlayButton">
+        <!-- 线条颜色 -->
+        <attr name="pb_lineColor" format="color" />
+        <!-- 线条大小 -->
+        <attr name="pb_lineSize" format="integer" />
+        <!-- 动画时间 -->
+        <attr name="pb_animDuration" format="integer" />
+    </declare-styleable>
+    <!--TitleBar-->
+    <declare-styleable name="TitleBar">
+        <attr name="barStatuesVisible" format="boolean" />
+        <attr name="barInitModel">
+            <!--默认不做初始化-->
+            <enum name="initLater" value="-1" />
+            <!--blue title theme-->
+            <enum name="initBlueTheme" value="0" />
+            <!--white title theme-->
+            <enum name="initWhiteTheme" value="1" />
+        </attr>
+        <attr name="barBackStr" format="string" />
+        <attr name="barBackVisible" format="boolean" />
+        <attr name="barBackArrowVisible" format="boolean" />
+        <attr name="barTitleStr" format="string" />
+        <attr name="barRightIconResource" format="reference" />
+    </declare-styleable>
+</resources>

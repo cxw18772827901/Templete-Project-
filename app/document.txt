@@ -1,0 +1,8 @@
+1.外部存储推荐以下方式,安卓高版本权限限制,无法直接在sd卡写入文件数据
+
+Context
+File getExternalCacheDir()
+// /storage/emulated/0/Android/data/com.sankuai.meituan/cache
+
+File getExternalFilesDir(String type)
+// /storage/emulated/0/Android/data/com.sankuai.meituan/files

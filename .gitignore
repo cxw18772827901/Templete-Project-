@@ -1,0 +1,5 @@
+/library/lib_view/build/
+/library/lib_permission/build/
+/library/lib_gson/build/
+/.gradle/
+/.idea/

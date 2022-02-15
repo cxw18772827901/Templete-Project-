@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/black85"
+    app:cardCornerRadius="@dimen/x45"
+    app:cardElevation="0px"
+    tools:context=".ui.dialog.base.WaitDialog">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="@dimen/x330"
+        android:minHeight="@dimen/x330"
+        android:orientation="vertical"
+        android:padding="@dimen/x30">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/x210"
+            android:layout_height="@dimen/x210"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/progress" />
+
+        <com.hjq.shape.view.textview.SmartTextView
+            android:id="@+id/tv_wait_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x45"
+            android:layout_marginTop="@dimen/x15"
+            android:layout_marginBottom="@dimen/x5"
+            android:maxLines="3"
+            android:text="@string/common_loading"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x42" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

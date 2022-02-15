@@ -1,0 +1,80 @@
+package com.lib.base.ui.action;
+
+import com.gyf.immersionbar.ImmersionBar;
+import com.lib.base.R;
+
+/**
+ * ProjectName  TempleteProject-java
+ * PackageName  com.lib.base.ui.action
+ * Author       chenxiaowu
+ * Date         2022/1/27.
+ */
+
+public interface ImmersionAvtion extends ContextAction {
+
+    /**
+     * 默认标题栏字体黑色
+     *
+     * @return
+     */
+    default boolean darkStatusBarFont() {
+        return true;
+    }
+
+    /**
+     * 默认无色,ContentView直接占用状态栏位置
+     */
+    default void setImmersionBar() {
+        setImmersionBar(R.color.cl_no_color, false);
+    }
+
+    /**
+     * 设置颜色后直接,ContentView从状态栏下方开始布局
+     *
+     * @param statusBarColor 状态栏颜色
+     */
+    default void setImmersionBar(int statusBarColor) {
+        setImmersionBar(statusBarColor, true);
+    }
+
+    /**
+     * 设置了autoDarkModeEnable后setStatueBarTextColorDark会失效
+     *
+     * @param statusBarColor    状态栏颜色
+     * @param fitsSystemWindows 是否从状态栏下方开始布局
+     */
+    default void setImmersionBar(int statusBarColor, boolean fitsSystemWindows) {
+        ImmersionBar
+                .with(getActivitys())
+                .statusBarColor(statusBarColor)
+                .fitsSystemWindows(fitsSystemWindows)
+                .statusBarDarkFont(darkStatusBarFont())
+                .navigationBarColor(R.color.white)//可自定义navigationBar颜色
+                /*.autoDarkModeEnable(true, 0.2f)*/
+                .init();
+    }
+
+    /**
+     * 只设置状态栏字体是否是黑色,其他不管
+     *
+     * @param dark 是否黑色
+     */
+    default void setStatueBarTextColorDark(boolean dark) {
+        ImmersionBar
+                .with(getActivitys())
+                .statusBarDarkFont(dark)
+                .init();
+    }
+
+    /**
+     * 设置背景后单独处理状态栏属性
+     */
+    default void specialImmersion() {
+        ImmersionBar
+                .with(getActivitys())
+                .statusBarColor(R.color.cl_no_color)
+                .fitsSystemWindows(false)
+                .statusBarDarkFont(false)
+                .init();
+    }
+}

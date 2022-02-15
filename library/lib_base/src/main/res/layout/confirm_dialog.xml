@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/loading_bg"
+    android:minWidth="@dimen/x360"
+    android:paddingHorizontal="@dimen/x40"
+    android:paddingVertical="@dimen/x90">
+
+    <TextView
+        android:id="@+id/tv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:includeFontPadding="false"
+        android:text="确认中"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x42"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/point1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/point1"
+        android:layout_width="@dimen/x28"
+        android:layout_height="@dimen/x28"
+        android:layout_marginTop="@dimen/x50"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/point2"
+        app:layout_constraintTop_toBottomOf="@id/tv_loading"
+        app:shape_radius="@dimen/x14"
+        app:shape_solidColor="@color/cl_aaa"
+        app:shape_solidSelectedColor="@color/white" />
+
+    <!--android:layout_marginStart="@dimen/x20"-->
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/point2"
+        android:layout_width="@dimen/x28"
+        android:layout_height="@dimen/x28"
+        app:layout_constraintBottom_toBottomOf="@id/point1"
+        app:layout_constraintLeft_toRightOf="@id/point1"
+        app:layout_constraintRight_toLeftOf="@id/point3"
+        app:layout_constraintTop_toTopOf="@id/point1"
+        app:shape_radius="@dimen/x14"
+        app:shape_solidColor="@color/cl_aaa"
+        app:shape_solidSelectedColor="@color/white" />
+
+    <!--android:layout_marginStart="@dimen/x20"-->
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/point3"
+        android:layout_width="@dimen/x28"
+        android:layout_height="@dimen/x28"
+        app:layout_constraintBottom_toBottomOf="@id/point2"
+        app:layout_constraintLeft_toRightOf="@id/point2"
+        app:layout_constraintRight_toLeftOf="@id/point4"
+        app:layout_constraintTop_toTopOf="@id/point2"
+        app:shape_radius="@dimen/x14"
+        app:shape_solidColor="@color/cl_aaa"
+        app:shape_solidSelectedColor="@color/white" />
+
+    <!--android:layout_marginStart="@dimen/x20"-->
+    <com.hjq.shape.layout.ShapeFrameLayout
+        android:id="@+id/point4"
+        android:layout_width="@dimen/x28"
+        android:layout_height="@dimen/x28"
+        app:layout_constraintBottom_toBottomOf="@id/point3"
+        app:layout_constraintLeft_toRightOf="@id/point3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/point3"
+        app:shape_radius="@dimen/x14"
+        app:shape_solidColor="@color/cl_aaa"
+        app:shape_solidSelectedColor="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

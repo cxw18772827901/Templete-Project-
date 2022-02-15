@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/x60">
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="加载"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+    <!--       app:shape_textCenterColor="#ED58FF"
+        app:shape_textEndColor="#49DAFA"
+        app:shape_textGradientOrientation="horizontal"
+        app:shape_textStartColor="#49DAFA"-->
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x50"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="加载1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x50"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="加载2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x50"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x50"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="警告"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x150"
+        android:layout_marginTop="@dimen/x50"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="异常"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x75"
+        app:shape_solidColor="@color/common_accent_color"
+        app:shape_textColor="@color/white"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

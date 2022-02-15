@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/x46"
+    android:paddingBottom="@dimen/x36">
+
+    <TextView
+        android:id="@+id/mLastUpdateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/cl_666"
+        android:textSize="@dimen/x46" />
+
+    <ImageView
+        android:id="@+id/mArrowView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x20"
+        android:scaleType="matrix"
+        android:src="@mipmap/ic_foot_ball"
+        tools:ignore="ContentDescription" />
+    <!-- android:src="@drawable/ic_default_rotate"-->
+</LinearLayout>

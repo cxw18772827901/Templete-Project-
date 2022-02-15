@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/x60">
+
+        <com.hjq.shape.view.textview.PasswordEditText
+            android:id="@+id/et_password_reset_password1"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x45"
+            android:background="@color/white"
+            android:drawableStart="@drawable/safe_ic"
+            android:drawablePadding="@dimen/x30"
+            android:hint=" 请输入6位以上密码"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:paddingHorizontal="@dimen/x40"
+            android:paddingVertical="@dimen/x36"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/et_cursor"
+            tools:ignore="HardcodedText" />
+        <!--android:hint="@string/password_reset_phone_hint1"-->
+
+        <com.hjq.shape.view.ratioLayout.RatioConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x60"
+            app:shape_radius="@dimen/x30"
+            app:shape_solidColor="@color/common_accent_color"
+            app:sizeRatio="2:1"
+            tools:visibility="visible">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/x80" />
+            <!--app:layout_constraintGuide_percent="0.2"-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x50"
+                android:text="这是一个宽高比 2:1 的ConstraintLayout"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x50"
+                android:text="这是一个宽高比 2:1 的ConstraintLayout"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv1"
+                app:layout_goneMarginTop="@dimen/x50"
+                tools:ignore="HardcodedText" />
+        </com.hjq.shape.view.ratioLayout.RatioConstraintLayout>
+
+        <com.hjq.shape.view.ratioLayout.RatioLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x30"
+            android:gravity="center"
+            app:shape_radius="@dimen/x30"
+            app:shape_solidColor="@color/common_accent_color"
+            app:sizeRatio="2:1"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是一个宽高比 2:1 的LinearLayout"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+        </com.hjq.shape.view.ratioLayout.RatioLinearLayout>
+
+        <com.hjq.shape.view.ratioLayout.RatioRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            android:gravity="center"
+            app:shape_radius="@dimen/x30"
+            app:shape_solidColor="@color/common_accent_color"
+            app:sizeRatio="2:1"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是一个宽高比 2:1 的RelativeLayout"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+        </com.hjq.shape.view.ratioLayout.RatioRelativeLayout>
+
+        <com.hjq.shape.view.ratioLayout.RatioFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            app:shape_radius="@dimen/x30"
+            app:shape_solidColor="@color/common_accent_color"
+            app:sizeRatio="2:1"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="这是一个宽高比 2:1 的FrameLayout"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+        </com.hjq.shape.view.ratioLayout.RatioFrameLayout>
+
+        <com.hjq.shape.view.ratioLayout.RatioImageView
+            android:id="@+id/ratio_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            android:background="@drawable/img_drawable"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_drawable"
+            app:round_corner_radius="@dimen/x20"
+            app:sizeRatio="2:1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            android:text="这是一个宽高比2:1的ImageView"
+            android:textColor="@color/cl_333333"
+            android:textSize="@dimen/x55"
+            tools:ignore="HardcodedText" />
+
+        <com.hjq.shape.view.ratioLayout.RatioHolderView
+            android:id="@+id/ratio_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x60"
+            android:background="@drawable/img_drawable"
+            app:sizeRatio="2:1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            android:text="这是一个宽高比2:1的Holder View"
+            android:textColor="@color/cl_333333"
+            android:textSize="@dimen/x55"
+            tools:ignore="HardcodedText" />
+
+        <com.hjq.shape.view.ratioLayout.RatioTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x30"
+            android:gravity="center"
+            android:text="这是一个宽高比2:1的TextView"
+            app:shape_radius="@dimen/x30"
+            app:shape_solidColor="@color/common_accent_color"
+            app:sizeRatio="2:1"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</ScrollView>

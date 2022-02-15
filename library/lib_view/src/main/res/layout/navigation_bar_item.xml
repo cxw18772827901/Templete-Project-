@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical">
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/x35"
+        android:paddingVertical="@dimen/x25"
+        android:text="@string/str_publish"
+        android:textSize="@dimen/x45"
+        app:shape_radius="@dimen/x50"
+        app:shape_solidColor="@color/white"
+        app:shape_solidSelectedColor="#FFDD19"
+        app:shape_textColor="#646464"
+        app:shape_textSelectedColor="#2A2A2A" />
+</FrameLayout>

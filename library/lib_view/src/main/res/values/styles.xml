@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TabText">
+        <item name="android:textSize">@dimen/x45</item>
+    </style>
+</resources>

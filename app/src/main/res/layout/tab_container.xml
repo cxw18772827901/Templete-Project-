@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x150"
+    android:background="@color/cl_white"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/tab1"
+        style="@style/bottom_host_ll"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            style="@style/bottom_host_iv"
+            android:padding="@dimen/x3"
+            android:src="@drawable/tab1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/bottom_host_tv"
+            android:text="探索"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab2"
+        style="@style/bottom_host_ll"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            style="@style/bottom_host_iv"
+            android:padding="@dimen/x8"
+            android:src="@drawable/tab3"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/bottom_host_tv"
+            android:text="精选"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab3"
+        style="@style/bottom_host_ll"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            style="@style/bottom_host_iv"
+            android:src="@drawable/tab2"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/bottom_host_tv"
+            android:text="收藏"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tab5"
+        style="@style/bottom_host_ll"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            style="@style/bottom_host_iv"
+            android:padding="@dimen/x8"
+            android:src="@drawable/tab5"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            style="@style/bottom_host_tv"
+            android:text="我的"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</LinearLayout>

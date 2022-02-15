@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_left_padding">@dimen/x120</dimen>
+    <dimen name="loading_top_padding">@dimen/x145</dimen>
+    <dimen name="tv_title_size">@dimen/x45</dimen>
+    <dimen name="home_auto_roll_height">@dimen/x600</dimen>
+    <dimen name="sp_16">@dimen/x42</dimen>
+    <!-- 默认分割线大小 -->
+    <dimen name="line_size">1px</dimen>
+    <!-- 默认按钮的圆角大小 -->
+    <dimen name="button_circle_size">999dp</dimen>
+    <!-- 通用对话框圆角大小 -->
+    <dimen name="dialog_ui_round_size">15dp</dimen>
+    <!-- 标题栏高度 -->
+    <dimen name="title_bar_height">@dimen/x130</dimen>
+</resources>

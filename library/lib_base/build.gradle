@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.library'
+}
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("Boolean", "MOULDE_TO_APPLICATION", "${mouldeToApplication}")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("Boolean", "MOULDE_TO_APPLICATION", "${mouldeToApplication}")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+        disable 'MissingTranslation'
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs', '../library/lib_base/libs'
+        }
+    }
+    viewBinding {
+        enabled = true
+    }
+//    greendao {
+//        //版本号
+//        schemaVersion 1
+//        //工程路径
+//        targetGenDir 'src/main/java'
+//        //包名
+//        daoPackage 'com.android.db.dao'
+//    }
+}
+dependencies {
+    //api
+    api project(path: ':library:lib_db')
+    api project(path: ':library:lib_gson')
+    api project(path: ':library:lib_permission')
+    api project(path: ':library:lib_view')
+    //aroute
+    annotationProcessor "com.alibaba:arouter-compiler:${config.dependencies.route_version}"
+    api "com.alibaba:arouter-api:${config.dependencies.route_version}"
+    //rxjava retrofit okhttp log
+    implementation "io.reactivex.rxjava3:rxandroid:${config.dependencies.rxandroid_version}"
+    implementation "com.jakewharton.rxbinding4:rxbinding:${config.dependencies.rxbinding_version}"
+    implementation "com.squareup.okhttp3:okhttp:${config.dependencies.okhttp_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${config.dependencies.okhttp_version}"
+    //noinspection GradleDependency
+    implementation "com.squareup.okio:okio:${config.dependencies.okio_version}"
+    implementation "com.squareup.retrofit2:retrofit:${config.dependencies.retrofit_version}"
+    //api "com.squareup.retrofit2:converter-gson:${config.dependencies.retrofit_version}"
+    api "com.squareup.retrofit2:adapter-rxjava3:${config.dependencies.retrofit_version}"
+    //title bar
+    implementation "com.gyf.immersionbar:immersionbar:${config.dependencies.immersionbar_version}"
+    //leakcanary
+    debugApi "com.squareup.leakcanary:leakcanary-android:${config.dependencies.leakcanary_version}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${config.dependencies.glide_version}"
+    //3.0版本
+    // PictureSelector 基础 (必须)
+    api 'io.github.lucksiege:pictureselector:v3.0.3'
+    // 图片压缩 (按需引入)
+    api 'io.github.lucksiege:compress:v3.0.3'
+    // 图片裁剪 (按需引入)
+    api 'io.github.lucksiege:ucrop:v3.0.3'
+    // 自定义相机 (按需引入)
+    api 'io.github.lucksiege:camerax:v3.0.3'
+    //七牛
+    //noinspection GradleDependency
+    implementation "com.qiniu:qiniu-android-sdk:${config.dependencies.qiniu_version}"
+//    implementation "androidx.lifecyle:lifecyle:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:${config.dependencies.androidx_lifecycle_version}"
+    implementation 'com.github.getActivity:ToastUtils:10.3'
+}

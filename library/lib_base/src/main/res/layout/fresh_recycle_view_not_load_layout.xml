@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lib.base.ui.widget.HolderView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srcErrorResource="@drawable/ic_error"
+    app:srcNoDataResource="@drawable/ic_no_data">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableAutoLoadMore="false"
+        app:srlEnableFooterFollowWhenNoMoreData="true"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollDrag="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+</com.lib.base.ui.widget.HolderView>

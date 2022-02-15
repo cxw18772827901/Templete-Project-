@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'org.greenrobot.greendao'
+}
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    greendao {
+        //版本号
+        schemaVersion 1
+        //工程路径
+        targetGenDir 'src/main/java'
+        //包名
+        daoPackage 'com.greendao.db.helper'
+    }
+}
+
+dependencies {
+
+//    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    implementation 'com.google.android.material:material:1.1.0'
+    testImplementation "junit:junit:${config.dependencies.junit_version}"
+    androidTestImplementation "androidx.test.ext:junit:${config.dependencies.ext_junit_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${config.dependencies.espresso_core_version}"
+
+    //db
+    implementation "org.greenrobot:greendao:${config.dependencies.greendao_version}"
+    implementation "org.greenrobot:greendao-generator:${config.dependencies.greendao_version}"
+}
