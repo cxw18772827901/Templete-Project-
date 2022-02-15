@@ -36,11 +36,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 行首增加单标签
          */
-        TxtUtil.setTxtLable(this, mViewBinding.tv4, mViewBinding.tv4.getText().toString(), (int) getDimen(R.dimen.x45), "标签1");
+        TxtUtil.setTxtLable(this, mViewBinding.tv4, mViewBinding.tv4.getText().toString(), (int) getDimen(R.dimen.x50), "标签1");
         /**
          * 行首增加双标签
          */
-        TxtUtil.setTxtLables(this, mViewBinding.tv5, mViewBinding.tv5.getText().toString(), (int) getDimen(R.dimen.x45), "标签1", "标签2");
+        TxtUtil.setTxtLables(this, mViewBinding.tv5, mViewBinding.tv5.getText().toString(), (int) getDimen(R.dimen.x50), "标签1", "标签2");
         /**
          * 修改字体粗细,默认值0.3,注意不要跟粗体一起使用
          */
