@@ -94,17 +94,17 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:${config.dependencies.glide_version}"
     //3.0版本
     // PictureSelector 基础 (必须)
-    api 'io.github.lucksiege:pictureselector:v3.0.3'
+    api "io.github.lucksiege:pictureselector:${config.dependencies.pictureselector_version}"
     // 图片压缩 (按需引入)
-    api 'io.github.lucksiege:compress:v3.0.3'
+    implementation "io.github.lucksiege:compress:${config.dependencies.pictureselector_version}"
     // 图片裁剪 (按需引入)
-    api 'io.github.lucksiege:ucrop:v3.0.3'
+    implementation "io.github.lucksiege:ucrop:${config.dependencies.pictureselector_version}"
     // 自定义相机 (按需引入)
-    api 'io.github.lucksiege:camerax:v3.0.3'
+    api "io.github.lucksiege:camerax:${config.dependencies.pictureselector_version}"
     //七牛
     //noinspection GradleDependency
     implementation "com.qiniu:qiniu-android-sdk:${config.dependencies.qiniu_version}"
 //    implementation "androidx.lifecyle:lifecyle:2.4.0"
     implementation "androidx.lifecycle:lifecycle-runtime:${config.dependencies.androidx_lifecycle_version}"
-    implementation 'com.github.getActivity:ToastUtils:10.3'
+    implementation "com.github.getActivity:ToastUtils:${config.dependencies.toastutils_version}"
 }
