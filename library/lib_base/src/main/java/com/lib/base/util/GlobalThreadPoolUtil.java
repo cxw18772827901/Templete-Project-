@@ -45,8 +45,7 @@ public class GlobalThreadPoolUtil {
 
         @Override
         public Thread newThread(Runnable r) {
-            return new Thread(r, "Dispatcher thread:"
-                    + integer.getAndIncrement());
+            return new Thread(r, "Dispatcher thread:" + integer.getAndIncrement());
         }
     };
 
