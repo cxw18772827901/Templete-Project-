@@ -22,11 +22,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
     @Override
     public void initView() {
         /**
-         * 只能打单标签,多标签请手动处理
+         * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
          */
         TxtUtil.setText(mViewBinding.tv1, "#FF0000", (int) getDimen(R.dimen.x65), true, mViewBinding.tv1.getText().toString(), "标签");
         /**
-         * 只能打单标签,多标签请手动处理
+         * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
          */
         TxtUtil.setText(mViewBinding.tv2, "#FF0000", (int) getDimen(R.dimen.x65), false, mViewBinding.tv2.getText().toString(), "标签");
         /**
@@ -34,11 +34,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
          */
         getaVoid();
         /**
-         * 行首单标签
+         * 行首增加单标签
          */
         TxtUtil.setTxtLable(this, mViewBinding.tv4, mViewBinding.tv4.getText().toString(), (int) getDimen(R.dimen.x45), "标签1");
         /**
-         * 行首双标签
+         * 行首增加双标签
          */
         TxtUtil.setTxtLables(this, mViewBinding.tv5, mViewBinding.tv5.getText().toString(), (int) getDimen(R.dimen.x45), "标签1", "标签2");
         /**
