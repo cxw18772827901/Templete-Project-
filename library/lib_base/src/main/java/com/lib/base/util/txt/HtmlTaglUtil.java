@@ -56,7 +56,7 @@ public class HtmlTaglUtil implements Html.TagHandler {
      * @param content 整个文本
      * @param label   标签部分文本
      */
-    public static void setText(TextView tv, String color, String size, boolean bold, String content, String label) {
+    public static void setText(TextView tv, String color, int size, boolean bold, String content, String label) {
         if (OUtil.isNull(content)) {
             tv.setText("");
             return;
@@ -76,21 +76,17 @@ public class HtmlTaglUtil implements Html.TagHandler {
             end = content.split(label)[1];
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(start)
-                .append("<tag");
+        sb.append(start).append("<tag");
         if (OUtil.isNotNull(color)) {
             sb.append(" color='").append(color).append("'");
         }
-        if (OUtil.isNotNull(size)) {
-            sb.append(" size='").append(size).append("'");
-        }
+        //if (OUtil.isNotNull(size)) {
+        sb.append(" size='").append(size).append("px").append("'");
+        //}
         if (bold) {
             sb.append(" bold='").append("true").append("'");
         }
-        sb.append(">")
-                .append(label)
-                .append("</tag>")
-                .append(end);
+        sb.append(">").append(label).append("</tag>").append(end);
         String s = sb.toString();
         DebugUtil.logD(TAG, "s=" + s);
         tv.setText(Html.fromHtml(s, null, new HtmlTaglUtil("tag", label.length())));

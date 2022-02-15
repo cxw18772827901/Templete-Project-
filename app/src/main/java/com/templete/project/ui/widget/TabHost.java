@@ -18,7 +18,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 /**
- * Created by Dave on 2017/1/18.
+ * @author Dave
+ * @date 2017/1/18
  */
 
 public class TabHost extends LinearLayout {
@@ -27,9 +28,11 @@ public class TabHost extends LinearLayout {
     private int containerId;
     private int currentTab = 0;
     private FragmentManager manager;
-    private BaseFragment currentFragment;
+    private BaseFragment<?> currentFragment;
     private View[] tabViewList;
-    private BaseFragment[] fragmentList;
+    private BaseFragment<?>[] fragmentList;
+    private boolean intercept;
+    private int interceptIndex;
 
     public TabHost(Context context) {
         this(context, null);
@@ -68,7 +71,7 @@ public class TabHost extends LinearLayout {
             setTabSelected(lastTab);
             currentTab = lastTab;
         } else {
-            BaseFragment fragment = fragmentList[0];
+            BaseFragment<?> fragment = fragmentList[0];
             manager
                     .beginTransaction()
                     .add(containerId, fragment, getClassTag(fragment))
@@ -80,13 +83,14 @@ public class TabHost extends LinearLayout {
         callBack();
     }
 
-    private String getClassTag(BaseFragment fragment) {
+    private String getClassTag(BaseFragment<?> fragment) {
         return fragment.getClass().getSimpleName();
     }
 
     private void callBack() {
         if (null != onTabChangedListener) {
-            onTabChangedListener.tabChange(currentTab);//回调到MainActivity
+            //回调到MainActivity
+            onTabChangedListener.tabChange(currentTab);
         }
         currentFragment.tabClick();//直接回调到Fragment
     }
@@ -100,15 +104,16 @@ public class TabHost extends LinearLayout {
     }
 
     private void changeFragment(int finalI) {
-        if (finalI > 2 && !LoginUtil.isLogin()) {
+        if (intercept && finalI >= interceptIndex && !LoginUtil.isLogin()) {
             if (onUserStateListener != null) {
                 onUserStateListener.login();
             }
             return;
         }
         //
-        BaseFragment fragment = fragmentList[finalI];
-        if (currentFragment.equals(fragment)) {//是当前的tab,再次点击的话无效
+        BaseFragment<?> fragment = fragmentList[finalI];
+        //是当前的tab,再次点击的话无效
+        if (currentFragment.equals(fragment)) {
             return;
         }
         if (fragment.isAdded()) {
@@ -167,9 +172,11 @@ public class TabHost extends LinearLayout {
         fl_pop.setVisibility(0 == unReadCount ? View.GONE : View.VISIBLE);
     }*/
 
-    //tab切换后在MainActivity里面的回调,参数为下标
     private OnTabChangedListener onTabChangedListener;
 
+    /**
+     * tab切换后在MainActivity里面的回调,参数为下标
+     */
     public TabHost setOnTabChangedListener(OnTabChangedListener onTabChangedListener) {
         this.onTabChangedListener = onTabChangedListener;
         return this;
@@ -185,7 +192,17 @@ public class TabHost extends LinearLayout {
 
     private OnUserStateListener onUserStateListener;
 
-    public TabHost setOnLoginListener(OnUserStateListener onUserStateListener) {
+    /**
+     * 登录拦截
+     *
+     * @param intercept           是否拦截
+     * @param interceptIndex      从第几个角标开始拦截
+     * @param onUserStateListener 拦截回调
+     * @return
+     */
+    public TabHost setOnLoginListener(boolean intercept, int interceptIndex, OnUserStateListener onUserStateListener) {
+        this.intercept = intercept;
+        this.interceptIndex = interceptIndex;
         this.onUserStateListener = onUserStateListener;
         return this;
     }
@@ -203,7 +220,7 @@ public class TabHost extends LinearLayout {
     public static class Builder {
         FragmentManager manager;
         int containerId;
-        BaseFragment[] fragmentList;
+        BaseFragment<?>[] fragmentList;
         int lastTab;
 
         public Builder() {
@@ -234,10 +251,11 @@ public class TabHost extends LinearLayout {
          *
          * @return
          */
-        public Builder setFragments(Class... clazz) {
+        @SafeVarargs
+        public final Builder setFragments(Class<? extends BaseFragment<?>>... clazz) {
             for (int i = 0; i < clazz.length; i++) {
-                Class aClass = clazz[i];
-                BaseFragment fragment = (BaseFragment) manager.findFragmentByTag(aClass.getSimpleName());
+                Class<?> aClass = clazz[i];
+                BaseFragment<?> fragment = (BaseFragment<?>) manager.findFragmentByTag(aClass.getSimpleName());
                 if (fragment != null) {
                     //记录之前选中的position
                     if (!fragment.isHidden()) {
@@ -254,7 +272,7 @@ public class TabHost extends LinearLayout {
                     if (!(o instanceof BaseFragment)) {
                         throw new RuntimeException("clazz must be BaseFragment!");
                     } else {
-                        fragment = (BaseFragment) o;
+                        fragment = (BaseFragment<?>) o;
                     }
                 }
                 fragmentList[i] = fragment;

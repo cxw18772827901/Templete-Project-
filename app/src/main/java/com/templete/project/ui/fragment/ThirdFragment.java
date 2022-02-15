@@ -50,7 +50,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
     @Override
     public void initEvent() {
         setOnClickListener(v -> {
-                    Class clazz = null;
+                    Class<? extends BaseActivity<?>> clazz = null;
                     if (v.equals(mViewBinding.tv1)) {
                         clazz = FlexBoxActivity.class;
                     } else if (v.equals(mViewBinding.tv2)) {
@@ -82,7 +82,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
                         clazz = OneElementActivity.class;
                     } else if (v.equals(mViewBinding.tv6)) {
                         clazz = MultipleElementActivity.class;
-                    }else if (v.equals(mViewBinding.tv7)) {
+                    } else if (v.equals(mViewBinding.tv7)) {
                         clazz = GrassFreshActivity.class;
                     } else if (v.equals(mViewBinding.tv8)) {
                         clazz = SunFreshActivity.class;
@@ -90,7 +90,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
                         clazz = HorizontalFreshActivity.class;
                     }
                     if (clazz != null) {
-                        ((BaseActivity) requireActivity()).startAty(requireActivity(), clazz);
+                        ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
                     }
                 },
                 mViewBinding.tv1, mViewBinding.tv2,

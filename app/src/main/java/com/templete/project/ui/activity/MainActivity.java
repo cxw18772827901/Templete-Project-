@@ -62,7 +62,7 @@ public class MainActivity extends BaseMvvmActivity<ActivityMainBinding, MainView
                 .setContainerId(R.id.fl_container)
                 .setFragments(FirstFragment.class, SecondFragment.class, ThirdFragment.class, ForthFragment.class)
                 .build(mViewBinding.tabHost)
-                .setOnLoginListener(LoginUtil::toLogin)
+                .setOnLoginListener(false, 3, LoginUtil::toLogin)
                 .setOnTabChangedListener(tabIndex -> logD(TAG, "tabIndex=" + tabIndex))
                 .over();
     }

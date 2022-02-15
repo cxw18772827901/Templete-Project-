@@ -25,7 +25,7 @@ public class GrassFreshActivity extends BaseActivity<GrassFreshActivityBinding> 
 
     @Override
     public void inits() {
-
+        setTitleStr("青青草原");
     }
 
     @Override

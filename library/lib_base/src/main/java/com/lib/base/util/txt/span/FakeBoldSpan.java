@@ -8,7 +8,7 @@ import android.text.style.CharacterStyle;
  * 不要跟Bold一起用
  */
 public class FakeBoldSpan extends CharacterStyle {
-    float width = 0.8f;
+    float width = 0.2f;
 
     public FakeBoldSpan() {
     }

@@ -25,7 +25,7 @@ public class SunFreshActivity extends BaseActivity<SunFreshActivityBinding> {
 
     @Override
     public void inits() {
-
+        setTitleStr("烈日当空");
     }
 
     @Override

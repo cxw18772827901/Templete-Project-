@@ -36,7 +36,7 @@ public class TxtUtil {
      * @param content 文本
      * @param label   标签
      */
-    public static void setText(TextView tv, String color, String size, boolean bold, String content, String label) {
+    public static void setText(TextView tv, String color, int size, boolean bold, String content, String label) {
         HtmlTaglUtil.setText(tv, color, size, bold, content, label);
     }
 

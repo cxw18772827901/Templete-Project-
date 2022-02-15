@@ -1,11 +1,12 @@
 package com.templete.project.ui.fragment;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.ui.fragment.BaseFragment;
 import com.templete.project.databinding.ForthFragmentBinding;
+import com.templete.project.ui.activity.TxtActivity;
 
 /**
  * PackageName  com.templete.project.ui.fragment
@@ -32,7 +33,16 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
 
     @Override
     public void initEvent() {
-
+        setOnClickListener(v -> {
+                    Class<? extends BaseActivity<?>> clazz = null;
+                    if (v.equals(mViewBinding.tv1)) {
+                        clazz = TxtActivity.class;
+                    }
+                    if (clazz != null) {
+                        ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
+                    }
+                },
+                mViewBinding.tv1);
     }
 
     @Override
