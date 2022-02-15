@@ -24,9 +24,12 @@ public class DemoBeanDao extends AbstractDao<DemoBean, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property _id = new Property(0, long.class, "_id", true, "_id");
+        public final static Property _id = new Property(0, Long.class, "_id", true, "_id");
         public final static Property Name = new Property(1, String.class, "name", false, "NAME");
         public final static Property Age = new Property(2, int.class, "age", false, "AGE");
+        public final static Property Age1 = new Property(3, int.class, "age1", false, "AGE1");
+        public final static Property Age2 = new Property(4, int.class, "age2", false, "AGE2");
+        public final static Property Age3 = new Property(5, int.class, "age3", false, "AGE3");
     }
 
 
@@ -42,9 +45,12 @@ public class DemoBeanDao extends AbstractDao<DemoBean, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"DEMO_BEAN\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: _id
+                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: _id
                 "\"NAME\" TEXT," + // 1: name
-                "\"AGE\" INTEGER NOT NULL );"); // 2: age
+                "\"AGE\" INTEGER NOT NULL ," + // 2: age
+                "\"AGE1\" INTEGER NOT NULL ," + // 3: age1
+                "\"AGE2\" INTEGER NOT NULL ," + // 4: age2
+                "\"AGE3\" INTEGER NOT NULL );"); // 5: age3
     }
 
     /** Drops the underlying database table. */
@@ -56,47 +62,67 @@ public class DemoBeanDao extends AbstractDao<DemoBean, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, DemoBean entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.get_id());
+ 
+        Long _id = entity.get_id();
+        if (_id != null) {
+            stmt.bindLong(1, _id);
+        }
  
         String name = entity.getName();
         if (name != null) {
             stmt.bindString(2, name);
         }
         stmt.bindLong(3, entity.getAge());
+        stmt.bindLong(4, entity.getAge1());
+        stmt.bindLong(5, entity.getAge2());
+        stmt.bindLong(6, entity.getAge3());
     }
 
     @Override
     protected final void bindValues(SQLiteStatement stmt, DemoBean entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.get_id());
+ 
+        Long _id = entity.get_id();
+        if (_id != null) {
+            stmt.bindLong(1, _id);
+        }
  
         String name = entity.getName();
         if (name != null) {
             stmt.bindString(2, name);
         }
         stmt.bindLong(3, entity.getAge());
+        stmt.bindLong(4, entity.getAge1());
+        stmt.bindLong(5, entity.getAge2());
+        stmt.bindLong(6, entity.getAge3());
     }
 
     @Override
     public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+        return cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0);
     }    
 
     @Override
     public DemoBean readEntity(Cursor cursor, int offset) {
         DemoBean entity = new DemoBean( //
-            cursor.getLong(offset + 0), // _id
+            cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // _id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.getInt(offset + 2) // age
+            cursor.getInt(offset + 2), // age
+            cursor.getInt(offset + 3), // age1
+            cursor.getInt(offset + 4), // age2
+            cursor.getInt(offset + 5) // age3
         );
         return entity;
     }
      
     @Override
     public void readEntity(Cursor cursor, DemoBean entity, int offset) {
-        entity.set_id(cursor.getLong(offset + 0));
+        entity.set_id(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setAge(cursor.getInt(offset + 2));
+        entity.setAge1(cursor.getInt(offset + 3));
+        entity.setAge2(cursor.getInt(offset + 4));
+        entity.setAge3(cursor.getInt(offset + 5));
      }
     
     @Override
@@ -116,7 +142,7 @@ public class DemoBeanDao extends AbstractDao<DemoBean, Long> {
 
     @Override
     public boolean hasKey(DemoBean entity) {
-        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
+        return entity.get_id() != null;
     }
 
     @Override

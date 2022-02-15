@@ -73,6 +73,7 @@ public class MainActivity extends BaseMvvmActivity<ActivityMainBinding, MainView
 
     @Override
     public void initData() {
+//        LocalRepository.getInstance().getDaoSession().getDemoBeanDao().insert(new DemoBean(null,"",1));
     }
 
     @Override

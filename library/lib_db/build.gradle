@@ -29,7 +29,7 @@ android {
     }
     greendao {
         //版本号
-        schemaVersion 1
+        schemaVersion 2
         //工程路径
         targetGenDir 'src/main/java'
         //包名
@@ -46,6 +46,6 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${config.dependencies.espresso_core_version}"
 
     //db
-    implementation "org.greenrobot:greendao:${config.dependencies.greendao_version}"
+    api "org.greenrobot:greendao:${config.dependencies.greendao_version}"
     implementation "org.greenrobot:greendao-generator:${config.dependencies.greendao_version}"
 }
