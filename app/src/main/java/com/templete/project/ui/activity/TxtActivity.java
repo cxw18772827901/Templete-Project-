@@ -37,7 +37,7 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 修改字体粗细,默认值0.3,注意不要跟粗体一起使用
          */
-        TxtUtil.setTextBold(mViewBinding.tv6, "默认0.3粗细的字体");
+        TxtUtil.setTextBold(mViewBinding.tv6, "默认0.1粗细的字体");
         /**
          * 修改字体粗细,修改为2.0,注意不要跟粗体一起使用
          */
