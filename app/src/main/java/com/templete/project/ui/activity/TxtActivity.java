@@ -45,10 +45,12 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 超级富文本,可以修改多个标签,包括颜色,字号,粗体,可点击
          */
-        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, index -> {
+        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true,
+                index -> {
                     //do
                     toast("点击了第" + index + "个标签");
-                }, new SpanData("这是一", false),
+                },
+                new SpanData("这是一", false),
                 new SpanData("段超级文本", true),
                 new SpanData(",有颜色的", false),
                 new SpanData("+粗体+", true),
