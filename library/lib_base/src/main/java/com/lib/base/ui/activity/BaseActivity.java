@@ -69,7 +69,6 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
         if (AppTheme.THEME_NONE != activityTheme) {
             //setContentView
             BaseTitleLayoutBinding binding = getContentView(innerView);
-            setContentView(binding.getRoot());
             //初始化
             titleBar = binding.titleBar;
             initTitleBar(this, activityTheme);
@@ -87,6 +86,7 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
         BaseTitleLayoutBinding mBaseBinding = BaseTitleLayoutBinding.inflate(getLayoutInflater());
         LinearLayout rootView = mBaseBinding.getRoot();
         rootView.addView(innerView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        setContentView(rootView);
         return mBaseBinding;
     }
 
