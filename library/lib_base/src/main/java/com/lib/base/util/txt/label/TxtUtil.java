@@ -1,4 +1,4 @@
-package com.lib.base.util.txt.txtflag;
+package com.lib.base.util.txt.label;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,9 +9,13 @@ import android.text.SpannableString;
 import android.widget.TextView;
 
 import com.lib.base.R;
-import com.lib.base.util.txt.HtmlTaglUtil;
-import com.lib.base.util.txt.span.FakeBoldSpan;
-import com.lib.base.util.txt.span.Spanny;
+import com.lib.base.util.txt.boldSpan.FakeBoldSpan;
+import com.lib.base.util.txt.boldSpan.Spanny;
+import com.lib.base.util.txt.superSoan.SpanClickListener;
+import com.lib.base.util.txt.superSoan.SpanData;
+import com.lib.base.util.txt.superSoan.SuperSpanUtil;
+
+import java.util.List;
 
 import androidx.annotation.NonNull;
 
@@ -27,20 +31,6 @@ public class TxtUtil {
     private static final int TV_COLOR = R.color.cl_333333;
 
     /**
-     * 修改文本中标签样式,包括字号,颜色,粗体,注意只支持单个标签
-     *
-     * @param tv      TextView
-     * @param color   标签颜色
-     * @param size    标签字号
-     * @param bold    标签是否粗体
-     * @param content 文本
-     * @param label   标签
-     */
-    public static void setText(TextView tv, String color, int size, boolean bold, String content, String label) {
-        HtmlTaglUtil.setText(tv, color, size, bold, content, label);
-    }
-
-    /**
      * 修改多个标签颜色,只支持同一个颜色
      *
      * @param tv
@@ -48,7 +38,7 @@ public class TxtUtil {
      * @param content
      * @param label
      */
-    public static void setText(TextView tv, String color, String content, @NonNull String... label) {
+    public static void setMultipleLabelColor(TextView tv, String color, String content, @NonNull String... label) {
         for (String s : label) {
             content = content.replace(s, "<font color='" + color + "'>" + s + "</font>");
         }
@@ -99,7 +89,7 @@ public class TxtUtil {
      * @param size
      * @param lable1
      */
-    public static void setTxtLable(Context context, @NonNull TextView tv, String content, int size, String lable1) {
+    public static void addStartLabel(Context context, @NonNull TextView tv, String content, int size, String lable1) {
         SpannableString spanText = new SpannableString(" " + " " + content);
         spanText.setSpan(new VerticalImageSpan(getDrawable(context, size, lable1)), 0, 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         tv.setText(spanText);
@@ -115,7 +105,7 @@ public class TxtUtil {
      * @param lable1
      * @param lable2
      */
-    public static void setTxtLables(Context context, @NonNull TextView tv, String content, int size, String lable1, String lable2) {
+    public static void addDoubleStartLabel(Context context, @NonNull TextView tv, String content, int size, String lable1, String lable2) {
         SpannableString spanText = new SpannableString(" " + " " + " " + " " + content);
         spanText.setSpan(new VerticalImageSpan(getDrawable(context, size, lable1)), 0, 1, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
         spanText.setSpan(new VerticalImageSpan(getDrawable(context, size, lable2)), 2, 3, Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
@@ -143,6 +133,21 @@ public class TxtUtil {
                 .buildRoundRect(lable1, context.getResources().getColor(BG_COLOR), size / 6);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
         return drawable;
+    }
+
+    /**
+     * 超级富文本,可以修改多个标签,包括颜色,字号,粗体,可点击
+     *
+     * @param tv        TextView
+     * @param colorStr  注意以#开头,六位或者八位,不支持三位
+     * @param size      标签字号
+     * @param clickable 标签可点击
+     * @param bold      标签粗体
+     * @param contents  文本和标签list
+     * @param listener  点击回调
+     */
+    public static void setSuperLabel(TextView tv, String colorStr, int size, boolean clickable, boolean bold, List<SpanData> contents, SpanClickListener listener) {
+        SuperSpanUtil.setSuperLabel(tv, colorStr, size, clickable, bold, contents, listener);
     }
 
     @NonNull

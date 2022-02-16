@@ -1,4 +1,4 @@
-package com.lib.base.util.txt.span;
+package com.lib.base.util.txt.boldSpan;
 /*
  * Copyright 2015 Pavlovsky Ivan
  *

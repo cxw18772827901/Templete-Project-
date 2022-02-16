@@ -1,4 +1,4 @@
-package com.lib.base.util.txt.span;
+package com.lib.base.util.txt.boldSpan;
 
 import android.graphics.Paint;
 import android.text.TextPaint;

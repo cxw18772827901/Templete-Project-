@@ -1,4 +1,4 @@
-package com.lib.base.util.txt.txtflag;
+package com.lib.base.util.txt.label;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

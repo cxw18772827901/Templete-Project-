@@ -8,7 +8,7 @@ import com.lib.base.rxjava.RxUtils;
 import com.lib.base.util.DebugUtil;
 import com.lib.base.util.GsonUtil;
 import com.lib.base.util.JsonDataUtil;
-import com.lib.base.util.txt.txtflag.TxtUtil;
+import com.lib.base.util.txt.label.TxtUtil;
 import com.module.a.http.HttpUtil;
 import com.templete.project.bean.JBean;
 

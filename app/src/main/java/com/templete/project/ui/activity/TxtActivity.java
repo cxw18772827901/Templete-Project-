@@ -1,9 +1,13 @@
 package com.templete.project.ui.activity;
 
 import com.lib.base.ui.activity.BaseActivity;
-import com.lib.base.util.txt.txtflag.TxtUtil;
+import com.lib.base.util.Arrays;
+import com.lib.base.util.txt.label.TxtUtil;
+import com.lib.base.util.txt.superSoan.SpanData;
 import com.templete.project.R;
 import com.templete.project.databinding.TxtActivityBinding;
+
+import java.util.List;
 
 /**
  * PackageName  com.templete.project.ui.activity
@@ -22,25 +26,17 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
     @Override
     public void initView() {
         /**
-         * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
-         */
-        TxtUtil.setText(mViewBinding.tv1, "#FF0000", (int) getDimen(R.dimen.x75), true, mViewBinding.tv1.getText().toString(), "标签");
-        /**
-         * 只能打单标签,同时上色+粗体+字号调整,多标签请手动处理
-         */
-        TxtUtil.setText(mViewBinding.tv2, "#FF0000", (int) getDimen(R.dimen.x75), false, mViewBinding.tv2.getText().toString(), "标签");
-        /**
          * 多标签上色
          */
-        getaVoid();
+        TxtUtil.setMultipleLabelColor(mViewBinding.tv3, "#FF0000", mViewBinding.tv3.getText().toString(), "abc", "标签");
         /**
          * 行首增加单标签
          */
-        TxtUtil.setTxtLable(this, mViewBinding.tv4, mViewBinding.tv4.getText().toString(), (int) getDimen(R.dimen.x50), "标签1");
+        TxtUtil.addStartLabel(this, mViewBinding.tv4, mViewBinding.tv4.getText().toString(), (int) getDimen(R.dimen.x50), "标签1");
         /**
          * 行首增加双标签
          */
-        TxtUtil.setTxtLables(this, mViewBinding.tv5, mViewBinding.tv5.getText().toString(), (int) getDimen(R.dimen.x50), "标签1", "标签2");
+        TxtUtil.addDoubleStartLabel(this, mViewBinding.tv5, mViewBinding.tv5.getText().toString(), (int) getDimen(R.dimen.x50), "标签1", "标签2");
         /**
          * 修改字体粗细,默认值0.3,注意不要跟粗体一起使用
          */
@@ -49,10 +45,22 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
          * 修改字体粗细,修改为2.0,注意不要跟粗体一起使用
          */
         TxtUtil.setTextBold(mViewBinding.tv7, "2.0粗细的字体", (float) 2.0);
-    }
-
-    private void getaVoid() {
-        TxtUtil.setText(mViewBinding.tv3, "#FF0000", mViewBinding.tv3.getText().toString(), "abc", "标签");
+        /**
+         * 超级富文本,可以修改多个标签,包括颜色,字号,粗体,可点击
+         */
+        //这是一段超级文本,有颜色的+粗体+大字号的都可以点击,可以对多个标签进行修改,就问你溜不溜
+        List<SpanData> spanData = Arrays.asList(
+                new SpanData("这是一", false),
+                new SpanData("段超级文本", true),
+                new SpanData(",有颜色的", false),
+                new SpanData("+粗体+", true),
+                new SpanData("大字号", false),
+                new SpanData("的都可以点击", true),
+                new SpanData(",可以对多个标签进行修改,就问你溜不溜", false));
+        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, spanData, index -> {
+            //do
+            toast("点击了第" + index + "个标签");
+        });
     }
 
     @Override
