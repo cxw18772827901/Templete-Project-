@@ -267,10 +267,6 @@ public class TitleBar extends FrameLayout {
     }
 
     public void setTitleBGResource(int backGroundResource) {
-        /*int statusBarSize = ScreenUtil.getStatusBarSize();
-        getLayoutParams().height = (int) (getContext().getResources().getDimension(R.dimen.x130) + statusBarSize);
-        requestLayout();
-        setPadding(0, statusBarSize, 0, 0);*/
         hasInit();
         showStatuesBar();
         ((ViewGroup) tvBackArrow.getParent()).setBackgroundResource(R.color.cl_no_color);
