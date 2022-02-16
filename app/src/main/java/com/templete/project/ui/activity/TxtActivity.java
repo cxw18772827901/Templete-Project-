@@ -68,11 +68,6 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
 
     @Override
     public void initData() {
-        String a = "abc";
-        int length1 = a.split("1").length;
-        int length2 = a.split("bc").length;
-        int length3 = a.split("abc").length;
-        logD("split", "length1=" + length1 + ",length2=" + length2 + ",length3=" + length3);
     }
 
     @Override

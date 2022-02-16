@@ -16,8 +16,6 @@ import android.widget.TextView;
 import com.hjq.shape.view.ratioLayout.StatuesBar;
 import com.lib.base.R;
 import com.lib.base.bean.BtnBean;
-import com.lib.base.databinding.TitleRightClickIvViewBinding;
-import com.lib.base.databinding.TitleRightClickTvViewBinding;
 import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.ui.pop.PopView;
@@ -226,21 +224,28 @@ public class TitleBar extends FrameLayout {
         popView.show(ivRight);
     }
 
-    private void addRightClick(OnRightViewsClickListener listener, BtnBean[] rightClickViews) {
+    /**
+     * 不要使用title_right_click_iv_view的ViewBinding引用方式,新版本as编辑模式会报错
+     *
+     * @param listener
+     * @param rightClickViews
+     */
+    @SuppressLint("InflateParams")
+    private void addRightClick(OnRightViewsClickListener listener, @NonNull BtnBean[] rightClickViews) {
         for (int i = 0; i < rightClickViews.length; i++) {
             BtnBean btnBean = rightClickViews[i];
             View view = null;
             if (btnBean.resId > 0) {
-                TitleRightClickIvViewBinding binding = TitleRightClickIvViewBinding.inflate(layoutInflater, this, false);
-                binding.ivRight.setImageResource(btnBean.resId);
-                view = binding.getRoot();
+                view = layoutInflater.inflate(R.layout.title_right_click_iv_view, null);
+                ImageView iv = view.findViewById(R.id.iv_right);
+                iv.setImageResource(btnBean.resId);
             } else if (OUtil.isNotNull(btnBean.str)) {
-                TitleRightClickTvViewBinding binding = TitleRightClickTvViewBinding.inflate(layoutInflater, this, false);
-                binding.tvRight.setText(btnBean.str);
+                view = layoutInflater.inflate(R.layout.title_right_click_tv_view, null);
+                TextView tv_right = view.findViewById(R.id.tv_right);
+                tv_right.setText(btnBean.str);
                 if (AppTheme.THEME_WHITE == theme) {
-                    binding.tvRight.setTextColor(getResources().getColor(R.color.cl_333333));
+                    tv_right.setTextColor(getResources().getColor(R.color.cl_333333));
                 }
-                view = binding.getRoot();
             } else if (btnBean.view != null) {
                 view = btnBean.view;
             }
