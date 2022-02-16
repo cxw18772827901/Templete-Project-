@@ -48,8 +48,7 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 超级富文本,可以修改多个标签,包括颜色,字号,粗体,可点击
          */
-        //这是一段超级文本,有颜色的+粗体+大字号的都可以点击,可以对多个标签进行修改,就问你溜不溜
-        List<SpanData> spanData = Arrays.asList(
+        List<SpanData> spanData2 = Arrays.asList(
                 new SpanData("这是一", false),
                 new SpanData("段超级文本", true),
                 new SpanData(",有颜色的", false),
@@ -59,7 +58,7 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
                 new SpanData(",可以对多个", false),
                 new SpanData("标签", true),
                 new SpanData("进行修改,就问你溜不溜", false));
-        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, spanData, index -> {
+        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, spanData2, index -> {
             //do
             toast("点击了第" + index + "个标签");
         });
@@ -72,7 +71,11 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
 
     @Override
     public void initData() {
-
+        String a = "abc";
+        int length1 = a.split("1").length;
+        int length2 = a.split("bc").length;
+        int length3 = a.split("abc").length;
+        logD("split", "length1=" + length1 + ",length2=" + length2 + ",length3=" + length3);
     }
 
     @Override

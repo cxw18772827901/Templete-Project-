@@ -143,7 +143,7 @@ public class TxtUtil {
      * @param size      标签字号
      * @param clickable 标签可点击
      * @param bold      标签粗体
-     * @param contents  文本和标签list
+     * @param contents  将整个文本切割list(文本+label+文本+label+...)传入
      * @param listener  点击回调
      */
     public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold, @NonNull List<SpanData> contents, SpanClickListener listener) {

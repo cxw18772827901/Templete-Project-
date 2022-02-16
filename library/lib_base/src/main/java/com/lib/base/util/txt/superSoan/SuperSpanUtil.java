@@ -28,15 +28,17 @@ import androidx.annotation.NonNull;
  */
 
 public class SuperSpanUtil {
+
     /**
      * @param tv
      * @param colorStr  注意以#开头,六位或者八位
      * @param size
      * @param clickable
      * @param bold
-     * @param contents
+     * @param contents  将整个文本切割list(文本+label+文本+label+...)传入
      */
-    public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold, @NonNull List<SpanData> contents, SpanClickListener listener) {
+    public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold,
+                                     @NonNull List<SpanData> contents, SpanClickListener listener) {
         SpannableString span = new SpannableString(getTotalContent(contents));
         for (int i = 0; i < contents.size(); i++) {
             SpanData spanData = contents.get(i);

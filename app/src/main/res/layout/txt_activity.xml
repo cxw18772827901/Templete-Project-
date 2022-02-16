@@ -7,26 +7,26 @@
     android:paddingHorizontal="@dimen/x40"
     android:paddingVertical="@dimen/x70">
 
-  <!--  <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:includeFontPadding="false"
-        android:maxLines="1"
-        android:text="abc我是带标签文本abc"
-        android:textColor="@color/cl_666"
-        android:textSize="@dimen/x55" />
+    <!--  <TextView
+          android:id="@+id/tv1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:includeFontPadding="false"
+          android:maxLines="1"
+          android:text="abc我是带标签文本abc"
+          android:textColor="@color/cl_666"
+          android:textSize="@dimen/x55" />
 
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/x50"
-        android:includeFontPadding="false"
-        android:maxLines="1"
-        android:text="abc我是带标签文本abc"
-        android:textColor="@color/cl_666"
-        android:textSize="@dimen/x55" />-->
+      <TextView
+          android:id="@+id/tv2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/x50"
+          android:includeFontPadding="false"
+          android:maxLines="1"
+          android:text="abc我是带标签文本abc"
+          android:textColor="@color/cl_666"
+          android:textSize="@dimen/x55" />-->
 
     <TextView
         android:id="@+id/tv3"
