@@ -53,6 +53,7 @@ public class TranslateActivity extends BaseActivity<TranslateActivityBinding> {
         for (int i = 0; i < 100; i++) {
             list.add(i);
         }
+        demoAdapter.setShow(true);
         demoAdapter.setData(list);
     }
 }

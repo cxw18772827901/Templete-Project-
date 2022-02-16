@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hjq.shape.view.smartView.GrassHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:overScrollMode="never" />
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <com.hjq.shape.view.FastIndexBar
+        android:id="@+id/bar"
+        android:layout_width="@dimen/x65"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical" />
+
+    <TextView
+        android:id="@+id/big_tv"
+        android:layout_width="@dimen/x260"
+        android:layout_height="@dimen/x260"
+        android:layout_gravity="center"
+        android:background="@drawable/big_tv_bg"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="#FFF"
+        android:textSize="@dimen/x120"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:ignore="HardcodedText"
+        tools:visibility="visible" />
+</FrameLayout>

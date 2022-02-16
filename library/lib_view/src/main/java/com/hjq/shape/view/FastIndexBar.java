@@ -13,10 +13,9 @@ import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.hjq.shape.R;
 
@@ -43,13 +42,10 @@ public class FastIndexBar extends View {
     private float CELL_WIDTH;
     private final float CELL_HEIGHT;
     private int TOTAL_HEIGHT;
-    private float TOP_MARGIN;
-    private final float topMargin;
     private float bgCorner;
     private final float rectTrans;
     private final boolean touchChangeColor;
     private final Vibrator vibrator;
-    private final int widthSize;
 
     public FastIndexBar(Context context) {
         this(context, null);
@@ -67,17 +63,15 @@ public class FastIndexBar extends View {
         float tvSize = a.getDimension(R.styleable.FastIndexBar_tvSize, dip2px(context, 14));
         int bgStrokeColor = a.getInt(R.styleable.FastIndexBar_bgStrokeColor, Color.GRAY);
         float bgStrokeWidth = a.getDimension(R.styleable.FastIndexBar_bgStrokeWidth, dip2px(context, 0.6));
-        widthSize = (int) a.getDimension(R.styleable.FastIndexBar_widthSize, context.getResources().getDimension(R.dimen.x50));
-        topMargin = a.getDimension(R.styleable.FastIndexBar_topMargin, getResources().getDimension(R.dimen.x95));
         touchChangeColor = a.getBoolean(R.styleable.FastIndexBar_touchChangeColor, false);
         a.recycle();
+
         rectTrans = bgStrokeWidth / 2;
         CELL_HEIGHT = tvSize + dip2px(context, 2);
         textRect = new Rect();
         normalPaint = getTextPaint(tvColorNormal, tvSize);//默認顏色
         pressPaint = getTextPaint(tvColorPress, tvSize);//選中顏色
         strokePaint = getStrokePaint(bgStrokeColor, bgStrokeWidth);
-
         letters = isInEditMode() ? ALL_LETTERS : null;
         vibrator = (Vibrator) context.getSystemService(Service.VIBRATOR_SERVICE);
     }
@@ -99,15 +93,18 @@ public class FastIndexBar extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(widthSize, MeasureSpec.getSize(heightMeasureSpec));
+        initParams();
+        int specW = MeasureSpec.makeMeasureSpec((int) CELL_WIDTH, MeasureSpec.EXACTLY);
+        float h = TOTAL_HEIGHT + CELL_HEIGHT * 2;
+        int specH = MeasureSpec.makeMeasureSpec((int) h, MeasureSpec.EXACTLY);
+        super.onMeasure(specW, specH);
+        //setMeasuredDimension(widthSize, MeasureSpec.getSize(heightMeasureSpec));
     }
 
     @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        initParams();
         float textX;
         float textY;
         Paint textPaint;
@@ -117,16 +114,14 @@ public class FastIndexBar extends View {
             //x的值是控件的宽度的一半减去字体边界的一半
             textX = CELL_WIDTH / 2 - (float) textRect.width() / 2;
             //y值是CELL_HEIGHT的n倍加上CELL_HEIGHT一半和字体边界的一半,再加上距离顶部的间隔
-            textY = CELL_HEIGHT / 2 + (float) textRect.height() / 2 + i * CELL_HEIGHT + TOP_MARGIN;
+            textY = CELL_HEIGHT / 2 + (float) textRect.height() / 2 + (i + 1) * CELL_HEIGHT /*+ TOP_MARGIN*/;
             canvas.drawText(CHARS_ARR, i, 1, textX, textY, textPaint);
         }
         //画边框
         //注意canvas.drawRoundRect画圆角矩形时候，四个圆角可以画出指定宽度，四条边线只会画出一半的宽度,故RectF需要做线宽一半的偏移量
         if (strokePaint == null) return;
-        canvas.drawRoundRect(new RectF(rectTrans,
-                        TOP_MARGIN - CELL_HEIGHT + rectTrans,
-                        CELL_WIDTH - rectTrans,
-                        TOTAL_HEIGHT + TOP_MARGIN + CELL_HEIGHT - rectTrans),
+        canvas.drawRoundRect(new RectF(rectTrans, rectTrans, CELL_WIDTH - rectTrans,
+                        TOTAL_HEIGHT + CELL_HEIGHT * 2 - rectTrans),
                 bgCorner, bgCorner / 1.5f, strokePaint);
     }
 
@@ -146,12 +141,11 @@ public class FastIndexBar extends View {
 
     //得到控件的宽度和每一个cell的高度
     private void initParams() {
-        CELL_WIDTH = getWidth();
+        CELL_WIDTH = isInEditMode() ? getResources().getDimension(R.dimen.x50) :
+                getLayoutParams().width;
         bgCorner = CELL_WIDTH / 2;
         CHARS_ARR = letters.toCharArray();
         TOTAL_HEIGHT = (int) (CHARS_ARR.length * CELL_HEIGHT);
-        float toTop = (float) ((getScreenHei() - topMargin * 3.5 - TOTAL_HEIGHT) / 2);
-        TOP_MARGIN = isInEditMode() ? topMargin * 2 : toTop;
     }
 
     // 初始值应该是<0
@@ -166,13 +160,7 @@ public class FastIndexBar extends View {
             case MotionEvent.ACTION_MOVE:
                 int touchY = (int) event.getY();
                 //针对触摸区域进行处理
-                if (touchY >= TOP_MARGIN && touchY <= (TOP_MARGIN + TOTAL_HEIGHT)) {
-                    updateTouchIndex((int) ((touchY - TOP_MARGIN) / CELL_HEIGHT));
-                } else if (touchY < TOP_MARGIN) {
-                    updateTouchIndex(0);
-                } else {
-                    updateTouchIndex(CHARS_ARR.length - 1);
-                }
+                updateTouchIndex((int) ((touchY - CELL_HEIGHT) / CELL_HEIGHT));
                 break;
             case MotionEvent.ACTION_UP:
                 updateTouchIndex(-1);
@@ -186,9 +174,7 @@ public class FastIndexBar extends View {
         if (touchIndex == index) {
             return;
         }
-        if (index != -1) {
-            vibrator();
-        }
+        Log.d("index", "index=" + index);
         touchIndex = index;
         //如果需要改变触摸字母颜色，重绘即可
         if (touchChangeColor) {
@@ -196,7 +182,10 @@ public class FastIndexBar extends View {
         }
         if (listener != null) {
             if (touchIndex >= 0 && touchIndex < CHARS_ARR.length) {
-                listener.onCharSelected(CHARS_ARR[touchIndex]);
+                if (index != -1) {
+                    vibrator();
+                }
+                listener.onCharSelected(touchIndex, CHARS_ARR[touchIndex]);
             }
         }
     }
@@ -216,28 +205,18 @@ public class FastIndexBar extends View {
         return (int) (dip * (context.getResources().getDisplayMetrics().density) + 0.5f);
     }
 
-    private DisplayMetrics getDisplayMetrics() {
-        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
-        return outMetrics;
-    }
-
-    private int getScreenHei() {
-        return getDisplayMetrics().heightPixels;
-    }
-
     //对外改变数据借口
     public void setLetters(String letters) {
         if (letters == null || letters.length() == 0) {
             return;
         }
         this.letters = letters;
+        requestLayout();
         invalidate();
     }
 
     public interface OnCharSelectedListener {
-        void onCharSelected(char c);
+        void onCharSelected(int touchIndex, char c);
     }
 
     private OnCharSelectedListener listener;

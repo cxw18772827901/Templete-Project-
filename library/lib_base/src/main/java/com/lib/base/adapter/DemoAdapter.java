@@ -2,6 +2,7 @@ package com.lib.base.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.lib.base.databinding.DemoLayoutBinding;
@@ -38,6 +39,11 @@ import androidx.annotation.NonNull;
  * Date         2021/12/30.
  */
 public class DemoAdapter extends AppAdapter<Integer> {
+    private boolean show;
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
 
     public DemoAdapter(@NonNull Context context) {
         super(context);
@@ -62,6 +68,9 @@ public class DemoAdapter extends AppAdapter<Integer> {
         @Override
         public void onBindView(int position) {
             binding.tv1.setOnClickListener(v -> DebugUtil.toast("影藏item点击"));
+            if (show) {
+                binding.tv1.setVisibility(View.VISIBLE);
+            }
         }
     }
 }

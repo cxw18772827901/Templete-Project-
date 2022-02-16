@@ -29,9 +29,11 @@
         android:text="影藏item"
         android:textColor="@color/white"
         android:textSize="@dimen/x30"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/tv"
         app:layout_constraintLeft_toRightOf="@id/tv"
         app:layout_constraintTop_toTopOf="@id/tv"
         app:layout_constraintWidth_percent="0.1667"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

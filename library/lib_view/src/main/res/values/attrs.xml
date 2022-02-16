@@ -823,7 +823,6 @@
         <attr name="bgStrokeColor" format="color" />
         <attr name="bgStrokeWidth" format="dimension" />
         <attr name="topMargin" format="dimension" />
-        <attr name="widthSize" format="dimension" />
         <attr name="touchChangeColor" format="boolean" />
     </declare-styleable>
     <!-- 自定义评分控件 -->

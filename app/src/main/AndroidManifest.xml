@@ -153,5 +153,9 @@
             android:name=".ui.activity.TxtActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.activity.IndexActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 </manifest>
