@@ -146,7 +146,7 @@ public class TxtUtil {
      * @param contents  文本和标签list
      * @param listener  点击回调
      */
-    public static void setSuperLabel(TextView tv, String colorStr, int size, boolean clickable, boolean bold, List<SpanData> contents, SpanClickListener listener) {
+    public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold, @NonNull List<SpanData> contents, SpanClickListener listener) {
         SuperSpanUtil.setSuperLabel(tv, colorStr, size, clickable, bold, contents, listener);
     }
 
@@ -158,7 +158,7 @@ public class TxtUtil {
 
     @NonNull
     @SuppressLint("DefaultLocale")
-    public static String getTwoPoint(String value) {
+    public static String getTwoPoint(@NonNull String value) {
         try {
             return String.format("%.2f", Float.parseFloat(value));
         } catch (NumberFormatException e) {
@@ -174,7 +174,7 @@ public class TxtUtil {
 
     @NonNull
     @SuppressLint("DefaultLocale")
-    public static String getPoint(String value) {
+    public static String getPoint(@NonNull String value) {
         try {
             return String.format("%.1f", Float.parseFloat(value));
         } catch (NumberFormatException e) {
@@ -189,7 +189,7 @@ public class TxtUtil {
     }
 
     @SuppressLint("DefaultLocale")
-    public static String getPointNo0(String value) {
+    public static String getPointNo0(@NonNull String value) {
         try {
             String format = String.format("%.1f", Float.parseFloat(value));
             return format.endsWith(".0") ? format.replace(".0", "") : format;

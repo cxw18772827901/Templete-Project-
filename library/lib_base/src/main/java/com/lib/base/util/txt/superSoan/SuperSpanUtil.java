@@ -18,6 +18,8 @@ import com.lib.base.util.OUtil;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util.txt
@@ -34,7 +36,7 @@ public class SuperSpanUtil {
      * @param bold
      * @param contents
      */
-    public static void setSuperLabel(TextView tv, String colorStr, int size, boolean clickable, boolean bold, List<SpanData> contents, SpanClickListener listener) {
+    public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold, @NonNull List<SpanData> contents, SpanClickListener listener) {
         SpannableString span = new SpannableString(getTotalContent(contents));
         for (int i = 0; i < contents.size(); i++) {
             SpanData spanData = contents.get(i);
@@ -123,7 +125,8 @@ public class SuperSpanUtil {
      * @param contents
      * @return
      */
-    private static String getTotalContent(List<SpanData> contents) {
+    @NonNull
+    private static String getTotalContent(@NonNull List<SpanData> contents) {
         StringBuilder builder = new StringBuilder();
         for (SpanData spanData : contents) {
             if (OUtil.isNull(spanData.content)) {

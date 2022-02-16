@@ -56,7 +56,9 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
                 new SpanData("+粗体+", true),
                 new SpanData("大字号", false),
                 new SpanData("的都可以点击", true),
-                new SpanData(",可以对多个标签进行修改,就问你溜不溜", false));
+                new SpanData(",可以对多个", false),
+                new SpanData("标签", true),
+                new SpanData("进行修改,就问你溜不溜", false));
         TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, spanData, index -> {
             //do
             toast("点击了第" + index + "个标签");
