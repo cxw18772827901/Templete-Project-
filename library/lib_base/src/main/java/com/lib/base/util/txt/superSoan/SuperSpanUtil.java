@@ -16,8 +16,6 @@ import android.widget.TextView;
 
 import com.lib.base.util.OUtil;
 
-import java.util.List;
-
 import androidx.annotation.NonNull;
 
 /**
@@ -38,15 +36,15 @@ public class SuperSpanUtil {
      * @param contents  将整个文本切割list(文本+label+文本+label+...)传入
      */
     public static void setSuperLabel(@NonNull TextView tv, @NonNull String colorStr, int size, boolean clickable, boolean bold,
-                                     @NonNull List<SpanData> contents, SpanClickListener listener) {
+                                     SpanClickListener listener, @NonNull SpanData... contents) {
         SpannableString span = new SpannableString(getTotalContent(contents));
-        for (int i = 0; i < contents.size(); i++) {
-            SpanData spanData = contents.get(i);
+        for (int i = 0; i < contents.length; i++) {
+            SpanData spanData = contents[i];
             //不是标签直接跳过
             if (!spanData.isLabel) {
                 continue;
             }
-            int lenBefore = getCurrentLenBefore(contents, i);
+            int lenBefore = getCurrentLenBefore(i, contents);
             int lenEnd = lenBefore + spanData.contentLen;
             //color
             if (colorStr.length() == 7 || colorStr.length() == 9) {
@@ -64,7 +62,7 @@ public class SuperSpanUtil {
                     @Override
                     public void onClick(View widget) {
                         if (listener != null) {
-                            listener.click(getSpanIndex(contents, finalI));
+                            listener.click(getSpanIndex(finalI, contents));
                         }
                     }
                 }, lenBefore, lenEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -92,11 +90,11 @@ public class SuperSpanUtil {
      * @param finalI
      * @return
      */
-    private static int getSpanIndex(List<SpanData> contents, int finalI) {
+    private static int getSpanIndex(int finalI, SpanData... contents) {
         int index = 0;
         for (SpanData content : contents) {
             if (content.isLabel) {
-                if (contents.indexOf(content) < finalI) {
+                if (indexOf(contents, content) < finalI) {
                     index++;
                 } else {
                     break;
@@ -106,6 +104,15 @@ public class SuperSpanUtil {
         return index + 1;
     }
 
+    private static int indexOf(SpanData[] contents, SpanData content) {
+        for (int i = 0; i < contents.length; i++) {
+            if (content.content.equals(contents[i].content)) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
     /**
      * 获取当前标签起始位置=之前文本长度+标签长度
      *
@@ -113,10 +120,10 @@ public class SuperSpanUtil {
      * @param i
      * @return
      */
-    private static int getCurrentLenBefore(List<SpanData> contents, int i) {
+    private static int getCurrentLenBefore(int i, SpanData... contents) {
         int len = 0;
         for (int j = 0; j < i; j++) {
-            len += contents.get(j).contentLen;
+            len += contents[j].contentLen;
         }
         return len;
     }
@@ -128,7 +135,7 @@ public class SuperSpanUtil {
      * @return
      */
     @NonNull
-    private static String getTotalContent(@NonNull List<SpanData> contents) {
+    private static String getTotalContent(@NonNull SpanData... contents) {
         StringBuilder builder = new StringBuilder();
         for (SpanData spanData : contents) {
             if (OUtil.isNull(spanData.content)) {

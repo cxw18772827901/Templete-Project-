@@ -1,13 +1,10 @@
 package com.templete.project.ui.activity;
 
 import com.lib.base.ui.activity.BaseActivity;
-import com.lib.base.util.Arrays;
 import com.lib.base.util.txt.label.TxtUtil;
 import com.lib.base.util.txt.superSoan.SpanData;
 import com.templete.project.R;
 import com.templete.project.databinding.TxtActivityBinding;
-
-import java.util.List;
 
 /**
  * PackageName  com.templete.project.ui.activity
@@ -48,8 +45,10 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
         /**
          * 超级富文本,可以修改多个标签,包括颜色,字号,粗体,可点击
          */
-        List<SpanData> spanData2 = Arrays.asList(
-                new SpanData("这是一", false),
+        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, index -> {
+                    //do
+                    toast("点击了第" + index + "个标签");
+                }, new SpanData("这是一", false),
                 new SpanData("段超级文本", true),
                 new SpanData(",有颜色的", false),
                 new SpanData("+粗体+", true),
@@ -58,10 +57,6 @@ public class TxtActivity extends BaseActivity<TxtActivityBinding> {
                 new SpanData(",可以对多个", false),
                 new SpanData("标签", true),
                 new SpanData("进行修改,就问你溜不溜", false));
-        TxtUtil.setSuperLabel(mViewBinding.tv8, "#FF0000", (int) getDimen(R.dimen.x75), true, true, spanData2, index -> {
-            //do
-            toast("点击了第" + index + "个标签");
-        });
     }
 
     @Override
