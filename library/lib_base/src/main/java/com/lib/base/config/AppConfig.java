@@ -15,7 +15,6 @@ public interface AppConfig {
     String API_BASE_URL_RELEASE = "http://tinysafety.fxgkpt.com";
     String API_BASE_URL_FINAL = DebugUtil.isDebug ? API_BASE_URL_TEST : API_BASE_URL_RELEASE;//主域名
     String API_BASE_URL_FINAL1 = "http://app.jnprsc.com";
-//    String API_BASE_URL_FINAL1 = "https://api.weixin.qq.com/";//副域名1---微信登录
     String API_BASE_URL_FINAL2 = "";//副域名2
     String HOST = "host";
     String HOST1 = "host:host1";
