@@ -31,6 +31,27 @@ public class RetrofitHelper {
         //OkHttpClient
         mOkHttpClient = new OkHttpClient
                 .Builder()
+                //处理cookie
+                /*.cookieJar(new CookieJar() {
+                    @Override
+                    public void saveFromResponse(@NonNull HttpUrl httpUrl, @NonNull List<Cookie> list) {
+                        cookieStore.put(HttpUrl.parse("http://192.168.31.231:8080/shiro-2"), cookies);
+                        for(Cookie cookie:cookies){
+                            System.out.println("cookie Name:"+cookie.name());
+                            System.out.println("cookie Path:"+cookie.path());
+                        }
+                    }
+
+                    @NonNull
+                    @Override
+                    public List<Cookie> loadForRequest(@NonNull HttpUrl httpUrl) {
+                        List<Cookie> cookies = cookieStore.get(HttpUrl.parse("http://192.168.31.231:8080/shiro-2"));
+                        if(cookies==null){
+                            System.out.println("没加载到cookie");
+                        }
+                        return cookies != null ? cookies : new ArrayList<Cookie>();
+                    }
+                })*/
                 //.retryOnConnectionFailure(true)//默认重试一次,使用RetryInterceptor可以自定义重试次数
                 .followRedirects(true)//允许重定向
                 .connectTimeout(10, TimeUnit.SECONDS)
