@@ -3,13 +3,10 @@ package com.templete.project.ui.fragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.hjq.permissions.OnPermissionCallback;
-import com.hjq.permissions.Permission;
 import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.ui.activity.GrassFreshActivity;
 import com.lib.base.ui.activity.SunFreshActivity;
 import com.lib.base.ui.fragment.BaseFragment;
-import com.lib.base.util.PermissionUtil;
 import com.lib.base.util.intent.IntentData;
 import com.templete.project.bean.PBean;
 import com.templete.project.databinding.ThirdFragmentBinding;
@@ -22,7 +19,6 @@ import com.templete.project.ui.activity.SheetActivity;
 import com.templete.project.ui.activity.TargetActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * PackageName  com.templete.project.ui.fragment
@@ -102,35 +98,35 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
 
     private void checkPermission() {
         //clazz = CameraActivity.class;
-        String[] arr = {Permission.WRITE_EXTERNAL_STORAGE, Permission.CAMERA, Permission.RECORD_AUDIO};
-        boolean hasPermission = PermissionUtil.isGranted(getContext(), arr);
-        if (hasPermission) {
-            logD(TAG, "permission ok1");
-            ((BaseActivity) requireActivity()).startAty(requireActivity(), SelectorActivity.class);
-        } else {
-            PermissionUtil.requestPermission(getContext(), new OnPermissionCallback() {
-                @Override
-                public void onGranted(List<String> permissions, boolean all) {
-                    if (all) {
-                        logD(TAG, "permission ok2");
-                        getBaseActivity().startAty(requireActivity(), SelectorActivity.class);
-                    } else {
-                        toast("获取部分权限成功，但部分权限未正常授予");
-                    }
-                }
-
-                @Override
-                public void onDenied(List<String> permissions, boolean never) {
-                    // 如果是被永久拒绝就跳转到应用权限系统设置页面
-                    if (never) {
-                        toast("被永久拒绝授权，请手动授予权限");
-                        PermissionUtil.startPermissionActivity(getContext(), arr);
-                    } else {
-                        toast("获取权限失败");
-                    }
-                }
-            }, arr);
-        }
+//        String[] arr = {Permission.WRITE_EXTERNAL_STORAGE, Permission.CAMERA, Permission.RECORD_AUDIO};
+//        boolean hasPermission = PermissionUtil.isGranted(getContext(), arr);
+//        if (hasPermission) {
+//            logD(TAG, "permission ok1");
+//            ((BaseActivity) requireActivity()).startAty(requireActivity(), SelectorActivity.class);
+//        } else {
+//            PermissionUtil.requestPermission(getContext(), new OnPermissionCallback() {
+//                @Override
+//                public void onGranted(List<String> permissions, boolean all) {
+//                    if (all) {
+//                        logD(TAG, "permission ok2");
+            getBaseActivity().startAty(requireActivity(), SelectorActivity.class);
+//                    } else {
+//                        toast("获取部分权限成功，但部分权限未正常授予");
+//                    }
+//                }
+//
+//                @Override
+//                public void onDenied(List<String> permissions, boolean never) {
+//                    // 如果是被永久拒绝就跳转到应用权限系统设置页面
+//                    if (never) {
+//                        toast("被永久拒绝授权，请手动授予权限");
+//                        PermissionUtil.startPermissionActivity(getContext(), arr);
+//                    } else {
+//                        toast("获取权限失败");
+//                    }
+//                }
+//            }, arr);
+//        }
     }
 
     @Override

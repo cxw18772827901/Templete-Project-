@@ -70,6 +70,23 @@ android {
         }
     }
 }
+if (toapp) {
+//强制指定库
+    configurations.all {
+        resolutionStrategy {
+            //force "com.google.android.material:material:${config.dependencies.material_version}"//1.3.0
+            //force 'androidx.core:core-ktx:1.3.2'
+            //force 'androidx.core:core:1.3.2'
+
+            force "androidx.core:core-ktx:${config.dependencies.androidx_core_version}"
+            force "androidx.core:core:${config.dependencies.androidx_core_version}"
+
+            force "androidx.appcompat:appcompat:${config.dependencies.appcompat_version}"//1.3.0
+            force "androidx.activity:activity:${config.dependencies.appcompat_version}"
+            force "androidx.fragment:fragment:${config.dependencies.appcompat_version}"
+        }
+    }
+}
 dependencies {
     implementation project(path: ':library:lib_base')
 
