@@ -2,7 +2,6 @@ package com.templete.project.ui.activity;
 
 import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.activity.BaseActivity;
-import com.templete.project.R;
 import com.templete.project.databinding.SoftActivityBinding;
 
 /**
@@ -25,6 +24,12 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
         setTitleStr("输入法");
     }
 
+    /**
+     * 不需要再使用.getViewTreeObserver()..addOnGlobalLayoutListener...来判断
+     *
+     * @param open
+     * @param keyboardHeight
+     */
     @Override
     public void softKeyboard(boolean open, int keyboardHeight) {
         logD("softKeyboard", "open=" + open + ",keyboardHeight=" + keyboardHeight);
@@ -34,7 +39,7 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
     @Override
     public void initView() {
         //标题栏支持沉浸式图片背景,输入法正常使用
-        setTitleBg(R.drawable.ic_top_bg);
+        //setTitleBg(R.drawable.ic_top_bg);
     }
 
     @Override
