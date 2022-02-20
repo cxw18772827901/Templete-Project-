@@ -29,7 +29,11 @@ import androidx.annotation.Nullable;
 
 public interface IntentAction extends OverridePendingTransitionAction {
     /*****************************************跳转,存数据******************************************************/
-    default void error(@NonNull Activity activity, @NonNull Class aClass) {
+    /**
+     * @param activity
+     * @param aClass
+     */
+    default void error(Activity activity, Class<?> aClass) {
         if (activity == null || aClass == null) {
             throw new RuntimeException("activity or class error");
         }
