@@ -88,7 +88,7 @@ dependencies {
     //api "com.squareup.retrofit2:converter-gson:${config.dependencies.retrofit_version}"
     api "com.squareup.retrofit2:adapter-rxjava3:${config.dependencies.retrofit_version}"
     //title bar
-    implementation "com.gyf.immersionbar:immersionbar:${config.dependencies.immersionbar_version}"
+    implementation "com.geyifeng.immersionbar:immersionbar:${config.dependencies.immersionbar_version}"
     //leakcanary
     debugApi "com.squareup.leakcanary:leakcanary-android:${config.dependencies.leakcanary_version}"
     annotationProcessor "com.github.bumptech.glide:compiler:${config.dependencies.glide_version}"

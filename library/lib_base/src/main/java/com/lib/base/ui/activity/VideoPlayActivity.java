@@ -33,7 +33,7 @@ public class VideoPlayActivity extends BaseActivity<VideoPlayActivityBinding> im
 
     @Override
     public void inits() {
-        ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR);
+        ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR).init();
     }
 
     @Override

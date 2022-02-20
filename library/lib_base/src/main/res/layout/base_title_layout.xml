@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <!--ImmersionBar处理-->
     <!--android:fitsSystemWindows="true"-->
 
     <com.lib.base.ui.widget.TitleBar

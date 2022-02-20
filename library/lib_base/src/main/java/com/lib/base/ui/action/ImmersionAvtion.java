@@ -49,9 +49,23 @@ public interface ImmersionAvtion extends ContextAction {
                 .statusBarColor(statusBarColor)
                 .fitsSystemWindows(fitsSystemWindows)
                 .statusBarDarkFont(darkStatusBarFont())
-                .navigationBarColor(R.color.white)//可自定义navigationBar颜色
+                //.navigationBarColor(R.color.white)//可自定义navigationBar颜色
                 /*.autoDarkModeEnable(true, 0.2f)*/
+                //软键盘监听回调，keyboardEnable为true才会回调此方法
+                //open为true，软键盘弹出，为false，软键盘关闭
+                .keyboardEnable(true)
+                .setOnKeyboardListener(this::softKeyboard)
                 .init();
+    }
+
+    /**
+     * 监听键盘状态:弹起,收回
+     *
+     * @param open
+     * @param keyboardHeight
+     */
+    default void softKeyboard(boolean open, int keyboardHeight) {
+
     }
 
     /**
@@ -63,6 +77,10 @@ public interface ImmersionAvtion extends ContextAction {
         ImmersionBar
                 .with(getActivitys())
                 .statusBarDarkFont(dark)
+                //软键盘监听回调，keyboardEnable为true才会回调此方法
+                //open为true，软键盘弹出，为false，软键盘关闭
+                .keyboardEnable(true)
+                .setOnKeyboardListener(this::softKeyboard)
                 .init();
     }
 
@@ -75,6 +93,10 @@ public interface ImmersionAvtion extends ContextAction {
                 .statusBarColor(R.color.cl_no_color)
                 .fitsSystemWindows(false)
                 .statusBarDarkFont(false)
+                //软键盘监听回调，keyboardEnable为true才会回调此方法
+                //open为true，软键盘弹出，为false，软键盘关闭
+                .keyboardEnable(true)
+                .setOnKeyboardListener(this::softKeyboard)
                 .init();
     }
 }
