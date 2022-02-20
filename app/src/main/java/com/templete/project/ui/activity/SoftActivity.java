@@ -33,6 +33,7 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
 
     @Override
     public void initView() {
+        //标题栏支持沉浸式图片背景,输入法正常使用
         setTitleBg(R.drawable.ic_top_bg);
     }
 
