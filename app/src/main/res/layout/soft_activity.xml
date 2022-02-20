@@ -3,14 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<!--    android:fitsSystemWindows="true"-->
-
-    <EditText
-        android:id="@+id/et"
+    <!--android:fitsSystemWindows="true"-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x150"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/cl_eee"
-        android:textCursorDrawable="@drawable/et_cursor"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x150"
+            android:background="@color/cl_999"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/x30"
+            android:text="输入法上面的View"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x150"
+            android:background="@color/cl_eee"
+            android:hint=" 输入点什么"
+            android:paddingHorizontal="@dimen/x30"
+            android:textCursorDrawable="@drawable/et_cursor"
+            tools:ignore="Autofill,HardcodedText,SpeakableTextPresentCheck,TextFields" />
+    </LinearLayout>
 </FrameLayout>

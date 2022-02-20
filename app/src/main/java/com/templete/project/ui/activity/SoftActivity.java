@@ -2,6 +2,7 @@ package com.templete.project.ui.activity;
 
 import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.activity.BaseActivity;
+import com.templete.project.R;
 import com.templete.project.databinding.SoftActivityBinding;
 
 /**
@@ -27,11 +28,12 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
     @Override
     public void softKeyboard(boolean open, int keyboardHeight) {
         logD("softKeyboard", "open=" + open + ",keyboardHeight=" + keyboardHeight);
+        toast((open ? "键盘弹出" : "键盘关闭") + ",键盘高度=" + keyboardHeight);
     }
 
     @Override
     public void initView() {
-
+        setTitleBg(R.drawable.ic_top_bg);
     }
 
     @Override
