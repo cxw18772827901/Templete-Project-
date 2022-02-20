@@ -40,7 +40,12 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
     public void initView() {
         //标题栏支持沉浸式图片背景,输入法正常使用
         //setTitleBg(R.drawable.ic_top_bg);
+
+        mViewBinding.getRoot().postDelayed(runnable, 2000);
+        mViewBinding.getRoot().postDelayed(runnable, 4000);
     }
+
+    private final Runnable runnable = () -> toggleSoftInput(mViewBinding.getRoot());
 
     @Override
     public void initEvent() {
@@ -55,5 +60,11 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
     @Override
     protected SoftActivityBinding viewBinding() {
         return SoftActivityBinding.inflate(getLayoutInflater());
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mViewBinding.getRoot().removeCallbacks(runnable);
     }
 }
