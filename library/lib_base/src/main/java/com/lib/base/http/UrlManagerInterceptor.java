@@ -7,7 +7,7 @@ import com.lib.base.util.DebugUtil;
 import java.io.IOException;
 import java.util.List;
 
-import io.reactivex.rxjava3.annotations.NonNull;
+import androidx.annotation.NonNull;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
