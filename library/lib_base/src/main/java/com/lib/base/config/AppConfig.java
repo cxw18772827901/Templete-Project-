@@ -3,6 +3,8 @@ package com.lib.base.config;
 
 import com.lib.base.util.DebugUtil;
 
+import androidx.annotation.NonNull;
+
 /**
  * PackageName  com.bigheadhorse.xscat.config
  * ProjectName  NumericalCodeProject
@@ -11,14 +13,23 @@ import com.lib.base.util.DebugUtil;
  */
 public interface AppConfig {
     //host ip
-    String API_BASE_URL_TEST = "http://192.168.3.6:8888";
-    String API_BASE_URL_RELEASE = "http://tinysafety.fxgkpt.com";
-    String API_BASE_URL_FINAL = DebugUtil.isDebug ? API_BASE_URL_TEST : API_BASE_URL_RELEASE;//主域名
-    String API_BASE_URL_FINAL1 = "http://app.jnprsc.com";
-    String API_BASE_URL_FINAL2 = "";//副域名2
+    String COOKIE_URL_PATH = "";//cookie 指定path
+    String API_BASE_URL_FINAL1 = "http://192.168.3.6:8888";
+    String API_BASE_URL_FINAL2 = "http://app.jnprsc.com";//url2前缀
     String HOST = "host";
     String HOST1 = "host:host1";
     String HOST2 = "host:host2";
+
+    /**
+     * 切换环境:开发/测试/生产...
+     *
+     * @return
+     */
+    @NonNull
+    static String getUrl() {
+        return DebugUtil.isDebug ? API_BASE_URL_FINAL1 : API_BASE_URL_FINAL2;
+    }
+
     //user
     String USER_TOKEN = "user_token";
     String USER_PHONE_NUM = "user_phone_num";

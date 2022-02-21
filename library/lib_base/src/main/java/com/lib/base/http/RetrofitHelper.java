@@ -3,6 +3,7 @@ package com.lib.base.http;
 import com.hjq.gson.GsonFactory;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.DebugUtil;
+import com.lib.base.util.OUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +45,13 @@ public class RetrofitHelper {
                 .cookieJar(new CookieJar() {
                     @Override
                     public void saveFromResponse(@NonNull HttpUrl httpUrl, @NonNull List<Cookie> cookies) {
-                        cookieStore.put(HttpUrl.parse(AppConfig.API_BASE_URL_FINAL), cookies);
+                        String cookiePath = AppConfig.COOKIE_URL_PATH;
+                        String currPath = httpUrl.url().getPath();
+                        if (!OUtil.isNotNull(cookiePath) &&
+                                !OUtil.isNotNull(currPath) &&
+                                cookiePath.equals(currPath)) {
+                            cookieStore.put(httpUrl, cookies);
+                        }
                         for (Cookie cookie : cookies) {
                             DebugUtil.logD(TAG, "cookie name=" + cookie.name() + ",cookie path=" + cookie.path() + ",cookie value=" + cookie.value());
                         }
@@ -53,7 +60,7 @@ public class RetrofitHelper {
                     @NonNull
                     @Override
                     public List<Cookie> loadForRequest(@NonNull HttpUrl httpUrl) {
-                        List<Cookie> cookies = cookieStore.get(HttpUrl.parse(AppConfig.API_BASE_URL_FINAL));
+                        List<Cookie> cookies = cookieStore.get(httpUrl);
                         return cookies != null ? cookies : new ArrayList<>();
                     }
                 })
@@ -77,7 +84,7 @@ public class RetrofitHelper {
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 //.addConverterFactory(GsonConverterFactory.create())//--------------------------常规gson,异常解析会直接回调error
                 .addConverterFactory(GsonConverterFactory.create(GsonFactory.getSingletonGson()))//解析容错gson,异常解析自动忽略
-                .baseUrl(AppConfig.API_BASE_URL_FINAL1)
+                .baseUrl(AppConfig.getUrl())
                 .build();
     }
 
