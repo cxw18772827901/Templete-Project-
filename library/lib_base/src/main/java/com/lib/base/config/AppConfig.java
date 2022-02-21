@@ -34,7 +34,7 @@ public interface AppConfig {
     String USER_TOKEN = "user_token";
     String USER_PHONE_NUM = "user_phone_num";
     //debug
-    String LETTER_26 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String LETTER_26 = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     //protocol
     String APP_PROTOCOL = "https://www.baidu.com";
     //易盾
@@ -52,7 +52,7 @@ public interface AppConfig {
     String WX_SECRET = "";
     String AUTHORIZATION_CODE = "authorization_code";
     //sp
-    String SP_NAME = "sp_xuanshangmao";
+    String SP_NAME = "sp_db";
     //others
     long BIG_TV_SHOW_TIME = 400;//字母索引显示时间
     long AUTO_DELAY = 3 * 1000;//轮播图展示时间

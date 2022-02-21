@@ -31,7 +31,7 @@ public class RetrofitHelper {
     private final Retrofit mRetrofit;
     private final OkHttpClient mOkHttpClient;
 
-    private final HashMap<HttpUrl, List<Cookie>> cookieStore = new HashMap<>();
+    private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
 
     /**
      * 应用拦截器：关注的是发起请求，不能拦截发起请求到请求成功后返回数据的中间的这段时期;
@@ -46,11 +46,13 @@ public class RetrofitHelper {
                     @Override
                     public void saveFromResponse(@NonNull HttpUrl httpUrl, @NonNull List<Cookie> cookies) {
                         String cookiePath = AppConfig.COOKIE_URL_PATH;
+                        String host = httpUrl.url().getHost();
                         String currPath = httpUrl.url().getPath();
-                        if (!OUtil.isNotNull(cookiePath) &&
-                                !OUtil.isNotNull(currPath) &&
+                        if (OUtil.isNotNull(cookiePath) &&
+                                OUtil.isNotNull(host) &&
+                                OUtil.isNotNull(currPath) &&
                                 cookiePath.equals(currPath)) {
-                            cookieStore.put(httpUrl, cookies);
+                            cookieStore.put(host, cookies);
                         }
                         for (Cookie cookie : cookies) {
                             DebugUtil.logD(TAG, "cookie name=" + cookie.name() + ",cookie path=" + cookie.path() + ",cookie value=" + cookie.value());
@@ -60,7 +62,7 @@ public class RetrofitHelper {
                     @NonNull
                     @Override
                     public List<Cookie> loadForRequest(@NonNull HttpUrl httpUrl) {
-                        List<Cookie> cookies = cookieStore.get(httpUrl);
+                        List<Cookie> cookies = cookieStore.get(httpUrl.url().getHost());
                         return cookies != null ? cookies : new ArrayList<>();
                     }
                 })
