@@ -45,7 +45,7 @@ public interface DatasApi {
      * @param password
      * @return
      */
-    @Headers({AppConfig.HOST1})
+    @Headers({AppConfig.HOST2})
     @POST("/service/user/doLogin")
     Single<LoginBean/*ResponseBody*/> login(@Query("mobile") String loginName,
                                             @Query("userPwd") String password);

@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
@@ -70,36 +69,35 @@ public class NetworkInterceptor implements Interceptor {
         Response response = chain.proceed(request);
         ResponseBody responseBody = response.body();
         /*
-         * 注意此处需要过率非http请求,非http请求调用bodey.string()会出异常:
+         * 注意此处需要过率非json http请求,非图片或者文件下载类型的http请求调用bodey.string()会出异常:
          * 1.glide加载图片时type为:image/xxx;
          * 2.http请求为:application/xxx.
          */
         if (responseBody != null && responseBody.contentType() != null) {
-            String type = Objects.requireNonNull(responseBody.contentType()).type();
-            if (!TextUtils.isEmpty(type) && !type.startsWith("application")) {
+            String type = responseBody.contentType().type() + "/" + responseBody.contentType().subtype();
+            if (!TextUtils.isEmpty(type) && !type.equals("application/json")) {
                 return response;
             }
         }
-        //③重登陆判断
-        String str = null;
+        String str = "";
         try {
             if (responseBody != null) {
                 str = responseBody.string();
-            }
-            if (str == null) {
-                str = "";
+                if (!TextUtils.isEmpty(str)) {
+                    //③重登陆判断
+                    checkLoginCode(str);
+                } else {
+                    str = "";
+                }
             }
         } catch (IOException e) {
-            return response;
-        }
-        MediaType type = getMediaType(responseBody);
-        if (responseBody != null && !TextUtils.isEmpty(str)) {
-            checkLoginCode(str);
+            e.printStackTrace();
+            str = "";
         }
         //④返回Response
         return response
                 .newBuilder()
-                .body(ResponseBody.create(str, type))
+                .body(ResponseBody.create(str, getMediaType(responseBody)))
                 .build();
     }
 
