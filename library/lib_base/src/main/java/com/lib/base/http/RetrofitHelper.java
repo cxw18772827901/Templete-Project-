@@ -3,17 +3,10 @@ package com.lib.base.http;
 import com.hjq.gson.GsonFactory;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.DebugUtil;
-import com.lib.base.util.OUtil;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
-import okhttp3.Cookie;
-import okhttp3.CookieJar;
-import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -31,8 +24,6 @@ public class RetrofitHelper {
     private final Retrofit mRetrofit;
     private final OkHttpClient mOkHttpClient;
 
-    private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
-
     /**
      * 应用拦截器：关注的是发起请求，不能拦截发起请求到请求成功后返回数据的中间的这段时期;
      * 网络拦截器：关注的是发起请求和请求后获取的数据中间的这一过程。
@@ -41,41 +32,7 @@ public class RetrofitHelper {
         //OkHttpClient
         mOkHttpClient = new OkHttpClient
                 .Builder()
-                //处理cookie
-                .cookieJar(new CookieJar() {
-                    /**
-                     * 1.只保存指定path的cookie{@link com.lib.base.config.AppConfig.COOKIE_URL_PATH},防止被其他coookie覆盖;
-                     * 2.使用host关联,后续该host都是用该cookie.
-                     * @param httpUrl
-                     * @param cookies
-                     */
-                    @Override
-                    public void saveFromResponse(@NonNull HttpUrl httpUrl, @NonNull List<Cookie> cookies) {
-                        String host = httpUrl.url().getHost();
-                        String cookiePath = AppConfig.COOKIE_URL_PATH;
-                        String currPath = httpUrl.url().getPath();
-                        if (OUtil.isNotNull(host) && OUtil.isNotNull(cookiePath) && OUtil.isNotNull(currPath) && cookiePath.equals(currPath)) {
-                            cookieStore.put(host, cookies);
-                        }
-                        DebugUtil.logD(TAG, "cookies =" + cookies);
-                    }
-
-                    /**
-                     * 取出域名关联的cookie
-                     * @param httpUrl
-                     * @return
-                     */
-                    @NonNull
-                    @Override
-                    public List<Cookie> loadForRequest(@NonNull HttpUrl httpUrl) {
-                        String host = httpUrl.url().getHost();
-                        List<Cookie> cookies = null;
-                        if (OUtil.isNotNull(host) && cookieStore.containsKey(host)) {
-                            cookies = cookieStore.get(host);
-                        }
-                        return cookies != null ? cookies : new ArrayList<>();
-                    }
-                })
+                .cookieJar(new OkCookieJar())//---------------//处理cookie
                 //.retryOnConnectionFailure(true)//默认重试一次,使用RetryInterceptor可以自定义重试次数
                 .followRedirects(true)//允许重定向
                 .connectTimeout(10, TimeUnit.SECONDS)
