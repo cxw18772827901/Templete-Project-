@@ -97,7 +97,9 @@ public class NetworkInterceptor implements Interceptor {
         //④返回Response
         return response
                 .newBuilder()
-                .body(ResponseBody.create(OUtil.isNotNull(str) ? str : getDefaultStr(), getMediaType(responseBody)))
+                .body(ResponseBody.create(
+                        OUtil.isNotNull(str) ? str : getDefaultStr(),
+                        getMediaType(responseBody)))
                 .build();
     }
 
