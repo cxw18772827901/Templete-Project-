@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import androidx.annotation.NonNull;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -79,7 +80,7 @@ public class NetworkInterceptor implements Interceptor {
                 return response;
             }
         }
-        String str = "";
+        String str;
         try {
             if (responseBody != null) {
                 str = responseBody.string();
@@ -87,18 +88,30 @@ public class NetworkInterceptor implements Interceptor {
                     //③重登陆判断
                     checkLoginCode(str);
                 } else {
-                    str = "";
+                    str = getDefaultStr();
                 }
+            } else {
+                str = getDefaultStr();
             }
         } catch (IOException e) {
             e.printStackTrace();
-            str = "";
+            str = getDefaultStr();
         }
         //④返回Response
         return response
                 .newBuilder()
                 .body(ResponseBody.create(str, getMediaType(responseBody)))
                 .build();
+    }
+
+    /**
+     * 缺省数据
+     *
+     * @return
+     */
+    @NonNull
+    private String getDefaultStr() {
+        return "{\"code\":-1,\"message\":\"body.string() error,please check data!\"}";
     }
 
     private MediaType getMediaType(ResponseBody responseBody) {
