@@ -6,11 +6,13 @@ import com.lib.base.config.App;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.AppUtil;
 import com.lib.base.util.LoginUtil;
+import com.lib.base.util.OUtil;
 import com.lib.base.util.SPUtil;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
 import androidx.annotation.NonNull;
@@ -75,32 +77,27 @@ public class NetworkInterceptor implements Interceptor {
          * 2.http请求为:application/xxx.
          */
         if (responseBody != null && responseBody.contentType() != null) {
-            String type = responseBody.contentType().type() + "/" + responseBody.contentType().subtype();
+            String type = responseBody.contentType().type() + File.separator + responseBody.contentType().subtype();
             if (!TextUtils.isEmpty(type) && !type.equals("application/json")) {
                 return response;
             }
         }
-        String str;
+        String str = null;
         try {
             if (responseBody != null) {
                 str = responseBody.string();
                 if (!TextUtils.isEmpty(str)) {
                     //③重登陆判断
                     checkLoginCode(str);
-                } else {
-                    str = getDefaultStr();
                 }
-            } else {
-                str = getDefaultStr();
             }
         } catch (IOException e) {
             e.printStackTrace();
-            str = getDefaultStr();
         }
         //④返回Response
         return response
                 .newBuilder()
-                .body(ResponseBody.create(str, getMediaType(responseBody)))
+                .body(ResponseBody.create(OUtil.isNotNull(str) ? str : getDefaultStr(), getMediaType(responseBody)))
                 .build();
     }
 
