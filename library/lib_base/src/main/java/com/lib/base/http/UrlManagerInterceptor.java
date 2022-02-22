@@ -26,7 +26,7 @@ public class UrlManagerInterceptor implements Interceptor {
 
     @NonNull
     @Override
-    public Response intercept(Chain chain) throws IOException {
+    public Response intercept(@NonNull Chain chain) throws IOException {
         Request request = chain.request();
         HttpUrl oldHttpUrl = request.url();
         Request.Builder builder = request.newBuilder();

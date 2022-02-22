@@ -113,6 +113,7 @@ public class NetworkInterceptor implements Interceptor {
         return "{\"code\":-1,\"message\":\"body.string() error,please check data!\"}";
     }
 
+    @NonNull
     private MediaType getMediaType(ResponseBody responseBody) {
         if (responseBody != null && responseBody.contentType() != null) {
             return responseBody.contentType();

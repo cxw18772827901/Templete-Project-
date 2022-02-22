@@ -69,6 +69,7 @@ public class RetrofitHelper {
         return loggingInterceptor;
     }
 
+    @NonNull
     public static RetrofitHelper getInstance() {
         if (sInstance == null) {
             synchronized (RetrofitHelper.class) {
@@ -80,10 +81,12 @@ public class RetrofitHelper {
         return sInstance;
     }
 
+    @NonNull
     public Retrofit getRetrofit() {
         return mRetrofit;
     }
 
+    @NonNull
     public OkHttpClient getOkHttpClient() {
         return mOkHttpClient;
     }
