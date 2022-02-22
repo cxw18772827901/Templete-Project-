@@ -114,7 +114,7 @@ public class SecondFragment extends BaseFragment<SecondFragmentBinding> {
                     // 如果是被永久拒绝就跳转到应用权限系统设置页面
                     if (never) {
                         toast("被永久拒绝授权，请手动授予权限");
-                        PermissionUtil.startPermissionActivity(getContext(), arr);
+                        PermissionUtil.startPermissionActivity(getContext(), permissions);
                     } else {
                         toast("获取权限失败");
                     }

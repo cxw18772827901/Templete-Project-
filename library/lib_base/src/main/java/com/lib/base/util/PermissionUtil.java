@@ -75,7 +75,7 @@ public class PermissionUtil {
      * @param permissions
      * @return
      */
-    public static void startPermissionActivity(Object o, String... permissions) {
+    public static void startPermissionActivity(Object o, List<String> permissions) {
         if (o instanceof Activity) {
             XXPermissions.startPermissionActivity((Activity) o, permissions);
         } else if (o instanceof Fragment) {
