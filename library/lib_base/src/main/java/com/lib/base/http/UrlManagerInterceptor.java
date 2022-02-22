@@ -51,7 +51,7 @@ public class UrlManagerInterceptor implements Interceptor {
                     .host(newBaseUrl.host())//更换主机名
                     .port(newBaseUrl.port())//更换端口
                     .build();
-            DebugUtil.logD(TAG, "intercept: " + newFullUrl.toString());
+            DebugUtil.logD(TAG, "intercept: " + newFullUrl);
             return chain.proceed(builder.url(newFullUrl).build());
         }
         return chain.proceed(request);
