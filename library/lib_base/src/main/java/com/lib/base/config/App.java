@@ -26,6 +26,7 @@ import com.lib.base.ui.action.LogAction;
 import com.lib.base.ui.widget.BlackToastStyle;
 import com.lib.base.util.ContextUtil;
 import com.lib.base.util.DebugUtil;
+import com.lib.base.util.GsonUtil;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.header.MaterialHeader;
@@ -184,7 +185,7 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
         GsonFactory.setJsonCallback((typeToken, fieldName, jsonToken) -> {
             try {
                 String info = "类型解析异常：" + typeToken + "#" + fieldName + "，后台返回的类型为：" + jsonToken;
-                DebugUtil.logD("GSON_LOG", info);
+                DebugUtil.logD(GsonUtil.TAG, info);
                 Activity topActivity = getTopActivity();
                 if (ContextUtil.isActivityResume(topActivity)) {
                     topActivity.runOnUiThread(() -> DebugUtil.debugToast(info));

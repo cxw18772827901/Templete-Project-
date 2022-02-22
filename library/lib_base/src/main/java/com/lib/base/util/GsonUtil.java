@@ -8,6 +8,7 @@ import com.hjq.gson.GsonFactory;
  * Created by Dave on 2020/6/8.
  */
 public class GsonUtil {
+    public static final String TAG = "GSON_LOG";
     private static volatile Gson sInstance;
 
     /**

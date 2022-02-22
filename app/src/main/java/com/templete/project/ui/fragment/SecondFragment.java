@@ -90,7 +90,7 @@ public class SecondFragment extends BaseFragment<SecondFragmentBinding> {
     private void gson() {
         String json = JsonDataUtil.getJson(App.getContext(), "app.json");
         JBean jBean = GsonUtil.getNoCrashInstance().fromJson(json, JBean.class);
-        logD("GSON_LOG", GsonUtil.getNoCrashInstance().toJson(jBean));
+        logD(GsonUtil.TAG, GsonUtil.getNoCrashInstance().toJson(jBean));
     }
 
     private void permission() {
