@@ -1,10 +1,14 @@
 package com.templete.project.ui.activity;
 
+import android.view.KeyEvent;
 import android.view.View;
 
+import com.lib.base.bean.BtnBean;
 import com.lib.base.ui.activity.BaseActivity;
+import com.lib.base.ui.pop.PopMenuView;
 import com.lib.base.ui.pop.PopView;
 import com.templete.project.R;
+import com.templete.project.databinding.MenuLayoutBinding;
 import com.templete.project.databinding.PopActivityBinding;
 
 /**
@@ -15,10 +19,56 @@ import com.templete.project.databinding.PopActivityBinding;
  */
 
 public class PopActivity extends BaseActivity<PopActivityBinding> {
+
+    private PopMenuView popMenuView;
+
     @Override
     public void inits() {
         setTitleStr("智能popView");
+        setRightClickViews((position, view) -> togoMenu(), false, new BtnBean("菜单"));
     }
+
+    private void togoMenu() {
+        if (popMenuView == null) {
+            MenuLayoutBinding binding = MenuLayoutBinding.inflate(getLayoutInflater());
+            popMenuView = new PopMenuView(binding.getRoot(), getTitleBar());
+            popMenuView.show();
+        } else {
+            if (popMenuView.isShowing()) {
+                popMenuView.dismiss();
+            } else {
+                popMenuView.show();
+            }
+        }
+    }
+
+    @Override
+    public boolean backClickIntercept() {
+        return true;
+    }
+
+    @Override
+    public void actionTitleBackClick() {
+        setBack();
+    }
+
+    private void setBack() {
+        if (popMenuView != null && popMenuView.isShowing()) {
+            popMenuView.dismiss();
+        } else {
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            setBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
     @Override
     public void initView() {
