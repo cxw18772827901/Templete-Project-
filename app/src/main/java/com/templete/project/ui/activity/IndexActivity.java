@@ -27,7 +27,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 public class IndexActivity extends BaseActivity<IndexActivityBinding> {
     public static final String TAG = "IndexActivity";
     private DemoAdapter demoAdapter;
-    private LinearLayoutManager linearLayoutManager;
 
     @Override
     public void inits() {
@@ -49,7 +48,7 @@ public class IndexActivity extends BaseActivity<IndexActivityBinding> {
             mViewBinding.getRoot().postDelayed(dismissRunnable, AppConfig.BIG_TV_SHOW_TIME);
         });
 
-        linearLayoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mViewBinding.recyclerView.setLayoutManager(linearLayoutManager);
         demoAdapter = new DemoAdapter(this);
         mViewBinding.recyclerView.setAdapter(demoAdapter);

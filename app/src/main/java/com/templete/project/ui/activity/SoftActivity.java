@@ -31,7 +31,7 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
      * @param keyboardHeight
      */
     @Override
-    public void softKeyboard(boolean open, int keyboardHeight) {
+    public void togoSoftKeyboard(boolean open, int keyboardHeight) {
         logD("softKeyboard", "open=" + open + ",keyboardHeight=" + keyboardHeight);
         toast((open ? "键盘弹出" : "键盘关闭") + ",键盘高度=" + keyboardHeight);
     }
@@ -41,8 +41,8 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
         //标题栏支持沉浸式图片背景,输入法正常使用
         //setTitleBg(R.drawable.ic_top_bg);
 
-        mViewBinding.getRoot().postDelayed(runnable, 2000);
-        mViewBinding.getRoot().postDelayed(runnable, 4000);
+//        mViewBinding.getRoot().postDelayed(runnable, 2000);
+//        mViewBinding.getRoot().postDelayed(runnable, 4000);
     }
 
     private final Runnable runnable = () -> toggleSoftInput(mViewBinding.getRoot());
