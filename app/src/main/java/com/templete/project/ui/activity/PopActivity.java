@@ -42,34 +42,6 @@ public class PopActivity extends BaseActivity<PopActivityBinding> {
         }
     }
 
-    /*@Override
-    public boolean backClickIntercept() {
-        return true;
-    }
-
-    @Override
-    public void actionTitleBackClick() {
-        setBack();
-    }
-
-    private void setBack() {
-        if (popMenuView != null && popMenuView.isShowing()) {
-            popMenuView.dismiss();
-        } else {
-            finish();
-        }
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (KeyEvent.KEYCODE_BACK == keyCode) {
-            setBack();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }*/
-
-
     @Override
     public void initView() {
 
