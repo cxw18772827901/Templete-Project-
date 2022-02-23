@@ -1,6 +1,5 @@
 package com.templete.project.ui.activity;
 
-import android.view.KeyEvent;
 import android.view.View;
 
 import com.lib.base.bean.BtnBean;
@@ -31,6 +30,7 @@ public class PopActivity extends BaseActivity<PopActivityBinding> {
     private void togoMenu() {
         if (popMenuView == null) {
             MenuLayoutBinding binding = MenuLayoutBinding.inflate(getLayoutInflater());
+            binding.holder.setOnClickListener(v -> popMenuView.dismiss());
             popMenuView = new PopMenuView(binding.getRoot(), getTitleBar());
             popMenuView.show();
         } else {
@@ -42,7 +42,7 @@ public class PopActivity extends BaseActivity<PopActivityBinding> {
         }
     }
 
-    @Override
+    /*@Override
     public boolean backClickIntercept() {
         return true;
     }
@@ -67,7 +67,7 @@ public class PopActivity extends BaseActivity<PopActivityBinding> {
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }*/
 
 
     @Override

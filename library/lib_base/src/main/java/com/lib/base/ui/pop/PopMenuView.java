@@ -27,8 +27,9 @@ public class PopMenuView extends PopupWindow {
     public PopMenuView(View contentView, View locationView, int width, int height) {
         super(contentView, width, height);
         this.locationView = locationView;
-        setFocusable(false);
+        setFocusable(true);
         setOutsideTouchable(false);
+        setClippingEnabled(false);
         setAnimationStyle(R.style.draw_down_pw_style);
         //setBackgroundDrawable(new BitmapDrawable())；已过时
         setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
