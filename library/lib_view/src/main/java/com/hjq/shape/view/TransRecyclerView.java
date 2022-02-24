@@ -96,21 +96,19 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
      * @return
      */
     @Override
-    public boolean onTouch(View v, MotionEvent event) {
+    public boolean onTouch(View v, @NonNull MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 touchDown = true;
                 isScroll = false;
                 pointX = event.getRawX();
                 pointY = event.getRawY();
-                x = 0;
-                y = 0;
+                reset();
                 break;
             case MotionEvent.ACTION_MOVE:
                 touchDown = true;
                 if (isScroll) {
-                    x = 0;
-                    y = 0;
+                    reset();
                     return false;
                 }
                 float pointX = event.getRawX();
@@ -122,23 +120,20 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
                 Log.d("OnTouch", "x=" + x + ",y=" + y);
                 //无效滑动
                 if ((hasTransLeft && x < 0) || (!hasTransLeft && x > 0)) {
-                    x = 0;
-                    y = 0;
+                    reset();
                 }
                 if (x < -50 && y != 0 && Math.abs(x / y) > 2) {
                     //向左滑动
                     if (!hasTransLeft && !anim) {
                         trans();
                     }
-                    x = 0;
-                    y = 0;
+                    reset();
                 } else if (x > 50 && y != 0 && Math.abs(x / y) > 2) {
                     //向右滑动
                     if (hasTransLeft && !anim) {
                         trans();
                     }
-                    x = 0;
-                    y = 0;
+                    reset();
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -149,6 +144,11 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
                 break;
         }
         return false;
+    }
+
+    private void reset() {
+        x = 0;
+        y = 0;
     }
 
     /**
