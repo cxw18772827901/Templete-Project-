@@ -310,3 +310,5 @@
     public static java.lang.String TABLENAME;
 }
 -keep class **$Properties
+#吐司
+-keep class com.hjq.toast.** {*;}

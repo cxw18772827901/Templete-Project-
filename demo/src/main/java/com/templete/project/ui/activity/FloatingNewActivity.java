@@ -125,6 +125,19 @@ public class FloatingNewActivity extends BaseActivity<FloatingActivityNewBinding
 
     @Override
     public void initData() {
-        mViewBinding.getRoot().postDelayed(() -> adapter.itemMove(3, 5), 1000);
+        mViewBinding.getRoot().postDelayed(runnable, 1000);
+    }
+
+    private final Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            adapter.itemMove(3, 5);
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mViewBinding.getRoot().removeCallbacks(runnable);
     }
 }
