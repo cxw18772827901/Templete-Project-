@@ -152,6 +152,7 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
             }
             outStream.close();
             inputStream.close();
+
             String data = outStream.toString();
             if (OUtil.isNotNull(data)) {
                 List<CityBean> list = GsonUtil.getInstance().fromJson(data, new TypeToken<List<CityBean>>() {
