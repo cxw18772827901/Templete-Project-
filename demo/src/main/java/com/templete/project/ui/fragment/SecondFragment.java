@@ -84,7 +84,8 @@ public class SecondFragment extends BaseFragment<SecondFragmentBinding> {
                 },
                 mViewBinding.tv1, mViewBinding.tv2, mViewBinding.tv3,
                 mViewBinding.tv4, mViewBinding.tv5, mViewBinding.tv6,
-                mViewBinding.tv7, mViewBinding.tv8, mViewBinding.tv9);
+                mViewBinding.tv7, mViewBinding.tv8, mViewBinding.tv9,
+                mViewBinding.tv10);
     }
 
     private void gson() {
