@@ -21,7 +21,7 @@ android {
     buildToolsVersion config.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.templete.project"
+        applicationId "com.example.app"
         minSdkVersion config.android.minSdkVersion
         targetSdkVersion config.android.targetSdkVersion
         versionCode config.android.versionCode
