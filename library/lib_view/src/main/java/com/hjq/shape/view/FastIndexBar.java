@@ -27,7 +27,7 @@ import static android.os.VibrationEffect.DEFAULT_AMPLITUDE;
 /**
  * 1.索引条控件,默认预览是"#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  * 2.可以调用updateLettersData方法来跟新索引表内容;
- * 3.控件需要指定宽度,不要使用wrap_content.
+ * 3.控件需要指定宽度,不要使用wrap_content;高度不要写死,使用wrap_content即可.
  * by Dave
  */
 public class FastIndexBar extends View {
