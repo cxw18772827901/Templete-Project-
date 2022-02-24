@@ -11,7 +11,7 @@ import com.module.login.config.ModuleLoginApp;
  * Date         2021/11/17.
  */
 
-public interface AppConfig {
+public interface DemoAppConfig {
     //新增module需要在此处添加application
     Class[] APP_ARR = {ModuleAApp.class, ModuleBApp.class, ModuleLoginApp.class};
 }

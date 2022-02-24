@@ -9,7 +9,7 @@ import com.module.a.databinding.MaActivityMainBinding;
 import io.reactivex.rxjava3.disposables.Disposable;
 
 @Route(path = ArouteConfig.ACTIVITY_MAIN_A/*, group =RouteConfig.GROUP_A*/)
-public class MainActivity extends BaseActivity<MaActivityMainBinding> {
+public class MainActivityA extends BaseActivity<MaActivityMainBinding> {
     public static final String TAG = "sssss";
     //    @Autowired
     public int age;

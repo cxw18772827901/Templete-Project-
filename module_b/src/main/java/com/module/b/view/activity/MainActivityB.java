@@ -6,7 +6,7 @@ import com.lib.base.ui.activity.BaseActivity;
 import com.module.b.databinding.MbActivityMainBinding;
 
 @Route(path = ArouteConfig.ACTIVITY_MAIN_B/*, group = RouteConfig.GROUP_B*/)
-public class MainActivity extends BaseActivity<MbActivityMainBinding> {
+public class MainActivityB extends BaseActivity<MbActivityMainBinding> {
 
     @Override
     public MbActivityMainBinding viewBinding() {

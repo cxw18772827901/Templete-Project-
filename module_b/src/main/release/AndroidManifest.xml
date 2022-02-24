@@ -4,7 +4,7 @@
 
     <application android:label="@string/mb_app_name">
         <activity
-            android:name="com.module.b.view.activity.MainActivity"
+            android:name="com.module.b.view.activity.MainActivityB"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

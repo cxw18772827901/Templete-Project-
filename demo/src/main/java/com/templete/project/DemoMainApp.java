@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.lib.base.config.App;
-import com.templete.project.config.AppConfig;
+import com.templete.project.config.DemoAppConfig;
 
 import androidx.multidex.MultiDex;
 
@@ -14,10 +14,10 @@ import androidx.multidex.MultiDex;
  * Author       Administrator
  * Date         2021/10/11.
  */
-public class MainApp extends App {
+public class DemoMainApp extends App {
     public static final String TAG = "MainApp";
     @SuppressLint("StaticFieldLeak")
-    private static MainApp mainApp;
+    private static DemoMainApp mainApp;
 
     @Override
     public void initApplication(Context context) {
@@ -33,7 +33,7 @@ public class MainApp extends App {
     private void init(Context context, boolean isApp) {
         try {
             mainApp = this;
-            for (Class name : AppConfig.APP_ARR) {
+            for (Class name : DemoAppConfig.APP_ARR) {
                 Object o = name.newInstance();
                 if (isApp) {
                     ((App) o).initApplication(context);
@@ -52,7 +52,7 @@ public class MainApp extends App {
         MultiDex.install(this);
     }
 
-    public static MainApp getMainApp() {
+    public static DemoMainApp getMainApp() {
         return mainApp;
     }
 

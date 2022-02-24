@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mb_purple_200">#FFBB86FC</color>
+    <color name="mb_purple_500">#FF6200EE</color>
+    <color name="mb_purple_700">#FF3700B3</color>
+    <color name="mb_teal_200">#FF03DAC5</color>
+    <color name="mb_teal_700">#FF018786</color>
+    <color name="mb_black">#FF000000</color>
+    <color name="mb_white">#FFFFFFFF</color>
+    <color name="cl_999">#999</color>
+    <color name="cl_aaa">#aaa</color>
+    <color name="cl_bbb">#bbb</color>
+    <color name="cl_ccc">#ccc</color>
+    <color name="cl_ddd">#ddd</color>
+    <color name="cl_fa6f23">#fa6f23</color>
+    <color name="cl_1692db_half">#801692db</color>
+</resources>

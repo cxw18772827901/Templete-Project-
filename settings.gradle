@@ -1,6 +1,7 @@
 rootProject.name = "TempleteProject-java"
 //业务模块
 include ':app'
+include ':demo'
 include ':module_a'
 include ':module_b'
 include ':module_login'

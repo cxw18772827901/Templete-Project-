@@ -6,7 +6,7 @@ import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.activity.BaseMvvmActivity;
 import com.lib.base.util.LoginUtil;
 import com.templete.project.R;
-import com.templete.project.databinding.ActivityMainBinding;
+import com.templete.project.databinding.MainTempleteActivityBinding;
 import com.templete.project.mvvm.MainViewModel;
 import com.templete.project.ui.fragment.FirstFragment;
 import com.templete.project.ui.fragment.ForthFragment;
@@ -18,7 +18,7 @@ import com.templete.project.ui.widget.TabHost;
  * @author chenxiaowu
  */
 @Route(path = ArouteConfig.ACTIVITY_MAIN)
-public class MainActivity extends BaseMvvmActivity<ActivityMainBinding, MainViewModel> {
+public class MainTempleteActivity extends BaseMvvmActivity<MainTempleteActivityBinding, MainViewModel> {
     public static final String TAG = "MainActivity";
 
     @Override
@@ -37,8 +37,8 @@ public class MainActivity extends BaseMvvmActivity<ActivityMainBinding, MainView
     }
 
     @Override
-    protected ActivityMainBinding viewBinding() {
-        return ActivityMainBinding.inflate(getLayoutInflater());
+    protected MainTempleteActivityBinding viewBinding() {
+        return MainTempleteActivityBinding.inflate(getLayoutInflater());
     }
 
     @Override
