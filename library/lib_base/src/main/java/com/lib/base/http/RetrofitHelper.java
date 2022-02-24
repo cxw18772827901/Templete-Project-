@@ -1,6 +1,6 @@
 package com.lib.base.http;
 
-import com.hjq.gson.GsonFactory;
+import com.greendao.db.gson.GsonFactory;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.DebugUtil;
 

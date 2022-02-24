@@ -1,4 +1,4 @@
-package com.gson.factory.element;
+package com.greendao.db.gson.element;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;

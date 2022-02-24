@@ -1,4 +1,4 @@
-package com.hjq.gson;
+package com.greendao.db.gson;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -8,15 +8,15 @@ import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.ConstructorConstructor;
 import com.google.gson.internal.Excluder;
 import com.google.gson.internal.bind.TypeAdapters;
-import com.gson.factory.data.BigDecimalTypeAdapter;
-import com.gson.factory.data.BooleanTypeAdapter;
-import com.gson.factory.data.DoubleTypeAdapter;
-import com.gson.factory.data.FloatTypeAdapter;
-import com.gson.factory.data.IntegerTypeAdapter;
-import com.gson.factory.data.LongTypeAdapter;
-import com.gson.factory.data.StringTypeAdapter;
-import com.gson.factory.element.CollectionTypeAdapterFactory;
-import com.gson.factory.element.ReflectiveTypeAdapterFactory;
+import com.greendao.db.gson.data.BigDecimalTypeAdapter;
+import com.greendao.db.gson.data.BooleanTypeAdapter;
+import com.greendao.db.gson.data.DoubleTypeAdapter;
+import com.greendao.db.gson.data.FloatTypeAdapter;
+import com.greendao.db.gson.data.IntegerTypeAdapter;
+import com.greendao.db.gson.data.LongTypeAdapter;
+import com.greendao.db.gson.data.StringTypeAdapter;
+import com.greendao.db.gson.element.CollectionTypeAdapterFactory;
+import com.greendao.db.gson.element.ReflectiveTypeAdapterFactory;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
@@ -25,10 +25,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- *    author : Android 轮子哥
- *    github : https://github.com/getActivity/GsonFactory
- *    time   : 2020/11/10
- *    desc   : Gson 解析容错适配器
+ * author : Android 轮子哥
+ * github : https://github.com/getActivity/GsonFactory
+ * time   : 2020/11/10
+ * desc   : Gson 解析容错适配器
  */
 public final class GsonFactory {
 
@@ -40,16 +40,17 @@ public final class GsonFactory {
 
     private static volatile Gson sGson;
 
-    private GsonFactory() {}
+    private GsonFactory() {
+    }
 
     /**
      * 获取单例的 Gson 对象
      */
     public static Gson getSingletonGson() {
         // 加入双重校验锁
-        if(sGson == null) {
+        if (sGson == null) {
             synchronized (GsonFactory.class) {
-                if(sGson == null){
+                if (sGson == null) {
                     sGson = newGsonBuilder().serializeNulls().create();
                 }
             }
@@ -82,8 +83,8 @@ public final class GsonFactory {
     /**
      * 注册构造函数创建器
      *
-     * @param type                  对象类型
-     * @param creator               实例创建器
+     * @param type    对象类型
+     * @param creator 实例创建器
      */
     public static void registerInstanceCreator(Type type, InstanceCreator<?> creator) {
         INSTANCE_CREATORS.put(type, creator);

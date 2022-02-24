@@ -3,6 +3,7 @@ package com.greendao.db.util;
 
 import android.content.Context;
 
+import com.greendao.db.helper.CityBeanDao;
 import com.greendao.db.helper.DaoMaster;
 import com.greendao.db.helper.DaoSession;
 import com.greendao.db.helper.DemoBeanDao;
@@ -14,12 +15,15 @@ import com.greendao.db.helper.DemoBeanDao;
  * PackageName  com.bigheadhorse.xscat.db
  * Author       Administrator
  * Date         2021/6/17.
+ *
+ * @author chenxiaowu
  */
 
 public class LocalRepository {
     private volatile static LocalRepository sInstance;
     private DaoSession daoSession;
     private DemoBeanDao demoBeanDao;
+    private CityBeanDao cityBeanDao;
 
     private LocalRepository() {
     }
@@ -38,6 +42,11 @@ public class LocalRepository {
     public void init(Context context) {
         daoSession = new DaoMaster(new DbHelper(context).getWritableDb()).newSession();
         demoBeanDao = daoSession.getDemoBeanDao();
+        cityBeanDao = daoSession.getCityBeanDao();
+    }
+
+    public CityBeanDao getCityBeanDao() {
+        return cityBeanDao;
     }
 
     public DemoBeanDao getDemoBeanDao() {

@@ -48,4 +48,5 @@ dependencies {
     //db
     api "org.greenrobot:greendao:${config.dependencies.greendao_version}"
     implementation "org.greenrobot:greendao-generator:${config.dependencies.greendao_version}"
+    api "com.squareup.retrofit2:converter-gson:${config.dependencies.retrofit_version}"
 }

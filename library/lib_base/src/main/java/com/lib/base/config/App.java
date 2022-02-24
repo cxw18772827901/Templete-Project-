@@ -11,8 +11,11 @@ import android.net.NetworkRequest;
 import android.view.Gravity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.google.common.reflect.TypeToken;
+import com.greendao.db.bean.CityBean;
+import com.greendao.db.gson.GsonFactory;
+import com.greendao.db.helper.CityBeanDao;
 import com.greendao.db.util.LocalRepository;
-import com.hjq.gson.GsonFactory;
 import com.hjq.shape.view.horizontal.SmartRefreshHorizontal;
 import com.hjq.toast.CustomToast;
 import com.hjq.toast.ToastStrategy;
@@ -22,11 +25,13 @@ import com.lib.base.BuildConfig;
 import com.lib.base.R;
 import com.lib.base.glide.GlideApp;
 import com.lib.base.mvvm.GlobalViewModel;
+import com.lib.base.rxjava.RxUtils;
 import com.lib.base.ui.action.LogAction;
 import com.lib.base.ui.widget.BlackToastStyle;
 import com.lib.base.util.ContextUtil;
 import com.lib.base.util.DebugUtil;
 import com.lib.base.util.GsonUtil;
+import com.lib.base.util.OUtil;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;
 import com.scwang.smart.refresh.header.MaterialHeader;
@@ -35,7 +40,10 @@ import com.scwang.smart.refresh.layout.wrapper.RefreshFooterWrapper;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.lang.ref.SoftReference;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.camera.camera2.Camera2Config;
@@ -44,6 +52,9 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
+import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.core.SingleEmitter;
+import io.reactivex.rxjava3.core.SingleOnSubscribe;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
 /**
@@ -96,12 +107,13 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
         } else {
             initModule(this);
         }
-        //db
-        LocalRepository.getInstance().init(this);
-        //json解析异常回调
-        setGsonErrorHandler();
         //处理RxJava中未处理异常
         setRxJavaErrorHandler();
+        //db
+        LocalRepository.getInstance().init(this);
+        saveCity();
+        //json解析异常回调
+        setGsonErrorHandler();
         //life
         setLifeObserve();
         //smart refresh
@@ -114,6 +126,51 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
         setNetWorkListener();
     }
 
+    private void saveCity() {
+        CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
+        if (cityBeanDao.count() > 0) {
+            logD("city_", "city saved, num is " + cityBeanDao.count());
+            return;
+        }
+        Single
+                .create((SingleOnSubscribe<Integer>) emitter -> {
+                    saveCityData(cityBeanDao, emitter);
+                })
+                .compose(RxUtils::toSimpleSingleIo)
+                .doOnSuccess(integer -> logD("city_", "city num is " + integer))
+                .doOnError(throwable -> logE("city_", throwable != null ? throwable.getMessage() + "" : "city data error"))
+                .subscribe();
+    }
+
+    private void saveCityData(CityBeanDao cityBeanDao, SingleEmitter<Integer> emitter) {
+        try {
+            InputStream inputStream = getResources().openRawResource(R.raw.province);
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[512];
+            int length;
+            while ((length = inputStream.read(buffer)) != -1) {
+                outStream.write(buffer, 0, length);
+            }
+            outStream.close();
+            inputStream.close();
+            String data = outStream.toString();
+            if (OUtil.isNotNull(data)) {
+                List<CityBean> list = GsonUtil.getInstance().fromJson(data, new TypeToken<List<CityBean>>() {
+                }.getType());
+                cityBeanDao.insertInTx(list);
+                emitter.onSuccess(list.size());
+            } else {
+                emitter.onError(new RuntimeException("city data error"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            emitter.onError(new RuntimeException("city data error"));
+        }
+    }
+
+    /**
+     * toast
+     */
     private void initToast() {
         ToastUtils.init(this, new ToastStrategy() {
             @Override

@@ -71,7 +71,7 @@ android {
 dependencies {
     //api
     api project(path: ':library:lib_db')
-    api project(path: ':library:lib_gson')
+    //api project(path: ':library:lib_gson')
     api project(path: ':library:lib_permission')
     api project(path: ':library:lib_view')
     //aroute

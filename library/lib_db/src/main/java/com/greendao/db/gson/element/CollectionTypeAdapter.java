@@ -1,4 +1,4 @@
-package com.gson.factory.element;
+package com.greendao.db.gson.element;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
@@ -7,8 +7,8 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import com.hjq.gson.GsonFactory;
-import com.hjq.gson.JsonCallback;
+import com.greendao.db.gson.GsonFactory;
+import com.greendao.db.gson.JsonCallback;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

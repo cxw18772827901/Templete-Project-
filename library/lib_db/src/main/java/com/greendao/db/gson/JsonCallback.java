@@ -1,4 +1,4 @@
-package com.hjq.gson;
+package com.greendao.db.gson;
 
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonToken;

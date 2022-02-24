@@ -19,6 +19,14 @@ public interface LogAction {
         DebugUtil.logD(tag, text.toString());
     }
 
+    default void logD(String tag, @StringRes int id) {
+        DebugUtil.logD(tag, App.getContext().getResources().getString(id));
+    }
+
+    default void logE(String tag, CharSequence text) {
+        DebugUtil.logE(tag, text.toString());
+    }
+
     default void logE(String tag, @StringRes int id) {
         DebugUtil.logE(tag, App.getContext().getResources().getString(id));
     }

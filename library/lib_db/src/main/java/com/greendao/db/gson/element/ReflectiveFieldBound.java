@@ -1,4 +1,4 @@
-package com.gson.factory.element;
+package com.greendao.db.gson.element;
 
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

@@ -2,7 +2,7 @@ package com.lib.base.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.hjq.gson.GsonFactory;
+import com.greendao.db.gson.GsonFactory;
 
 /**
  * Created by Dave on 2020/6/8.

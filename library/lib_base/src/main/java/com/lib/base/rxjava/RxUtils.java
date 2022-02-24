@@ -29,6 +29,11 @@ public class RxUtils {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
+    public static <T> SingleSource<T> toSimpleSingleIo(Single<T> upstream) {
+        return upstream.subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io());
+    }
+
     public static <T> ObservableSource<T> toSimpleSingle(Observable<T> upstream) {
         return upstream.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
