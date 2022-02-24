@@ -14,11 +14,11 @@ import androidx.annotation.NonNull;
 public interface AppConfig {
     //host ip
     String COOKIE_URL_PATH = "";//cookie 指定path
-    String API_BASE_URL_FINAL1 = "http://192.168.3.6:8888";
-    String API_BASE_URL_FINAL2 = "http://app.jnprsc.com";//url2前缀
     String HOST = "host";
     String HOST1 = "host:host1";
+    String API_BASE_URL_FINAL1 = "http://192.168.3.6:8888";
     String HOST2 = "host:host2";
+    String API_BASE_URL_FINAL2 = "http://app.jnprsc.com";//url2前缀
 
     /**
      * 切换环境:开发/测试/生产...
@@ -38,15 +38,15 @@ public interface AppConfig {
     //protocol
     String APP_PROTOCOL = "https://www.baidu.com";
     //易盾
-    boolean isTest = true;
-    String onePassId = "";//一键登录业务id--------------------------生产环境
-    String mobileVerifyId = "";//本机校验业务id----------------------生产环境
-    String trialOnePassId = "";//试用一键登录业务id------------------测试环境
-    String trialMobileVerifyId = "";//试用本机校验业务id-------------测试环境
-    String secretKey = "";
-    String secretId = "";
-    String onePassUrl = "http://ye.dun.163yun.com/v1/oneclick/check";//本机号码一键登录验证操作操作url地址（此操作也可放服务端）
-    String verifyUrl = "http://ye.dun.163yun.com/v1/check";//本机号码验证url地址
+    boolean IS_TEST = true;
+    String ONE_PASS_ID = "";//一键登录业务id--------------------------生产环境
+    String MOBILE_VERIFY_ID = "";//本机校验业务id----------------------生产环境
+    String TRIALONE_PASSID = "";//试用一键登录业务id------------------测试环境
+    String TRIAL_MOBILE_VERIFY_ID = "";//试用本机校验业务id-------------测试环境
+    String SECRETK_EY = "";
+    String SECRET_ID = "";
+    String ONE_PASS_URL = "http://ye.dun.163yun.com/v1/oneclick/check";//本机号码一键登录验证操作操作url地址（此操作也可放服务端）
+    String VERIFY_URL = "http://ye.dun.163yun.com/v1/check";//本机号码验证url地址
     //微信
     String WX_APP_ID = "wx5fcdeb6d2825e571";
     String WX_SECRET = "";
