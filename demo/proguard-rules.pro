@@ -305,3 +305,8 @@
 
 #Okio
 -dontwarn org.codehaus.mojo.animal_sniffer.*
+#greendao 3
+-keepclassmembers class * extends org.greenrobot.greendao.AbstractDao {
+    public static java.lang.String TABLENAME;
+}
+-keep class **$Properties
