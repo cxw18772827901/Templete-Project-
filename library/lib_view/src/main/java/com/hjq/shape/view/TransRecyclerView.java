@@ -2,12 +2,12 @@ package com.hjq.shape.view;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 
 import com.hjq.shape.R;
 
@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * @author chenxiaowu
  */
 
-public class TransRecyclerView extends RecyclerView implements View.OnTouchListener {
+public class TransRecyclerView extends RecyclerView {
     //    private boolean scroll;
     //是否已向左偏移
     private boolean hasTransLeft;
@@ -59,7 +59,6 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
         transPercent = array.getFloat(R.styleable.TransRecyclerView_transPercent, (float) 0.2);
         array.recycle();
 
-        setOnTouchListener(this);
         addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -91,12 +90,12 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
      * 根据触摸事件开始偏移动画,若触摸事件为MotionEvent.ACTION_UP则根据动画状态来判断是否恢复可滚动状态
      * 需要注意的是平移动画时不要使用event.getX/event.getRawY,一定要使用event.getRawX/event.getRawY
      *
-     * @param v
      * @param event
      * @return
      */
+    @SuppressLint("ClickableViewAccessibility")
     @Override
-    public boolean onTouch(View v, @NonNull MotionEvent event) {
+    public boolean onTouchEvent(@NonNull MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 touchDown = true;
@@ -109,7 +108,7 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
                 touchDown = true;
                 if (isScroll) {
                     reset();
-                    return false;
+                    return super.onTouchEvent(event);
                 }
                 float pointX = event.getRawX();
                 float pointY = event.getRawY();
@@ -143,7 +142,7 @@ public class TransRecyclerView extends RecyclerView implements View.OnTouchListe
                 }
                 break;
         }
-        return false;
+        return super.onTouchEvent(event);
     }
 
     private void reset() {
