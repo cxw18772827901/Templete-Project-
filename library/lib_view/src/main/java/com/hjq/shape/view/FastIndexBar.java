@@ -25,8 +25,9 @@ import static android.os.VibrationEffect.DEFAULT_AMPLITUDE;
 
 
 /**
- * 索引条控件,默认是"#ABCDEFGHIJKLMNOPQRSTUVWXYZ",可以调用updateLettersData方法来跟新索引表内容
- * 注意的是要等视图显示之后才能调用这个方法
+ * 1.索引条控件,默认预览是"#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ * 2.可以调用updateLettersData方法来跟新索引表内容;
+ * 3.控件需要指定宽度,不要使用wrap_content;高度不要写死,使用wrap_content即可.
  * by Dave
  */
 public class FastIndexBar extends View {
@@ -91,6 +92,30 @@ public class FastIndexBar extends View {
         return result;
     }
 
+    /**
+     * 如果是一个View，重写onMeasure时要注意：
+     * 如果在使用自定义view时，用了wrap_content。那么在onMeasure中就要调用setMeasuredDimension，
+     * 来指定view的宽高。如果使用的fill_parent或者一个具体的dp值。那么直接使用super.onMeasure即可。
+     * <p>
+     * <p>
+     * 如果是一个ViewGroup，重写onMeasure时要注意：
+     * 首先，结合上面两条，来测量自身的宽高。
+     * 然后，需要测量子View的宽高。
+     * 测量子view的方式有：
+     * getChildAt(int index).可以拿到index上的子view。
+     * 通过getChildCount得到子view的数目，再循环遍历出子view。
+     * 接着，subView.measure(int wSpec, int hSpec); //使用子view自身的测量方法
+     * 或者调用viewGroup的测量子view的方法：
+     * //某一个子view，多宽，多高, 内部加上了viewGroup的padding值
+     * measureChild(subView, int wSpec, int hSpec);
+     * //所有子view 都是 多宽，多高, 内部调用了measureChild方法
+     * measureChildren(int wSpec, int hSpec);
+     * //某一个子view，多宽，多高, 内部加上了viewGroup的padding值、margin值和传入的宽高wUsed、hUsed
+     * measureChildWithMargins(subView, intwSpec, int wUsed, int hSpec, int hUsed);
+     *
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         initParams();

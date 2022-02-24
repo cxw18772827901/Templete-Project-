@@ -54,7 +54,7 @@ public interface ImmersionAvtion extends ContextAction {
                 //软键盘监听回调，keyboardEnable为true才会回调此方法
                 //open为true，软键盘弹出，为false，软键盘关闭
                 .keyboardEnable(true)
-                .setOnKeyboardListener(this::softKeyboard)
+                .setOnKeyboardListener(this::togoSoftKeyboard)
                 .init();
     }
 
@@ -64,7 +64,7 @@ public interface ImmersionAvtion extends ContextAction {
      * @param open
      * @param keyboardHeight
      */
-    default void softKeyboard(boolean open, int keyboardHeight) {
+    default void togoSoftKeyboard(boolean open, int keyboardHeight) {
 
     }
 
@@ -80,7 +80,7 @@ public interface ImmersionAvtion extends ContextAction {
                 //软键盘监听回调，keyboardEnable为true才会回调此方法
                 //open为true，软键盘弹出，为false，软键盘关闭
                 .keyboardEnable(true)
-                .setOnKeyboardListener(this::softKeyboard)
+                .setOnKeyboardListener(this::togoSoftKeyboard)
                 .init();
     }
 
@@ -96,7 +96,7 @@ public interface ImmersionAvtion extends ContextAction {
                 //软键盘监听回调，keyboardEnable为true才会回调此方法
                 //open为true，软键盘弹出，为false，软键盘关闭
                 .keyboardEnable(true)
-                .setOnKeyboardListener(this::softKeyboard)
+                .setOnKeyboardListener(this::togoSoftKeyboard)
                 .init();
     }
 }
