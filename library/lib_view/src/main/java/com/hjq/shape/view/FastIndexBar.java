@@ -25,8 +25,9 @@ import static android.os.VibrationEffect.DEFAULT_AMPLITUDE;
 
 
 /**
- * 索引条控件,默认是"#ABCDEFGHIJKLMNOPQRSTUVWXYZ",可以调用updateLettersData方法来跟新索引表内容
- * 注意的是要等视图显示之后才能调用这个方法
+ * 1.索引条控件,默认预览是"#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ * 2.可以调用updateLettersData方法来跟新索引表内容;
+ * 3.控件需要指定宽度,不要使用wrap_content.
  * by Dave
  */
 public class FastIndexBar extends View {
@@ -91,6 +92,14 @@ public class FastIndexBar extends View {
         return result;
     }
 
+    /**
+     * 如果是一个View，重写onMeasure时要注意：
+     * 如果在使用自定义view时，用了wrap_content。那么在onMeasure中就要调用setMeasuredDimension，
+     * 来指定view的宽高。如果使用的fill_parent或者一个具体的dp值。那么直接使用super.onMeasure即可。
+     *
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         initParams();
