@@ -127,23 +127,22 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
     }
 
     private void saveCity() {
-        CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
-        if (cityBeanDao.count() > 0) {
-            logD("city_", "city saved, num is " + cityBeanDao.count());
-            return;
-        }
         Single
-                .create((SingleOnSubscribe<Integer>) emitter -> {
-                    saveCityData(cityBeanDao, emitter);
-                })
+                .create((SingleOnSubscribe<Integer>) this::saveCityData)
                 .compose(RxUtils::toSimpleSingleIo)
                 .doOnSuccess(integer -> logD("city_", "city num is " + integer))
                 .doOnError(throwable -> logE("city_", throwable != null ? throwable.getMessage() + "" : "city data error"))
                 .subscribe();
     }
 
-    private void saveCityData(CityBeanDao cityBeanDao, SingleEmitter<Integer> emitter) {
+    private void saveCityData(SingleEmitter<Integer> emitter) {
         try {
+            CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
+            if (cityBeanDao.count() > 0) {
+                emitter.onSuccess((int) cityBeanDao.count());
+                return;
+            }
+
             InputStream inputStream = getResources().openRawResource(R.raw.province);
             ByteArrayOutputStream outStream = new ByteArrayOutputStream();
             byte[] buffer = new byte[512];
