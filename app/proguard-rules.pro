@@ -312,3 +312,4 @@
 -keep class **$Properties
 #吐司
 -keep class com.hjq.toast.** {*;}
+-keep class com.hjq.permissions.** {*;}
