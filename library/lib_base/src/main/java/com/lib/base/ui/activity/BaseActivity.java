@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -105,6 +106,22 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
         super.finish();
         hideKeyboard(mViewBinding.getRoot());
         finishAnim();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        boolean keyDown = onKeyDown(keyCode == KeyEvent.KEYCODE_BACK);
+        return keyDown || super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * 是否消费点击事件
+     *
+     * @param iskeyBack
+     * @return
+     */
+    protected boolean onKeyDown(boolean iskeyBack) {
+        return false;
     }
 
     /**
