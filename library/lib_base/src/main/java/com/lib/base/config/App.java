@@ -99,6 +99,8 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
     public abstract void initModule(Context context);
 
     private void init() {
+        //处理RxJava中未处理异常
+        setRxJavaErrorHandler();
         // 初始化 Toast 框架
         initToast();
         //初始化module application
@@ -107,8 +109,6 @@ public abstract class App extends Application implements ViewModelStoreOwner, Lo
         } else {
             initModule(this);
         }
-        //处理RxJava中未处理异常
-        setRxJavaErrorHandler();
         //db
         LocalRepository.getInstance().init(this);
         saveCity();
