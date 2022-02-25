@@ -192,6 +192,7 @@ public class TransRecyclerView extends RecyclerView {
             @Override
             public void onAnimationStart(Animator animation) {
                 anim = true;
+                fling(0, 0);
                 layoutManager.setCanScrollVertically(false);
             }
 
