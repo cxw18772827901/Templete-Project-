@@ -30,7 +30,6 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 
 public class TransRecyclerView extends RecyclerView {
-    //    private boolean scroll;
     //是否已向左偏移
     private boolean hasTransLeft;
     //偏移百分比
@@ -168,20 +167,18 @@ public class TransRecyclerView extends RecyclerView {
      * 向右偏移动画
      */
     private void transToRight() {
-        ObjectAnimator animW = ObjectAnimator.ofFloat(this, "translationX", -trans, 0).setDuration(120);
-//        animW.addUpdateListener(animation -> mViewBinding.recyclerView.setTranslationX((Float) animation.getAnimatedValue()));
-        cancelScroll(animW);
-        animW.start();
+        ObjectAnimator anim = ObjectAnimator.ofFloat(this, "translationX", -trans, 0).setDuration(120);
+        setAnimListener(anim);
+        anim.start();
     }
 
     /**
      * 想左偏移动画
      */
     private void transToLeft() {
-        ObjectAnimator animW = ObjectAnimator.ofFloat(this, "translationX", 0, -trans).setDuration(120);
-//        animW.addUpdateListener(animation -> mViewBinding.recyclerView.setTranslationX((Float) animation.getAnimatedValue()));
-        cancelScroll(animW);
-        animW.start();
+        ObjectAnimator anim = ObjectAnimator.ofFloat(this, "translationX", 0, -trans).setDuration(120);
+        setAnimListener(anim);
+        anim.start();
     }
 
     /**
@@ -189,7 +186,7 @@ public class TransRecyclerView extends RecyclerView {
      *
      * @param animW
      */
-    private void cancelScroll(@NonNull ObjectAnimator animW) {
+    private void setAnimListener(@NonNull ObjectAnimator animW) {
         animW.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -221,6 +218,9 @@ public class TransRecyclerView extends RecyclerView {
         });
     }
 
+    /**
+     * RecyclerView调用fling(0,0)停止惯性滚动无效,暂时使用反射停止滚动方法代替,需要再研究一下.
+     */
     public void stopFling() {
         try {
             Method field = RecyclerView.class.getDeclaredMethod("cancelScroll");
@@ -230,13 +230,6 @@ public class TransRecyclerView extends RecyclerView {
             e.printStackTrace();
         }
     }
-
-    /*private int getWidths() {
-        WindowManager wm = (WindowManager) (getContext().getApplicationContext().getSystemService(Context.WINDOW_SERVICE));
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
-        return wm.getDefaultDisplay().getWidth();
-    }*/
 
     /**
      * 偏移量(屏幕宽度的百分比)
@@ -259,7 +252,6 @@ public class TransRecyclerView extends RecyclerView {
 
     @Override
     public void setLayoutManager(@Nullable LayoutManager layout) {
-        /*super.setLayoutManager(layout);*/
         throw new RuntimeException("do you need a StopScrollManager?");
     }
 
