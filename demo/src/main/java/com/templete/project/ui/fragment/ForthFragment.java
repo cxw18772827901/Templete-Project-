@@ -7,6 +7,7 @@ import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.ui.fragment.BaseFragment;
 import com.templete.project.databinding.ForthFragmentBinding;
 import com.templete.project.ui.activity.IndexActivity;
+import com.templete.project.ui.activity.ArtboardActivity;
 import com.templete.project.ui.activity.SoftActivity;
 import com.templete.project.ui.activity.TxtActivity;
 
@@ -41,14 +42,17 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
                         clazz = TxtActivity.class;
                     } else if (v.equals(mViewBinding.tv2)) {
                         clazz = IndexActivity.class;
-                    }else if (v.equals(mViewBinding.tv3)) {
+                    } else if (v.equals(mViewBinding.tv3)) {
                         clazz = SoftActivity.class;
+                    } else if (v.equals(mViewBinding.tv4)) {
+                        clazz = ArtboardActivity.class;
                     }
                     if (clazz != null) {
                         ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
                     }
                 },
-                mViewBinding.tv1, mViewBinding.tv2, mViewBinding.tv3);
+                mViewBinding.tv1, mViewBinding.tv2,
+                mViewBinding.tv3, mViewBinding.tv4);
     }
 
     @Override
