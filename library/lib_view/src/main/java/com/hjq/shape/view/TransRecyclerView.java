@@ -11,6 +11,8 @@ import android.view.MotionEvent;
 
 import com.hjq.shape.R;
 
+import java.lang.reflect.Method;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -187,12 +189,12 @@ public class TransRecyclerView extends RecyclerView {
      *
      * @param animW
      */
-    private void cancelScroll(ObjectAnimator animW) {
+    private void cancelScroll(@NonNull ObjectAnimator animW) {
         animW.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
                 anim = true;
-                fling(0, 0);
+                stopFling();
                 layoutManager.setCanScrollVertically(false);
             }
 
@@ -217,6 +219,16 @@ public class TransRecyclerView extends RecyclerView {
                 //anim = true;
             }
         });
+    }
+
+    public void stopFling() {
+        try {
+            Method field = RecyclerView.class.getDeclaredMethod("cancelScroll");
+            field.setAccessible(true);
+            field.invoke(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /*private int getWidths() {

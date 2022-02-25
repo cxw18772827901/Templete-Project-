@@ -11,6 +11,9 @@ import android.widget.ScrollView;
 
 import com.hjq.shape.view.nestedScrollView.NestedScrollWebView;
 
+import java.lang.reflect.Method;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -24,13 +27,24 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ViewUtil {
 
     @SuppressLint("ClickableViewAccessibility")
-    public static void stopFlingWhenTouchUp(RecyclerView recyclerView) {
+    public static void stopFlingWhenTouchUp(@NonNull RecyclerView recyclerView) {
         recyclerView.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_UP) {
-                recyclerView.fling(0, 0);
+//                recyclerView.fling(0, 0);
+                stopFling(recyclerView);
             }
             return false;
         });
+    }
+
+    public static void stopFling(RecyclerView recyclerView) {
+        try {
+            Method field = recyclerView.getClass().getDeclaredMethod("cancelScroll");
+            field.setAccessible(true);
+            field.invoke(recyclerView);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void addView(ViewGroup container, View child) {
@@ -38,7 +52,8 @@ public class ViewUtil {
         if (child instanceof ListView) {
             ((ListView) child).fling(0);
         } else if (child instanceof RecyclerView) {
-            ((RecyclerView) child).fling(0, 0);
+            //((RecyclerView) child).fling(0, 0);
+            stopFling((RecyclerView) child);
         } else if (child instanceof ScrollView) {
             ((ScrollView) child).fling(0);
         } else if (child instanceof NestedScrollWebView) {
