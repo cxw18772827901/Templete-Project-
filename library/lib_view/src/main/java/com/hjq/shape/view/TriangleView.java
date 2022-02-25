@@ -9,6 +9,8 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.hjq.shape.R;
+
 import androidx.annotation.Nullable;
 
 /**
@@ -20,6 +22,7 @@ import androidx.annotation.Nullable;
 
 public class TriangleView extends View {
     private Paint mPaint = new Paint();
+    private Paint mPaintCor = new Paint();
     private int width;
     private int height;
 
@@ -48,12 +51,18 @@ public class TriangleView extends View {
         mPaint.setStyle(Paint.Style.FILL);  //设置画笔模式为填充
         mPaint.setStrokeWidth(1f);
         mPaint.setAntiAlias(true);
+
+        mPaintCor.setColor(Color.WHITE);       //设置画笔颜色
+        mPaintCor.setStyle(Paint.Style.STROKE);  //设置画笔模式为填充
+        mPaintCor.setStrokeWidth(10f);
+        mPaintCor.setAntiAlias(true);
     }
 
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
         canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
+        canvas.drawColor(getContext().getResources().getColor(R.color.cl_999));
 
         //画三角形
         Path path = new Path();
@@ -63,6 +72,6 @@ public class TriangleView extends View {
         path.close();
         canvas.drawPath(path, mPaint);
         //画顶部圆角
-        canvas.drawRoundRect(width / 2-5, 85, 555, 155, 20, 20, mPaint);
+        canvas.drawArc(width / 2 - 20, 0, width / 2 + 20, height, -100, -80, false, mPaintCor);
     }
 }

@@ -61,7 +61,9 @@ public class Draw6 extends View {
         RectF rect2 = new RectF(95, 35, 195, 85);
         canvas.drawArc(rect2, -70, 140, true, mPaint);
 
-        canvas.drawArc(225, 35, 455, 85, -70, 140, true, mPaint1);
+        canvas.drawArc(225, 35, 455, 85, -70, 140, false, mPaint1);
+
+        canvas.drawArc(225, 95, 455, 185, -70, 140, true, mPaint1);
     }
 
 }
