@@ -30,7 +30,8 @@ import androidx.viewbinding.ViewBinding;
  * 2.使用ViewBinding;
  * 3.沉浸式标题栏,可设置多个属性;
  * 4.自带默认转场动画,可禁用;
- * 5.销毁时自动取消RxJava执行的任务.
+ * 5.销毁时自动取消RxJava执行的任务;
+ * 6.log,toast,intent...
  *
  * @author chenxiaowu
  * Date on 2019/11/28.
@@ -63,7 +64,7 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
     private void setContentLayout() {
         T mViewBinding = viewBinding();
         if (mViewBinding == null) {
-            throw new RuntimeException("viewBinding() must not return null");
+            throw new RuntimeException("viewBinding() must not return null!");
         }
         int activityTheme = getActivityTheme();
         View innerView = mViewBinding.getRoot();
