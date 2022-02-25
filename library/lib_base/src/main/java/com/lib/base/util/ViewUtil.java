@@ -57,7 +57,7 @@ public class ViewUtil {
         } else if (child instanceof ScrollView) {
             ((ScrollView) child).fling(0);
         } else if (child instanceof NestedScrollWebView) {
-            ((NestedScrollWebView) child).flingScroll(0, 0);
+            //((NestedScrollWebView) child).flingScroll(0, 0);
         } else if (child instanceof HorizontalScrollView) {
             ((HorizontalScrollView) child).fling(0);
         }
