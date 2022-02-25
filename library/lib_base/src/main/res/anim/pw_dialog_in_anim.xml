@@ -9,7 +9,7 @@
         android:pivotY="0"
         android:toXScale="1.0"
         android:toYScale="1.0" />
-    <alpha
+    <!--<alpha
         android:fromAlpha="0"
-        android:toAlpha="1" />
+        android:toAlpha="1" />-->
 </set>
