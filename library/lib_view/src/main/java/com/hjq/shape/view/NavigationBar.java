@@ -28,7 +28,7 @@ import androidx.viewpager.widget.ViewPager;
 
 public class NavigationBar extends FrameLayout {
 
-    private TabLayout tabLayout;
+    private final TabLayout tabLayout;
     private ViewPager viewPager;
     private List<? extends BarContent> tabs;
     private OnSelectListener listener;
