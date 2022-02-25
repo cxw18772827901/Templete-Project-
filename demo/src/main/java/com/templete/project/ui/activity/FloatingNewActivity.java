@@ -58,10 +58,16 @@ public class FloatingNewActivity extends BaseActivity<FloatingActivityNewBinding
         mViewBinding.refreshLayout.setOnLoadMoreListener(refreshLayout -> FreshUtil.finishLoad(mViewBinding.refreshLayout));
 
         NavigationBar bar = new NavigationBar(this);
-        bar.setData(Arrays.asList("导航按钮1", "导航按钮2", "导航按钮3", "导航按钮4",
-                "导航按钮5", "导航按钮6", "导航按钮7", "导航按钮8",
-                "导航按钮2", "导航按钮3", "导航按钮4", "导航按钮5",
-                "导航按钮6", "导航按钮7", "导航按钮8"), null, 0);
+        List<NavigationBar.Data> list = Arrays.asList(
+                new NavigationBar.Data("导航按钮1"), new NavigationBar.Data("导航按钮2"),
+                new NavigationBar.Data("导航按钮3"), new NavigationBar.Data("导航按钮4"),
+                new NavigationBar.Data("导航按钮5"), new NavigationBar.Data("导航按钮6"),
+                new NavigationBar.Data("导航按钮7"), new NavigationBar.Data("导航按钮8"),
+                new NavigationBar.Data("导航按钮2"), new NavigationBar.Data("导航按钮3"),
+                new NavigationBar.Data("导航按钮4"), new NavigationBar.Data("导航按钮5"),
+                new NavigationBar.Data("导航按钮6"), new NavigationBar.Data("导航按钮7"),
+                new NavigationBar.Data("导航按钮8"));
+        bar.setData(list, 0, null);
 
         linearLayoutManager = new LinearLayoutManager(this);
         mViewBinding.recyclerView.setLayoutManager(linearLayoutManager);

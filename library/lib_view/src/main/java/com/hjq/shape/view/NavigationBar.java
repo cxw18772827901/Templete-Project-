@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
 /**
+ * 自定义NavigationBar,可以选择关联ViewPager
  * ProjectName  xuanshangmao
  * PackageName  com.shapojie.five.view
  * Author       Administrator
@@ -54,10 +55,12 @@ public class NavigationBar extends FrameLayout {
      * @param pos
      */
     @SuppressLint("ClickableViewAccessibility")
-    public void setData(List<? extends BarContent> tabs, OnSelectListener listener, int pos) {
+    public void setData(List<? extends BarContent> tabs, int pos, OnSelectListener listener) {
         if (tabs == null || tabs.size() == 0) {
             return;
         }
+        this.tabs = tabs;
+        this.listener = listener;
         int dimension25 = (int) getContext().getResources().getDimension(R.dimen.x25);
         for (int i = 0; i < tabs.size(); i++) {
             String tabStr = tabs.get(i).getStr();
@@ -112,6 +115,19 @@ public class NavigationBar extends FrameLayout {
         void selest(int index, BarContent content);
     }
 
+    public static class Data implements BarContent {
+        String content;
+
+        public Data(String content) {
+            this.content = content;
+        }
+
+        @Override
+        public String getStr() {
+            return content;
+        }
+    }
+
     /**
      * 关联viewpager,注意在viewPager调用setAdapter后调用
      *
@@ -120,7 +136,7 @@ public class NavigationBar extends FrameLayout {
      * @param listener
      * @param pos
      */
-    public void setData(ViewPager viewPager, List<? extends BarContent> tabs, OnSelectListener listener, int pos) {
+    public void setData(ViewPager viewPager, List<? extends BarContent> tabs, int pos, OnSelectListener listener) {
         if (tabs == null || tabs.size() == 0) {
             return;
         }
@@ -157,9 +173,11 @@ public class NavigationBar extends FrameLayout {
     private final TabLayout.OnTabSelectedListener tabListener = new TabLayout.OnTabSelectedListener() {
         @Override
         public void onTabSelected(@NonNull TabLayout.Tab tab) {
-            viewPager.removeOnPageChangeListener(pagerLitener);
-            viewPager.setCurrentItem(tab.getPosition(), true);
-            viewPager.addOnPageChangeListener(pagerLitener);
+            if (viewPager != null) {
+                viewPager.removeOnPageChangeListener(pagerLitener);
+                viewPager.setCurrentItem(tab.getPosition(), true);
+                viewPager.addOnPageChangeListener(pagerLitener);
+            }
 
             selest(tab.getPosition());
         }
