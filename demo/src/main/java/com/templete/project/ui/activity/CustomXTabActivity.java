@@ -66,7 +66,7 @@ public class CustomXTabActivity extends BaseActivity<CustomTabActivityBinding> {
 
     private final TabListener tabListener = new TabListener() {
         @Override
-        public void select(XTabLayout.Tab tab) {
+        public void select(@NonNull XTabLayout.Tab tab) {
             mViewBinding.viewPager.removeOnPageChangeListener(pagerLitener);
             mViewBinding.viewPager.setCurrentItem(tab.getPosition(), true);
             mViewBinding.viewPager.addOnPageChangeListener(pagerLitener);
