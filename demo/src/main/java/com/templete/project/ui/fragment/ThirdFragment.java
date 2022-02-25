@@ -10,6 +10,7 @@ import com.lib.base.ui.fragment.BaseFragment;
 import com.lib.base.util.intent.IntentData;
 import com.templete.project.bean.PBean;
 import com.templete.project.databinding.ThirdFragmentBinding;
+import com.templete.project.ui.activity.FlexActivity;
 import com.templete.project.ui.activity.FlexBoxActivity;
 import com.templete.project.ui.activity.HorizontalFreshActivity;
 import com.templete.project.ui.activity.MultipleElementActivity;
@@ -84,6 +85,8 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
                         clazz = SunFreshActivity.class;
                     } else if (v.equals(mViewBinding.tv9)) {
                         clazz = HorizontalFreshActivity.class;
+                    } else if (v.equals(mViewBinding.tv10)) {
+                        clazz = FlexActivity.class;
                     }
                     if (clazz != null) {
                         ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
@@ -93,7 +96,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
                 mViewBinding.tv3, mViewBinding.tv4,
                 mViewBinding.tv5, mViewBinding.tv6,
                 mViewBinding.tv7, mViewBinding.tv8,
-                mViewBinding.tv9);
+                mViewBinding.tv9, mViewBinding.tv10);
     }
 
     private void checkPermission() {
@@ -109,7 +112,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
 //                public void onGranted(List<String> permissions, boolean all) {
 //                    if (all) {
 //                        logD(TAG, "permission ok2");
-            getBaseActivity().startAty(requireActivity(), SelectorActivity.class);
+        getBaseActivity().startAty(requireActivity(), SelectorActivity.class);
 //                    } else {
 //                        toast("获取部分权限成功，但部分权限未正常授予");
 //                    }

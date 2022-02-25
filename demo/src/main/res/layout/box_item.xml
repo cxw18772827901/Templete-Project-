@@ -16,7 +16,7 @@
         android:paddingHorizontal="@dimen/x40"
         android:paddingVertical="@dimen/x30"
         android:text=""
-        android:textColor="@color/cl_333333"
+        android:textColor="@color/white"
         android:textSize="@dimen/x45"
         app:shape_radius="@dimen/x10"
         app:shape_solidColor="#1692db" />

@@ -41,7 +41,7 @@ dependencies {
     //noinspection GradleDependency
     api "androidx.constraintlayout:constraintlayout:${config.dependencies.constraintlayout_version}"
     api "androidx.viewpager2:viewpager2:${config.dependencies.viewpager2_version}"
-    api "com.nex3z:flow-layout:${config.dependencies.flow_layout_version}"
+    //api "com.nex3z:flow-layout:${config.dependencies.flow_layout_version}"
     //垂直刷新
     api "com.scwang.smart:refresh-layout-kernel:${config.dependencies.smart_refresh_version}"      //核心必须依赖
     api "com.scwang.smart:refresh-header-classics:${config.dependencies.smart_refresh_version}"    //经典刷新头

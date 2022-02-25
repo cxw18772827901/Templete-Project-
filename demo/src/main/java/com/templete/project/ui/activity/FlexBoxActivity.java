@@ -41,7 +41,7 @@ public class FlexBoxActivity extends BaseActivity<FlexBoxActivityBinding> {
 
     @Override
     public void inits() {
-        setTitleStr("Flexbox");
+        setTitleStr("官方流式布局解决方案");
     }
 
     @Override
@@ -76,7 +76,7 @@ public class FlexBoxActivity extends BaseActivity<FlexBoxActivityBinding> {
         String name = "我我我我我我我我我";
         List<String> list = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 20; i++) {
             int num = random.nextInt(10);
             num = num == 0 ? 1 : num;
             list.add(name.substring(0, num));
