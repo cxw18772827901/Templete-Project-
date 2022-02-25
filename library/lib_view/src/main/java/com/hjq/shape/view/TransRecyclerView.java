@@ -239,7 +239,6 @@ public class TransRecyclerView extends RecyclerView {
     public void setTransPercent(float transPercent) {
         this.transPercent = transPercent;
         requestLayout();
-        //invalidate();
     }
 
     /**
