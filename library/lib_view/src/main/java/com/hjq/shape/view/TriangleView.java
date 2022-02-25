@@ -84,8 +84,7 @@ public class TriangleView extends View {
     }
 
     public void setWidthAndHeight(int width, int height) {
-        this.width = width;
-        this.height = height;
+        setMeasuredDimension(width, height);
         invalidate();
     }
 
