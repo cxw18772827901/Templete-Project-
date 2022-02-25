@@ -10,7 +10,7 @@ import com.lib.base.bean.VideoBuilder;
 import com.lib.base.config.App;
 import com.lib.base.ui.activity.MvpActivity;
 import com.lib.base.ui.fragment.BaseFragment;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.util.JsonDataUtil;
 import com.lib.base.util.PermissionUtil;
 import com.templete.project.bean.JBean;

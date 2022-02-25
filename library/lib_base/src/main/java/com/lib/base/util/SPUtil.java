@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.config.App;
 import com.lib.base.config.AppConfig;
 

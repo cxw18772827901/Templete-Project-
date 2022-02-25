@@ -3,7 +3,7 @@ package com.templete.project.ui.activity;
 import com.lib.base.databinding.SelectorActivityBinding;
 import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.util.GlobalThreadPoolUtil;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.util.upload.MeOnResultCallbackListener;
 import com.lib.base.util.upload.MediaPickerUtil;
 import com.luck.picture.lib.config.SelectMimeType;

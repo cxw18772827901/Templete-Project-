@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.lib.base.bean.ResBean;
 import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.util.ContextUtil;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
 import com.qiniu.android.storage.Configuration;

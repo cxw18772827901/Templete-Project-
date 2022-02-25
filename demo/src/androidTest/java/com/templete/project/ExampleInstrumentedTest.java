@@ -6,7 +6,7 @@ import com.google.gson.JsonSyntaxException;
 import com.lib.base.config.App;
 import com.lib.base.rxjava.RxUtils;
 import com.lib.base.util.DebugUtil;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.util.JsonDataUtil;
 import com.lib.base.util.txt.label.TxtUtil;
 import com.module.a.http.HttpUtil;

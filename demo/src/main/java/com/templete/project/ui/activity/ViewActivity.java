@@ -3,7 +3,7 @@ package com.templete.project.ui.activity;
 import com.lib.base.glide.GlideUtil;
 import com.lib.base.rxjava.RxUtils;
 import com.lib.base.ui.activity.BaseActivity;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.module.a.http.HttpUtil;
 import com.templete.project.R;
 import com.templete.project.databinding.AndratingBarActivityBinding;

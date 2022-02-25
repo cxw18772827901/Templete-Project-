@@ -2,8 +2,8 @@ package com.greendao.db.bean;
 
 import android.text.TextUtils;
 
-import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.greendao.db.util.GsonUtil;
 
 import org.greenrobot.greendao.annotation.Convert;
 import org.greenrobot.greendao.annotation.Entity;
@@ -71,19 +71,14 @@ public class CityBean {
     public static class Converter implements PropertyConverter<List<CityDataBean>, String> {
         @Override
         public List<CityDataBean> convertToEntityProperty(String databaseValue) {
-            if (TextUtils.isEmpty(databaseValue)) {
-                return null;
-            }
-            return new Gson().fromJson(databaseValue, new TypeToken<List<CityDataBean>>() {
-            }.getType());
+            return !TextUtils.isEmpty(databaseValue) ?
+                    GsonUtil.getInstance().fromJson(databaseValue, new TypeToken<List<CityDataBean>>() {}.getType()) :
+                    null;
         }
 
         @Override
         public String convertToDatabaseValue(List<CityDataBean> entityProperty) {
-            if (entityProperty == null) {
-                return null;
-            }
-            return new Gson().toJson(entityProperty);
+            return entityProperty != null ? GsonUtil.getInstance().toJson(entityProperty) : "";
         }
     }
 }

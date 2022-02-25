@@ -30,7 +30,7 @@ import com.lib.base.ui.action.LogAction;
 import com.lib.base.ui.widget.BlackToastStyle;
 import com.lib.base.util.ContextUtil;
 import com.lib.base.util.DebugUtil;
-import com.lib.base.util.GsonUtil;
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.util.OUtil;
 import com.scwang.smart.refresh.footer.ClassicsFooter;
 import com.scwang.smart.refresh.header.ClassicsHeader;

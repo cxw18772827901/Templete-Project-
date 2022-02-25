@@ -1,4 +1,4 @@
-package com.lib.base.util;
+package com.greendao.db.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
