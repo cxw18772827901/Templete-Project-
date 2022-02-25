@@ -8,6 +8,7 @@ import com.lib.base.util.DebugUtil;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.Observable;
@@ -24,24 +25,34 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class RxUtils {
     public static final String TAG = "RxUtils";
 
-    public static <T> SingleSource<T> toSimpleSingle(Single<T> upstream) {
+    public static <T> SingleSource<T> toSimpleSingle(@NonNull Single<T> upstream) {
         return upstream.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public static <T> SingleSource<T> toSimpleSingleIo(Single<T> upstream) {
+    public static <T> SingleSource<T> toSimpleSingleIo(@NonNull Single<T> upstream) {
         return upstream.subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.io());
     }
 
-    public static <T> ObservableSource<T> toSimpleSingle(Observable<T> upstream) {
+    public static <T> ObservableSource<T> toSimpleObservable(@NonNull Observable<T> upstream) {
         return upstream.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public static <T> Flowable<T> toSimpleSingle(Flowable<T> upstream) {
+    public static <T> ObservableSource<T> toSimpleObservableIo(@NonNull Observable<T> upstream) {
+        return upstream.subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io());
+    }
+
+    public static <T> Flowable<T> toSimpleFlowable(@NonNull Flowable<T> upstream) {
         return upstream.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public static <T> Flowable<T> toSimpleFlowableIo(@NonNull Flowable<T> upstream) {
+        return upstream.subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.io());
     }
 
     /**
