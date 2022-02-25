@@ -1,6 +1,7 @@
 package com.hjq.shape.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -14,17 +15,21 @@ import com.hjq.shape.R;
 import androidx.annotation.Nullable;
 
 /**
+ * 三角形和倒三角形
  * ProjectName  TempleteProject-java
  * PackageName  com.hjq.shape.view
  * Author       Administrator
  * Date         2022/2/25.
+ *
+ * @author chenxiaowu
  */
 
 public class TriangleView extends View {
-    private Paint mPaint = new Paint();
-    private Paint mPaintCor = new Paint();
+    private final Paint mPaint = new Paint();
     private int width;
     private int height;
+    private boolean isTop;
+    private int colorRes;
 
     public TriangleView(Context context) {
         this(context, null);
@@ -36,42 +41,61 @@ public class TriangleView extends View {
 
     public TriangleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TriangleView);
+        isTop = ta.getBoolean(R.styleable.TriangleView_sj_top, true);
+        colorRes = ta.getColor(R.styleable.TriangleView_sj_color, Color.BLACK);
+        ta.recycle();
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        width = isInEditMode() ? 150 : w;
-        height = isInEditMode() ? 100 : h;
+        width = isInEditMode() ? 36 : w;
+        height = isInEditMode() ? 15 : h;
         initPaint();
     }
 
     private void initPaint() {
-        mPaint.setColor(Color.BLACK);       //设置画笔颜色
+        mPaint.setColor(colorRes);       //设置画笔颜色
         mPaint.setStyle(Paint.Style.FILL);  //设置画笔模式为填充
         mPaint.setStrokeWidth(1f);
         mPaint.setAntiAlias(true);
-
-        mPaintCor.setColor(Color.WHITE);       //设置画笔颜色
-        mPaintCor.setStyle(Paint.Style.STROKE);  //设置画笔模式为填充
-        mPaintCor.setStrokeWidth(10f);
-        mPaintCor.setAntiAlias(true);
     }
 
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
         canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
-        canvas.drawColor(getContext().getResources().getColor(R.color.cl_999));
 
-        //画三角形
         Path path = new Path();
-        path.moveTo(width / 2, 0f);
-        path.lineTo(width, height);
-        path.lineTo(0f, height);
+        if (isTop) {
+            //尖叫朝上
+            path.moveTo(width / 2, 0f);
+            path.lineTo(width, height);
+            path.lineTo(0f, height);
+        } else {
+            //尖叫朝下
+            path.moveTo(0f, 0f);
+            path.lineTo(width, 0f);
+            path.lineTo(width / 2, height);
+        }
         path.close();
         canvas.drawPath(path, mPaint);
-        //画顶部圆角
-        canvas.drawArc(width / 2 - 20, 0, width / 2 + 20, height, -100, -80, false, mPaintCor);
+    }
+
+    public void setWidthAndHeight(int width, int height) {
+        this.width = width;
+        this.height = height;
+        invalidate();
+    }
+
+    public void setTop(boolean top) {
+        isTop = top;
+        invalidate();
+    }
+
+    public void setColorRes(int colorRes) {
+        this.colorRes = colorRes;
+        invalidate();
     }
 }

@@ -126,7 +126,7 @@ public class PopView extends PopupWindow implements BaseAdapter.OnItemClickListe
         int middleScreenY = (int) (ScreenUtil.getScreenHei() * 0.6);//宽度以60%为界限
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        float dimensionX10 = context.getResources().getDimension(R.dimen.x10);//尖叫距离view距离
+        float dimensionX10 = 0f;//context.getResources().getDimension(R.dimen.x10);//尖叫距离view距离
         float dimensionX25 = context.getResources().getDimension(R.dimen.x25);//尖叫距离最近边距离
         int sanjiaoWidthTop = layoutBinding.ivTop.getMeasuredWidth();
         int sanjiaoWidthBottom = layoutBinding.ivBottom.getMeasuredWidth();

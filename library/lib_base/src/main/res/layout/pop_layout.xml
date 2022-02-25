@@ -7,30 +7,45 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/iv_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:src="@drawable/icon_sanjiao"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription" />-->
 
-    <!--android:background="@drawable/shape_recycle"-->
+    <com.hjq.shape.view.TriangleView
+        android:id="@+id/iv_top"
+        android:layout_width="@dimen/x36"
+        android:layout_height="@dimen/x15"
+        android:layout_marginStart="@dimen/x25"
+        app:sj_color="@color/cl_333333"
+        app:sj_top="true" />
+
     <com.hjq.shape.layout.ShapeRecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="@dimen/x200"
-        android:minHeight="@dimen/x240"
-        app:shape_radius="@dimen/x12"
-        app:shape_solidColor="#A5000000" />
+        android:minWidth="@dimen/x260"
+        android:minHeight="@dimen/x320"
+        app:shape_radius="@dimen/x15"
+        app:shape_solidColor="@color/cl_333333"
+        tools:ignore="SpeakableTextPresentCheck" />
     <!--android:minWidth="@dimen/x350"
     android:minHeight="@dimen/x400" />-->
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/iv_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/pop_xiangxia"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription" />-->
+    <com.hjq.shape.view.TriangleView
+        android:id="@+id/iv_bottom"
+        android:layout_width="@dimen/x36"
+        android:layout_height="@dimen/x15"
+        android:layout_marginStart="@dimen/x25"
+        app:sj_color="@color/cl_333333"
+        app:sj_top="false" />
 </LinearLayout>

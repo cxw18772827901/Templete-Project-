@@ -1049,4 +1049,8 @@
         <attr name="srlTextSecondary" />
         <attr name="srlTextRefreshing" />
     </declare-styleable>
+    <declare-styleable name="TriangleView">
+        <attr name="sj_color" format="reference" />
+        <attr name="sj_top" format="boolean" />
+    </declare-styleable>
 </resources>
