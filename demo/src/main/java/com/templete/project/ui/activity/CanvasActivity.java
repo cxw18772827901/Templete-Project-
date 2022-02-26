@@ -10,7 +10,7 @@ import com.templete.project.databinding.PaintActivityBinding;
  * Date         2022/2/25.
  */
 
-public class ArtboardActivity extends BaseActivity<PaintActivityBinding> {
+public class CanvasActivity extends BaseActivity<PaintActivityBinding> {
     @Override
     public void inits() {
         setTitleStr("绘制回顾");
@@ -24,12 +24,15 @@ public class ArtboardActivity extends BaseActivity<PaintActivityBinding> {
                         clazz = BasicActivity.class;
                     } else if (v.equals(mViewBinding.tv2)) {
                         clazz = SummaryGraphActivity.class;
+                    } else if (v.equals(mViewBinding.tv3)) {
+                        clazz = RemoteControlActivity.class;
                     }
                     if (clazz != null) {
                         startAty(this, clazz);
                     }
                 },
-                mViewBinding.tv1, mViewBinding.tv2);
+                mViewBinding.tv1, mViewBinding.tv2,
+                mViewBinding.tv3);
     }
 
     @Override

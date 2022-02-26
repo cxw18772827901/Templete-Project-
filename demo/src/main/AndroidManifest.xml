@@ -187,7 +187,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ui.activity.ArtboardActivity"
+            android:name=".ui.activity.CanvasActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -196,6 +196,10 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.activity.SummaryGraphActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.activity.RemoteControlActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
     </application>

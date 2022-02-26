@@ -42,35 +42,20 @@
             app:shape_textColor="@color/white"
             tools:ignore="HardcodedText" />
 
-        <!--<com.hjq.shape.view.ShapeTextView
+        <com.hjq.shape.view.ShapeTextView
             android:id="@+id/tv3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/x150"
             android:layout_marginTop="@dimen/x65"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="输入法"
+            android:text="复杂控件的绘制和点击事件的处理"
             android:textColor="@color/white"
             android:textSize="@dimen/x45"
             app:shape_radius="@dimen/x75"
             app:shape_solidColor="@color/common_accent_color"
             app:shape_textColor="@color/white"
             tools:ignore="HardcodedText" />
-
-        <com.hjq.shape.view.ShapeTextView
-            android:id="@+id/tv4"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/x150"
-            android:layout_marginTop="@dimen/x65"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="图形绘制"
-            android:textColor="@color/white"
-            android:textSize="@dimen/x45"
-            app:shape_radius="@dimen/x75"
-            app:shape_solidColor="@color/common_accent_color"
-            app:shape_textColor="@color/white"
-            tools:ignore="HardcodedText" />-->
 
     </LinearLayout>
 </ScrollView>
