@@ -6,6 +6,7 @@ import com.templete.project.ui.draw.OvalRemoteControlMenu;
 import com.templete.project.ui.draw.RemoteControlMenu;
 
 /**
+ * 解决复杂供件点击事件解决思路就是自定义控件,然后使用Region.contains(x,y)来判断点击范围
  * PackageName  com.templete.project.ui.activity
  * ProjectName  TempleteProject-java
  * Date         2022/2/26.
