@@ -73,10 +73,10 @@ public class OvalRemoteControlMenu extends CustomView {
         super.onSizeChanged(w, h, oldw, oldh);
         mMapMatrix.reset();
         //预览模式
-        if (isInEditMode()) {
+        /*if (isInEditMode()) {
             w = 600;
             h = 400;
-        }
+        }*/
 
         // 注意这个区域的大小
         Region globalRegion = new Region(-w, -h, w, h);
