@@ -7,16 +7,10 @@
     android:paddingHorizontal="@dimen/x30"
     android:paddingVertical="@dimen/x60">
 
-    <com.templete.project.ui.draw.RemoteControlMenu
-        android:id="@+id/remote_control_menu1"
-        android:layout_width="@dimen/x600"
-        android:layout_height="@dimen/x600"
-        android:layout_gravity="center" />
-
     <com.templete.project.ui.draw.OvalRemoteControlMenu
-        android:id="@+id/remote_control_menu2"
+        android:id="@+id/remote_control_menu"
         android:layout_width="@dimen/x600"
-        android:layout_height="@dimen/x600"
+        android:layout_height="@dimen/x400"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/x50" />
 </LinearLayout>

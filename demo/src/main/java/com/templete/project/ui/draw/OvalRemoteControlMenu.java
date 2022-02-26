@@ -72,25 +72,33 @@ public class OvalRemoteControlMenu extends CustomView {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mMapMatrix.reset();
+        //预览模式
+        if (isInEditMode()) {
+            w = 600;
+            h = 400;
+        }
 
         // 注意这个区域的大小
         Region globalRegion = new Region(-w, -h, w, h);
-        int minWidth = Math.min(w, h);
+        //int minWidth = Math.min(w, h);
         //minWidth *= 0.8;
 
-        int br = minWidth / 2;
-        RectF bigCircle = new RectF(-br, -br * 0.8f, br, br * 0.8f);//与圆形差异
+        int brW = w / 2;
+        int brH = h / 2;
+        RectF bigCircle = new RectF(-brW, -brH, brW, brH);//与圆形差异
 
-        int sr = minWidth / 4;
-        RectF smallCircle = new RectF(-sr, -sr * 0.8f, sr, sr * 0.8f);//与圆形差异
+        int srW = w / 4;
+        int srH = h / 4;
+        RectF smallCircle = new RectF(-srW, -srH, srW, srH);//与圆形差异
 
         float bigSweepAngle = 84;
         float smallSweepAngle = -80;
 
         // 根据视图大小，初始化 Path 和 Region
         //center_p.addCircle(0, 0, 0.2f * minWidth, Path.Direction.CW);//与圆形差异
-        float halfW = 0.2f * minWidth;
-        center_p.addOval(-halfW, -halfW * 0.8f, halfW, halfW * 0.8f, Path.Direction.CW);//与圆形差异
+        float halfW = 0.2f * w;
+        float halfh = 0.2f * h;
+        center_p.addOval(-halfW, -halfh, halfW, halfh, Path.Direction.CW);//与圆形差异
         center.setPath(center_p, globalRegion);
 
         right_p.addArc(bigCircle, -40, bigSweepAngle);
