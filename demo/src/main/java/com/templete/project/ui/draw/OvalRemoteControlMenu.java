@@ -22,7 +22,7 @@ import androidx.annotation.NonNull;
  * @author chenxiaowu
  */
 
-public class RemoteControlMenu extends CustomView {
+public class OvalRemoteControlMenu extends CustomView {
     Path up_p, down_p, left_p, right_p, center_p;
     Region up, down, left, right, center;
 
@@ -42,11 +42,11 @@ public class RemoteControlMenu extends CustomView {
     int mTouchedColor = 0xFFDF9C81;
 
 
-    public RemoteControlMenu(Context context) {
+    public OvalRemoteControlMenu(Context context) {
         this(context, null);
     }
 
-    public RemoteControlMenu(Context context, AttributeSet attrs) {
+    public OvalRemoteControlMenu(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         up_p = new Path();
@@ -79,16 +79,18 @@ public class RemoteControlMenu extends CustomView {
         //minWidth *= 0.8;
 
         int br = minWidth / 2;
-        RectF bigCircle = new RectF(-br, -br, br, br);
+        RectF bigCircle = new RectF(-br, -br * 0.8f, br, br * 0.8f);//与圆形差异
 
         int sr = minWidth / 4;
-        RectF smallCircle = new RectF(-sr, -sr, sr, sr);
+        RectF smallCircle = new RectF(-sr, -sr * 0.8f, sr, sr * 0.8f);//与圆形差异
 
         float bigSweepAngle = 84;
         float smallSweepAngle = -80;
 
         // 根据视图大小，初始化 Path 和 Region
-        center_p.addCircle(0, 0, 0.2f * minWidth, Path.Direction.CW);
+        //center_p.addCircle(0, 0, 0.2f * minWidth, Path.Direction.CW);//与圆形差异
+        float halfW = 0.2f * minWidth;
+        center_p.addOval(-halfW, -halfW * 0.8f, halfW, halfW * 0.8f, Path.Direction.CW);//与圆形差异
         center.setPath(center_p, globalRegion);
 
         right_p.addArc(bigCircle, -40, bigSweepAngle);

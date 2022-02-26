@@ -144,7 +144,9 @@ public class FastIndexBar extends View {
         }
         //画边框
         //注意canvas.drawRoundRect画圆角矩形时候，四个圆角可以画出指定宽度，四条边线只会画出一半的宽度,故RectF需要做线宽一半的偏移量
-        if (strokePaint == null) return;
+        if (strokePaint == null) {
+            return;
+        }
         canvas.drawRoundRect(new RectF(rectTrans, rectTrans, CELL_WIDTH - rectTrans,
                         TOTAL_HEIGHT + CELL_HEIGHT * 2 - rectTrans),
                 bgCorner, bgCorner / 1.5f, strokePaint);
