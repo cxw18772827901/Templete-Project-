@@ -77,6 +77,9 @@ public class OvalRemoteControlMenu extends CustomView {
             w = 600;
             h = 400;
         }*/
+        if (h > w) {
+            h = w;
+        }
 
         // 注意这个区域的大小
         Region globalRegion = new Region(-w, -h, w, h);
