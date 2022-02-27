@@ -319,7 +319,7 @@ public class RoundedDrawable extends Drawable {
         }
     }
 
-    private void setRect(float w, float h, float min, RectF mDrawableRect) {
+    private void setRect(float w, float h, float min, @NonNull RectF mDrawableRect) {
         mDrawableRect.left = (w - min) / 2 + mBorderWidth / 2;
         mDrawableRect.top = (h - min) / 2 + mBorderWidth / 2;
         mDrawableRect.right = w - (w - min) / 2 - mBorderWidth / 2;
@@ -621,7 +621,7 @@ public class RoundedDrawable extends Drawable {
         return this;
     }
 
-    private static boolean only(int index, boolean[] booleans) {
+    private static boolean only(int index, @NonNull boolean[] booleans) {
         for (int i = 0, len = booleans.length; i < len; i++) {
             if (booleans[i] != (i == index)) {
                 return false;
@@ -630,7 +630,7 @@ public class RoundedDrawable extends Drawable {
         return true;
     }
 
-    private static boolean any(boolean[] booleans) {
+    private static boolean any(@NonNull boolean[] booleans) {
         for (boolean b : booleans) {
             if (b) {
                 return true;
@@ -639,7 +639,7 @@ public class RoundedDrawable extends Drawable {
         return false;
     }
 
-    private static boolean all(boolean[] booleans) {
+    private static boolean all(@NonNull boolean[] booleans) {
         for (boolean b : booleans) {
             if (b) {
                 return false;

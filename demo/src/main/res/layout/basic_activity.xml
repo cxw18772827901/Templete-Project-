@@ -113,7 +113,7 @@
             android:layout_height="@dimen/x150"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:text="绘制圆弧"
+            android:text="绘制三角形"
             android:textSize="@dimen/x45"
             app:shape_textColor="@color/cl_333333"
             tools:ignore="HardcodedText" />

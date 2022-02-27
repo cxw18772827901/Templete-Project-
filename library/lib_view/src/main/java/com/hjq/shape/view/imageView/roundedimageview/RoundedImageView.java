@@ -35,6 +35,7 @@ import com.hjq.shape.R;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DimenRes;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedImageView extends androidx.appcompat.widget.AppCompatImageView {
@@ -256,6 +257,7 @@ public class RoundedImageView extends androidx.appcompat.widget.AppCompatImageVi
         setImageDrawable(getDrawable());
     }
 
+    @Nullable
     private Drawable resolveResource() {
         Resources rsrc = getResources();
         if (rsrc == null) {
@@ -296,6 +298,7 @@ public class RoundedImageView extends androidx.appcompat.widget.AppCompatImageVi
         setBackgroundDrawable(mBackgroundDrawable);
     }
 
+    @Nullable
     private Drawable resolveBackgroundResource() {
         Resources rsrc = getResources();
         if (rsrc == null) {
