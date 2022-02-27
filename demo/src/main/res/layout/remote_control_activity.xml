@@ -10,7 +10,7 @@
     <com.templete.project.ui.draw.OvalRemoteControlMenu
         android:id="@+id/remote_control_menu"
         android:layout_width="@dimen/x600"
-        android:layout_height="@dimen/x400"
+        android:layout_height="@dimen/x500"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/x50" />
 </LinearLayout>

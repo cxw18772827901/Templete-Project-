@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="loading_left_padding">@dimen/x120</dimen>
-    <dimen name="loading_top_padding">@dimen/x145</dimen>
+    <dimen name="loading_top_padding">@dimen/x120</dimen>
     <dimen name="tv_title_size">@dimen/x45</dimen>
     <dimen name="home_auto_roll_height">@dimen/x600</dimen>
     <dimen name="sp_16">@dimen/x42</dimen>
