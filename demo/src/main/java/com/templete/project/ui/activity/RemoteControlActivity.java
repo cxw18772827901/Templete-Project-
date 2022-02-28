@@ -1,11 +1,16 @@
 package com.templete.project.ui.activity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.greendao.db.helper.CityBeanDao;
+import com.greendao.db.util.LocalRepository;
 import com.lib.base.aroute.ArouteConfig;
 import com.lib.base.aroute.ModuleAService;
+import com.lib.base.rxjava.RxUtils;
 import com.lib.base.ui.activity.BaseActivity;
 import com.templete.project.databinding.RemoteControlActivityBinding;
 import com.templete.project.ui.draw.OvalRemoteControlMenu;
+
+import io.reactivex.rxjava3.core.Single;
 
 /**
  * 解决复杂控件点击事件思路就是自定义控件,然后使用Region.contains(x,y)来判断点击范围
@@ -59,7 +64,7 @@ public class RemoteControlActivity extends BaseActivity<RemoteControlActivityBin
 
     @Override
     public void initData() {
-        /*Single
+        Single
                 .create(emitter -> {
                     CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
                     logD("cityBeanDao", "cityBeanDao2=" + cityBeanDao);
@@ -68,7 +73,7 @@ public class RemoteControlActivity extends BaseActivity<RemoteControlActivityBin
                 .doOnSubscribe(this::addDisposable)
                 .doOnSuccess(o -> logD("cityBeanDao", "cityBeanDao3=doOnSuccess"))
                 .doOnError(throwable -> logD("cityBeanDao", "cityBeanDao4=doOnError"))
-                .subscribe();*/
+                .subscribe();
         ModuleAService moduleAService = (ModuleAService) ARouter.getInstance().build(ArouteConfig.MODULE_SERVICE_A).navigation();
         moduleAService.getA(a -> logD("moduleAService", "moduleAService=" + a));
     }
