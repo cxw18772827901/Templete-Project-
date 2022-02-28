@@ -4,6 +4,8 @@
     android:id="@+id/tablayout"
     android:layout_width="match_parent"
     android:layout_height="@dimen/x150"
+    android:layout_marginStart="@dimen/x10"
+    android:layout_marginEnd="@dimen/x10"
     android:background="@color/cl_no_color"
     app:tabBackground="@color/cl_no_color"
     app:tabGravity="fill"
