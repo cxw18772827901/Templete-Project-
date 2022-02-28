@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/x150"
     android:background="@color/cl_no_color"
-    app:tabBackground="@color/cl_f0f0f0"
+    app:tabBackground="@color/cl_no_color"
+    app:tabGravity="fill"
     app:tabIndicatorHeight="0dp"
+    app:tabMaxWidth="0dp"
+    app:tabMinWidth="0dp"
     app:tabMode="scrollable"
-    app:tabPaddingEnd="0dp"
-    app:tabPaddingStart="0dp"
+    app:tabPaddingEnd="@dimen/x9"
+    app:tabPaddingStart="@dimen/x9"
     app:tabRippleColor="@android:color/transparent"
     app:tabTextAppearance="@style/TabText" />
 
