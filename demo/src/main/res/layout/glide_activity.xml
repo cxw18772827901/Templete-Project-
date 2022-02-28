@@ -97,7 +97,7 @@
             app:layout_constraintTop_toBottomOf="@id/iv5"
             tools:ignore="ContentDescription" />
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/iv8"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -108,6 +108,23 @@
             app:layout_constraintLeft_toRightOf="@id/iv7"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv7"
+            tools:ignore="ContentDescription" />-->
+
+        <com.hjq.shape.view.rclayout.RCImageView
+            android:id="@+id/iv8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/x60"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/iv7"
+            app:layout_constraintDimensionRatio="1.47"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/iv7"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv7"
+            app:round_as_circle="true"
+            app:stroke_color="@color/cl_1692DB"
+            app:stroke_width="@dimen/x10"
             tools:ignore="ContentDescription" />
 
         <ImageView

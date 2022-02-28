@@ -11,6 +11,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -49,7 +50,7 @@ public class RetrofitHelper {
         //retrofit
         mRetrofit = new Retrofit.Builder()
                 .client(mOkHttpClient)
-//                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 //.addConverterFactory(GsonConverterFactory.create())//--------------------------常规gson,异常解析会直接回调error
                 .addConverterFactory(GsonConverterFactory.create(GsonFactory.getSingletonGson()))//解析容错gson,异常解析自动忽略
                 .baseUrl(AppConfig.getUrl())
