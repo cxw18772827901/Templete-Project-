@@ -95,6 +95,7 @@ public class GlideActivity extends BaseActivity<GlideActivityBinding> {
         //CropCircleWithBorder
         GlideApp.with(this)
                 .load(R.drawable.demo)
+                //有锯齿
 //                .apply(RequestOptions.bitmapTransform(
 //                        new CropCircleWithBorderTransformation((int) getDimen(com.lib.base.R.dimen.x10), Color.rgb(0, 145, 86))))
                 .into(mViewBinding.iv8);

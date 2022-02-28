@@ -96,7 +96,7 @@
             app:layout_constraintRight_toLeftOf="@id/iv8"
             app:layout_constraintTop_toBottomOf="@id/iv5"
             tools:ignore="ContentDescription" />
-
+        <!--glide trans有锯齿-->
         <!--<ImageView
             android:id="@+id/iv8"
             android:layout_width="0dp"
@@ -109,7 +109,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv7"
             tools:ignore="ContentDescription" />-->
-
+        <!--自定义弱化锯齿效果-->
         <com.hjq.shape.view.rclayout.RCImageView
             android:id="@+id/iv8"
             android:layout_width="0dp"
@@ -123,8 +123,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv7"
             app:round_as_circle="true"
-            app:stroke_color="@color/cl_1692DB"
-            app:stroke_width="@dimen/x10"
+            app:round_stroke_color="@color/cl_1692DB"
+            app:round_stroke_width="@dimen/x10"
             tools:ignore="ContentDescription" />
 
         <ImageView
