@@ -200,7 +200,9 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ui.activity.RemoteControlActivity"
+            android:process=":dbProcess"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+        <!--android:theme="@style/Theme.Process"-->
     </application>
 </manifest>

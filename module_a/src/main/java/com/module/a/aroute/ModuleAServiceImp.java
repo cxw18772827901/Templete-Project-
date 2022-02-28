@@ -5,9 +5,13 @@ import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lib.base.aroute.ModuleAService;
 import com.lib.base.aroute.ArouteConfig;
+import com.lib.base.aroute.Result;
 import com.lib.base.util.DebugUtil;
 
+import androidx.annotation.NonNull;
+
 /**
+ * 可以跨进程通讯
  * PackageName  com.module.a
  * ProjectName  TempleteProject
  * Author       chenxiaowu
@@ -20,6 +24,11 @@ public class ModuleAServiceImp implements ModuleAService {
     @Override
     public String getA() {
         return "aaaaa";
+    }
+
+    @Override
+    public void getA(@NonNull Result result) {
+        result.callBack(getA());
     }
 
     @Override

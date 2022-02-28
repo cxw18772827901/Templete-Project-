@@ -1,6 +1,8 @@
 package com.templete.project.ui.activity;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.greendao.db.helper.CityBeanDao;
+import com.greendao.db.util.LocalRepository;
 import com.lib.base.aroute.ArouteConfig;
 import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.activity.BaseMvvmActivity;
@@ -74,6 +76,8 @@ public class MainTempleteActivity extends BaseMvvmActivity<MainTempleteActivityB
     @Override
     public void initData() {
 //        LocalRepository.getInstance().getDaoSession().getDemoBeanDao().insert(new DemoBean(null,"",1));
+        CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
+        logD("cityBeanDao", "cityBeanDao1=" + cityBeanDao);
     }
 
     @Override

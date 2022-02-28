@@ -44,6 +44,7 @@ android {
 dependencies {
     // noinspection GradleCompatible
 //    implementation 'com.android.support:support-fragment:24.2.0'
+    //noinspection GradleDependency
     implementation "androidx.appcompat:appcompat:${config.dependencies.appcompat_version}"
 }
 

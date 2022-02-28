@@ -8,7 +8,8 @@ import com.alibaba.android.arouter.facade.template.IProvider;
  * Author       chenxiaowu
  * Date         10/11/21.
  */
-
 public interface ModuleAService extends IProvider {
     String getA();
+
+    void getA(Result result);
 }

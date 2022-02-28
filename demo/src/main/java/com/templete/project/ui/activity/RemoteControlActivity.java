@@ -1,5 +1,8 @@
 package com.templete.project.ui.activity;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.lib.base.aroute.ArouteConfig;
+import com.lib.base.aroute.ModuleAService;
 import com.lib.base.ui.activity.BaseActivity;
 import com.templete.project.databinding.RemoteControlActivityBinding;
 import com.templete.project.ui.draw.OvalRemoteControlMenu;
@@ -56,7 +59,18 @@ public class RemoteControlActivity extends BaseActivity<RemoteControlActivityBin
 
     @Override
     public void initData() {
-
+        /*Single
+                .create(emitter -> {
+                    CityBeanDao cityBeanDao = LocalRepository.getInstance().getCityBeanDao();
+                    logD("cityBeanDao", "cityBeanDao2=" + cityBeanDao);
+                })
+                .compose(RxUtils::toSimpleSingleIo)
+                .doOnSubscribe(this::addDisposable)
+                .doOnSuccess(o -> logD("cityBeanDao", "cityBeanDao3=doOnSuccess"))
+                .doOnError(throwable -> logD("cityBeanDao", "cityBeanDao4=doOnError"))
+                .subscribe();*/
+        ModuleAService moduleAService = (ModuleAService) ARouter.getInstance().build(ArouteConfig.MODULE_SERVICE_A).navigation();
+        moduleAService.getA(a -> logD("moduleAService", "moduleAService=" + a));
     }
 
     @Override

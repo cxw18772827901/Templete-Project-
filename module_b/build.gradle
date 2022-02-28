@@ -64,6 +64,9 @@ android {
     viewBinding {
         enabled = true
     }
+    dataBinding {
+        enabled = true
+    }
     repositories {
         flatDir {
             dirs 'libs', '../library/lib_base/libs'
