@@ -64,8 +64,8 @@ public class NavigationBar extends FrameLayout {
         //int dimension25 = (int) getContext().getResources().getDimension(R.dimen.x25);
         for (int i = 0; i < tabs.size(); i++) {
             String tabStr = tabs.get(i).getStr();
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.navigation_bar_item, this, false);
-            TextView tv = view.findViewById(R.id.tv);
+            TextView tv = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.navigation_bar_item, this, false);
+            //TextView tv = view.findViewById(R.id.tv);
             tv.setText(tabStr);
             //params
             /*FrameLayout.LayoutParams params = (LayoutParams) tv.getLayoutParams();
@@ -74,7 +74,7 @@ public class NavigationBar extends FrameLayout {
             tv.setLayoutParams(params);*/
             //tab
             TabLayout.Tab tab = tabLayout.newTab();
-            tab.setCustomView(view);
+            tab.setCustomView(tv);
             tabLayout.addTab(tab, i, i == pos);
         }
         //select
@@ -143,20 +143,20 @@ public class NavigationBar extends FrameLayout {
         this.viewPager = viewPager;
         this.tabs = tabs;
         this.listener = listener;
-        int dimension25 = (int) getContext().getResources().getDimension(R.dimen.x25);
+        //int dimension25 = (int) getContext().getResources().getDimension(R.dimen.x25);
         for (int i = 0; i < tabs.size(); i++) {
             String tabStr = tabs.get(i).getStr();
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.navigation_bar_item, this, false);
-            TextView tv = view.findViewById(R.id.tv);
+            TextView tv = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.navigation_bar_item, this, false);
+            //TextView tv = view.findViewById(R.id.tv);
             tv.setText(tabStr);
             //params
-            FrameLayout.LayoutParams params = (LayoutParams) tv.getLayoutParams();
+            /*FrameLayout.LayoutParams params = (LayoutParams) tv.getLayoutParams();
             params.setMarginStart(i == 0 ? dimension25 : 0);
             params.setMarginEnd(dimension25);
-            tv.setLayoutParams(params);
+            tv.setLayoutParams(params);*/
             //tab
             TabLayout.Tab tab = tabLayout.newTab();
-            tab.setCustomView(view);
+            tab.setCustomView(tv);
             tabLayout.addTab(tab, i, i == pos);
         }
         tabLayout.addOnTabSelectedListener(tabListener);
