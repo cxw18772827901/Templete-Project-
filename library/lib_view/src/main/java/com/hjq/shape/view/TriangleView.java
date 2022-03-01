@@ -50,8 +50,8 @@ public class TriangleView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        width = isInEditMode() ? 36 : w;
-        height = isInEditMode() ? 15 : h;
+        width = /*isInEditMode() ? 36 :*/ w;
+        height = /*isInEditMode() ? 15 :*/ h;
         initPaint();
     }
 
