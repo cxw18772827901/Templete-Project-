@@ -60,11 +60,11 @@ public class ImmersionActivity extends BaseActivity<ImmersionActivityBinding> {
                             toast("按钮" + (position + 1) + "点击");
                             //todo
                         }, true,
-                        new BtnBean("按钮1", R.drawable.ic_pop1),
-                        new BtnBean("按钮2", R.drawable.ic_pop1),
-                        new BtnBean("按钮3", R.drawable.ic_pop1),
-                        new BtnBean("按钮4", R.drawable.ic_pop1),
-                        new BtnBean("按钮5", R.drawable.ic_pop1)));
+                        new BtnBean("我是按钮1", R.drawable.ic_pop1),
+                        new BtnBean("我是按钮2", R.drawable.ic_pop1),
+                        new BtnBean("我是按钮3", R.drawable.ic_pop1),
+                        new BtnBean("我是按钮4", R.drawable.ic_pop1),
+                        new BtnBean("我是按钮5", R.drawable.ic_pop1)));
         mViewBinding.tv10.setOnClickListener(v -> backClickIntercept = true);
         mViewBinding.tv11.setOnClickListener(v -> setTitleBg(R.drawable.ic_top_bg));
         mViewBinding.tv12.setOnClickListener(v -> {
