@@ -127,8 +127,7 @@ dependencies {
     //AndRatingBar
     api 'com.github.wdsqjq:AndRatingBar:1.0.6'
     /*compileOnly*/
-    /*api*/
-    compileOnly "jp.co.cyberagent.android:gpuimage:2.1.0"
+    api "jp.co.cyberagent.android:gpuimage:2.1.0"
     //drag
     api 'com.github.open-android:DragFooterView:0.1.0'
     //flex
