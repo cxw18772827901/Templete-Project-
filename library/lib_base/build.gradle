@@ -75,8 +75,10 @@ dependencies {
     //api
     api project(path: ':library:lib_db')
     //api project(path: ':library:lib_gson')
-    api project(path: ':library:lib_permission')
+    //api project(path: ':library:lib_permission')
     api project(path: ':library:lib_view')
+    api 'com.github.getActivity:XXPermissions:13.5'
+    implementation "com.github.getActivity:ToastUtils:${config.dependencies.toastutils_version}"
     //aroute
     annotationProcessor "com.alibaba:arouter-compiler:${config.dependencies.route_version}"
     api "com.alibaba:arouter-api:${config.dependencies.route_version}"
@@ -111,7 +113,6 @@ dependencies {
     implementation "com.qiniu:qiniu-android-sdk:${config.dependencies.qiniu_version}"
     //implementation "androidx.lifecyle:lifecyle:2.4.0"
     implementation "androidx.lifecycle:lifecycle-runtime:${config.dependencies.androidx_lifecycle_version}"
-    implementation "com.github.getActivity:ToastUtils:${config.dependencies.toastutils_version}"
     //glide
     api "com.github.bumptech.glide:glide:${config.dependencies.glide_version}"
 
