@@ -35,7 +35,7 @@ dependencies {
     //androidx support
     //noinspection GradleDependency
     api "com.google.android.material:material:${config.dependencies.material_version}"
-//    api "androidx.appcompat:appcompat:${config.dependencies.appcompat_version}"
+    //api "androidx.appcompat:appcompat:${config.dependencies.appcompat_version}"
     api "androidx.cardview:cardview:${config.dependencies.cardview_version}"
     api "androidx.recyclerview:recyclerview:${config.dependencies.recyclerview_version}"
     //noinspection GradleDependency
