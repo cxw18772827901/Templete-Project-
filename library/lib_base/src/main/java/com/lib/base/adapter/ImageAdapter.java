@@ -13,6 +13,8 @@ import com.youth.banner.adapter.BannerAdapter;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 
 /**
  * 自定义布局，图片
@@ -38,7 +40,7 @@ public class ImageAdapter extends BannerAdapter<DataBean, ImageHolder> {
 
     //创建ViewHolder，可以用viewType这个字段来区分不同的ViewHolder
     @Override
-    public ImageHolder onCreateHolder(ViewGroup parent, int viewType) {
+    public ImageHolder onCreateHolder(@NonNull ViewGroup parent, int viewType) {
         RoundedImageView imageView = (RoundedImageView) LayoutInflater.from(parent.getContext()).inflate(R.layout.banner_iv, parent, false);
         //RoundedImageView imageView =layout.findViewById(R.id.sdv);// new ImageView(parent.getContext());
         //注意，必须设置为match_parent，这个是viewpager2强制要求的
@@ -49,7 +51,7 @@ public class ImageAdapter extends BannerAdapter<DataBean, ImageHolder> {
     }
 
     @Override
-    public void onBindView(ImageHolder holder, DataBean data, int position, int size) {
+    public void onBindView(@NonNull ImageHolder holder, @NonNull DataBean data, int position, int size) {
         //holder.imageView.setImageResource(data.imageRes);
         GlideUtil.loadPic(holder.imageView.getContext(), data.imageUrl, holder.imageView);
         holder.imageView.setOnClickListener(v -> onItemClickListener.onItemClick(position));

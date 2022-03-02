@@ -121,7 +121,7 @@ public class RCHelper {
         areas.bottom = h - view.getPaddingBottom();
         mClipPath.reset();
         if (mRoundAsCircle) {
-            float d = areas.width() >= areas.height() ? areas.height() : areas.width();
+            float d = Math.min(areas.width(), areas.height());
             float r = d / 2;
             PointF center = new PointF(w / 2, h / 2);
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.O_MR1) {
