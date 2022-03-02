@@ -186,7 +186,7 @@ final class PermissionChecker {
      * @param requestPermissions        请求的权限组
      */
     static void checkLocationPermission(Context context, List<String> requestPermissions) {
-        if (context.getApplicationInfo().targetSdkVersion >= /*Build.VERSION_CODES.S*/12) {
+        if (context.getApplicationInfo().targetSdkVersion >= /*Build.VERSION_CODES.S*/31) {
             if (requestPermissions.contains(Permission.ACCESS_FINE_LOCATION) &&
                     !requestPermissions.contains(Permission.ACCESS_COARSE_LOCATION) ) {
                 // 如果您的应用以 Android 12 为目标平台并且您请求 ACCESS_FINE_LOCATION 权限
@@ -241,7 +241,7 @@ final class PermissionChecker {
         if (requestPermissions.contains(Permission.BLUETOOTH_SCAN) ||
                 requestPermissions.contains(Permission.BLUETOOTH_CONNECT) ||
                 requestPermissions.contains(Permission.BLUETOOTH_ADVERTISE)) {
-            targetSdkMinVersion = /*Build.VERSION_CODES.S*/12;
+            targetSdkMinVersion = /*Build.VERSION_CODES.S*/31;
         } else if (requestPermissions.contains(Permission.MANAGE_EXTERNAL_STORAGE)) {
             // 必须设置 targetSdkVersion >= 30 才能正常检测权限，否则请使用 Permission.Group.STORAGE 来申请存储权限
             targetSdkMinVersion = Build.VERSION_CODES.R;
@@ -288,7 +288,7 @@ final class PermissionChecker {
                 continue;
             }
 
-            if (minSdkVersion < /*Build.VERSION_CODES.S*/12) {
+            if (minSdkVersion < /*Build.VERSION_CODES.S*/31) {
 
                 if (Permission.BLUETOOTH_SCAN.equals(permission)) {
                     checkManifestPermission(manifestPermissions, Manifest.permission.BLUETOOTH_ADMIN, Build.VERSION_CODES.R);

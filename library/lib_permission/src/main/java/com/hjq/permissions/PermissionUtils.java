@@ -40,7 +40,7 @@ final class PermissionUtils {
      */
     @SuppressWarnings("all")
     static boolean isAndroid12() {
-        return Build.VERSION.SDK_INT >= /*Build.VERSION_CODES.S*/12;
+        return Build.VERSION.SDK_INT >= /*Build.VERSION_CODES.S*/31;
     }
 
     /**

@@ -7,6 +7,7 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 /**
@@ -42,7 +43,7 @@ public final class XXPermissions {
         return new XXPermissions(context);
     }
 
-    public static XXPermissions with(Fragment fragment) {
+    public static XXPermissions with(@NonNull Fragment fragment) {
         return with(fragment.getActivity());
     }
 
@@ -223,14 +224,17 @@ public final class XXPermissions {
     /**
      * 获取没有授予的权限
      */
+    @NonNull
     public static List<String> getDenied(Context context, String... permissions) {
         return getDenied(context, PermissionUtils.asArrayList(permissions));
     }
 
+    @NonNull
     public static List<String> getDenied(Context context, String[]... permissions) {
         return getDenied(context, PermissionUtils.asArrayLists(permissions));
     }
 
+    @NonNull
     public static List<String> getDenied(Context context, List<String> permissions) {
         return PermissionUtils.getDeniedPermissions(context, permissions);
     }
@@ -315,7 +319,7 @@ public final class XXPermissions {
      * @param permissions 没有授予或者被拒绝的权限组
      * @param requestCode Activity 跳转请求码
      */
-    public static void startPermissionActivity(Activity activity, List<String> permissions, int requestCode) {
+    public static void startPermissionActivity(@NonNull Activity activity, List<String> permissions, int requestCode) {
         activity.startActivityForResult(PermissionSettingPage.getSmartPermissionIntent(activity, permissions), requestCode);
     }
 
@@ -343,7 +347,7 @@ public final class XXPermissions {
      * @param permissions 没有授予或者被拒绝的权限组
      * @param requestCode Activity 跳转请求码
      */
-    public static void startPermissionActivity(Fragment fragment, List<String> permissions, int requestCode) {
+    public static void startPermissionActivity(@NonNull Fragment fragment, List<String> permissions, int requestCode) {
         Activity activity = fragment.getActivity();
         if (activity == null) {
             return;
