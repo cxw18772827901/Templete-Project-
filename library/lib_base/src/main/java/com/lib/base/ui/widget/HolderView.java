@@ -2,12 +2,14 @@ package com.lib.base.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
+import com.hjq.shape.view.progress.ProgressDrawable;
 import com.lib.base.R;
 import com.lib.base.databinding.HolderViewBinding;
 
@@ -62,16 +64,29 @@ public class HolderView extends FrameLayout {
         binding.tv.setVisibility(GONE);
         binding.iv.setVisibility(GONE);
 
-        binding.llLoading.setVisibility(VISIBLE);
+//        binding.llLoading.setVisibility(VISIBLE);
         binding.holderLoading.setVisibility(VISIBLE);
-        binding.ivLoading.setAnimation(R.raw.progress);
-        if (!binding.ivLoading.isAnimating()) {
+//        binding.ivLoading.setAnimation(R.raw.progress);
+        /*if (!binding.ivLoading.isAnimating()) {
             binding.ivLoading.playAnimation();
-        }
+        }*/
         //binding.tvLoading.setText(getTxt(strLoading, LOADING_STR));
+        binding.loadingDialog.getRoot().setVisibility(VISIBLE);
+        play();
         changeState(VISIBLE);
-        binding.getRoot().setBackgroundResource(R.color.black10);
+        //binding.getRoot().setBackgroundResource(R.color.black10);
         cancelFresh(false);
+    }
+
+    private ProgressDrawable progressDrawable;
+
+    private void play() {
+        if (progressDrawable == null) {
+            progressDrawable = new ProgressDrawable();
+            progressDrawable.setColor(Color.parseColor("#ffffff"));
+        }
+        binding.loadingDialog.ivPro.setImageDrawable(progressDrawable);
+        progressDrawable.start();
     }
 
     private String getTxt(String strLoading, String loadingStr) {
@@ -80,7 +95,8 @@ public class HolderView extends FrameLayout {
 
     public void showNoDataView() {
         stopAnim();
-        binding.llLoading.setVisibility(GONE);
+        //binding.llLoading.setVisibility(GONE);
+        binding.loadingDialog.getRoot().setVisibility(GONE);
         binding.holderLoading.setVisibility(GONE);
 
         binding.iv.setVisibility(VISIBLE);
@@ -88,13 +104,14 @@ public class HolderView extends FrameLayout {
         binding.tv.setVisibility(VISIBLE);
         binding.tv.setText(getTxt(strNoData, NO_DATA_STR));
         changeState(VISIBLE);
-        binding.getRoot().setBackgroundResource(R.color.cl_white);
+        //binding.getRoot().setBackgroundResource(R.color.cl_white);
         cancelFresh(false);
     }
 
     public void showErrorView() {
         stopAnim();
-        binding.llLoading.setVisibility(GONE);
+//        binding.llLoading.setVisibility(GONE);
+        binding.loadingDialog.getRoot().setVisibility(GONE);
         binding.holderLoading.setVisibility(GONE);
 
         binding.iv.setVisibility(VISIBLE);
@@ -102,7 +119,7 @@ public class HolderView extends FrameLayout {
         binding.tv.setVisibility(VISIBLE);
         binding.tv.setText(getTxt(strError, ERROR_STR));
         changeState(VISIBLE);
-        binding.getRoot().setBackgroundResource(R.color.cl_white);
+        //binding.getRoot().setBackgroundResource(R.color.cl_white);
         cancelFresh(false);
     }
 
@@ -120,8 +137,11 @@ public class HolderView extends FrameLayout {
     }
 
     private void stopAnim() {
-        if (binding.ivLoading.isAnimating()) {
+        /*if (binding.ivLoading.isAnimating()) {
             binding.ivLoading.cancelAnimation();
+        }*/
+        if (progressDrawable != null && progressDrawable.isRunning()) {
+            progressDrawable.stop();
         }
     }
 

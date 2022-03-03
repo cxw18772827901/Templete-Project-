@@ -63,7 +63,9 @@
         </com.hjq.shape.layout.ShapeLinearLayout>-->
         <include
             android:id="@+id/loading_dialog"
-            layout="@layout/loading_dialog" />
+            layout="@layout/loading_dialog"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/iv"
