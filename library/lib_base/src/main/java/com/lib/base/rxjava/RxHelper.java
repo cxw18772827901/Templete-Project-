@@ -51,6 +51,7 @@ public class RxHelper implements /*LifecycleEventObserver*/DefaultLifecycleObser
     public void onDestroy(@NonNull LifecycleOwner owner) {
         if (compositeDisposable != null) {
             compositeDisposable.dispose();
+            compositeDisposable = null;
         }
     }
 }

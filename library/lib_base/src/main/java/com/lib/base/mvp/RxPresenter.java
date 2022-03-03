@@ -22,7 +22,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
 public class RxPresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T>, DefaultLifecycleObserver {
 
     protected T mView;
-    private Lifecycle.Event currentState;
+    private Lifecycle.Event currentState = Lifecycle.Event.ON_CREATE;
 
     private RxPresenter() {
     }
@@ -37,7 +37,7 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
      * @return
      */
     protected boolean isLifecycleisResume() {
-        return currentState != null && currentState == Lifecycle.Event.ON_RESUME;
+        return mView != null && currentState != null && currentState == Lifecycle.Event.ON_RESUME;
     }
 
     /**
@@ -46,7 +46,7 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
      * @return
      */
     protected boolean isLifecycleSurvive() {
-        return currentState != null && currentState != Lifecycle.Event.ON_DESTROY;
+        return mView != null && currentState != null && currentState != Lifecycle.Event.ON_DESTROY;
     }
 
     @Override
@@ -65,8 +65,8 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
 
     @Override
     public void detachView() {
-        this.mView = null;
         unSubscribe();
+        this.mView = null;
     }
 
     protected void unSubscribe() {

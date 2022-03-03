@@ -41,12 +41,16 @@ public class DemoPresenter extends RxPresenter<DemoContract.View> implements Dem
 
     @Override
     public void loadData2() {
-        mView.showData2();
+        if (isLifecycleSurvive()) {
+            mView.showData2();
+        }
     }
 
     @Override
     public void loadData3() {
-        mView.showData3();
-        mView.error();
+        if (isLifecycleSurvive()) {
+            mView.showData3();
+            mView.error();
+        }
     }
 }
