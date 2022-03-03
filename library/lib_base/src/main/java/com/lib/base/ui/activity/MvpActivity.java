@@ -28,7 +28,7 @@ public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, Activit
 
     @Override
     protected DemoContract.Presenter bindPresenter() {
-        return new DemoPresenter();
+        return new DemoPresenter(getLifecycle());
     }
 
     @Override

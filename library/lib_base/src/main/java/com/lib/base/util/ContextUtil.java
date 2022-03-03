@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
@@ -64,8 +65,11 @@ public class ContextUtil {
         if (!(activity instanceof LifecycleOwner)) {
             return false;
         }
-        LifecycleOwner lifecycleOwner = ((LifecycleOwner) activity);
-        return lifecycleOwner.getLifecycle().getCurrentState() == Lifecycle.State.RESUMED;
+        return isLifecycleResume((LifecycleOwner) activity);
+    }
+
+    public static boolean isLifecycleResume(@NonNull LifecycleOwner lifecycleOwner) {
+        return lifecycleOwner.getLifecycle().getCurrentState() != Lifecycle.State.DESTROYED;
     }
 
     /**
@@ -78,7 +82,10 @@ public class ContextUtil {
         if (!(activity instanceof LifecycleOwner)) {
             return false;
         }
-        LifecycleOwner lifecycleOwner = ((LifecycleOwner) activity);
+        return isLifecycleSurvive((LifecycleOwner) activity);
+    }
+
+    public static boolean isLifecycleSurvive(@NonNull LifecycleOwner lifecycleOwner) {
         return lifecycleOwner.getLifecycle().getCurrentState() != Lifecycle.State.DESTROYED;
     }
 }
