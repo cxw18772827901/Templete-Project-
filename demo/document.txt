@@ -6,3 +6,24 @@ File getExternalCacheDir()
 
 File getExternalFilesDir(String type)
 // /storage/emulated/0/Android/data/com.sankuai.meituan/files
+
+剔除多与权限
+project.afterEvaluate {
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.processResources.doFirst { pm ->
+                String manifestPath = output.processResources.manifestFile;
+                def manifestContent = file(manifestPath).getText()
+                manifestContent = manifestContent.replace('android.permission.READ_CONTACTS','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.WRITE_SETTINGS','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.READ_PHONE_STATE','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.ACCESS_WIFI_STATE','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.READ_LOGS','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.ACCESS_FINE_LOCATION','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.ACCESS_COARSE_LOCATION','android.permission.INTERNET' )
+                manifestContent = manifestContent.replace('android.permission.VIBRATE','' )
+                file(manifestPath).write(manifestContent)
+            }
+        }
+    }
+}
