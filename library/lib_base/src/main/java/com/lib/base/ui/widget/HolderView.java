@@ -68,7 +68,7 @@ public class HolderView extends FrameLayout {
         if (!binding.ivLoading.isAnimating()) {
             binding.ivLoading.playAnimation();
         }
-        binding.tvLoading.setText(getTxt(strLoading, LOADING_STR));
+        //binding.tvLoading.setText(getTxt(strLoading, LOADING_STR));
         changeState(VISIBLE);
         binding.getRoot().setBackgroundResource(R.color.black10);
         cancelFresh(false);

@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.hjq.shape.layout.ShapeLinearLayout
+        <!--<com.hjq.shape.layout.ShapeLinearLayout
             android:id="@+id/ll_loading"
             android:layout_width="@dimen/x340"
             android:layout_height="wrap_content"
@@ -60,7 +60,10 @@
                 android:textSize="@dimen/x45"
                 android:textStyle="normal"
                 tools:ignore="HardcodedText" />
-        </com.hjq.shape.layout.ShapeLinearLayout>
+        </com.hjq.shape.layout.ShapeLinearLayout>-->
+        <include
+            android:id="@+id/loading_dialog"
+            layout="@layout/loading_dialog" />
 
         <ImageView
             android:id="@+id/iv"
