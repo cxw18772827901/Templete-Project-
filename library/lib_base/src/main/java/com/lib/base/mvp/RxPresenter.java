@@ -36,7 +36,7 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
      *
      * @return
      */
-    protected boolean isLifecycleisResume() {
+    protected boolean isLifecycleResume() {
         return mView != null && currentState != null && currentState == Lifecycle.Event.ON_RESUME;
     }
 

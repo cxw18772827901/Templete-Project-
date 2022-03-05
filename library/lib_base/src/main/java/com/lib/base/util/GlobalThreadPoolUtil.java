@@ -24,14 +24,13 @@ public class GlobalThreadPoolUtil {
      */
     private static final int CORE_POOL_SIZE = Math.max(2, Math.min(CPU_COUNT - 1, 4));
     /**
-     * 线程池最大线程数
+     * 线程池最大线程数为核心线程数+2
      */
-    private static final int MAX_POOL_SIZE = CPU_COUNT * 2 + 1;
-//    private static int MAX_POOL_SIZE = Integer.MAX_VALUE;
+    private static final int MAX_POOL_SIZE = CPU_COUNT + 2;
     /**
-     * 额外线程空状态生存时间
+     * 额外线程空状态生存时间,不允许
      */
-    private static final int KEEP_ALIVE_TIME = 30;
+    private static final int KEEP_ALIVE_TIME = 0;
     /**
      * 阻塞队列。当核心线程都被占用，且阻塞队列已满的情况下，才会开启额外线程。
      */
@@ -53,10 +52,20 @@ public class GlobalThreadPoolUtil {
 
     private static final Handler mHandler = new Handler(Looper.getMainLooper());
 
+    /*
+      拒绝策略
+      AbortPolicy:抛出RejectedExecutionException;
+      DiscardPolicy:什么也不做，直接忽略;
+      DiscardOldestPolicy:丢弃执行队列中最老的任务，尝试为当前提交的任务腾出位置;
+      CallerRunsPolicy:直接由提交任务者执行这个任务
+     */
     static {
-        sExecutor = new ThreadPoolExecutor(CORE_POOL_SIZE, MAX_POOL_SIZE,
-                KEEP_ALIVE_TIME, TimeUnit.SECONDS, workQueue, threadFactory);
-        sExecutor.allowCoreThreadTimeOut(true);
+        sExecutor = new ThreadPoolExecutor(
+                CORE_POOL_SIZE, MAX_POOL_SIZE,
+                KEEP_ALIVE_TIME, TimeUnit.SECONDS,
+                workQueue, threadFactory,
+                new ThreadPoolExecutor.DiscardPolicy());
+        sExecutor.allowCoreThreadTimeOut(true);//不设置,即使可空闲线程闲置也会一直保持
     }
 
     public static void postOnUiThread(Runnable runnable) {
