@@ -21,7 +21,7 @@ import androidx.lifecycle.LifecycleOwner;
  * <p>
  * PackageName  com.spot.ispot.view.widget
  * ProjectName  Spot1-26-yoga
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         6/27/21.
  */
 public class PopMenuView extends PopupWindow implements DefaultLifecycleObserver {

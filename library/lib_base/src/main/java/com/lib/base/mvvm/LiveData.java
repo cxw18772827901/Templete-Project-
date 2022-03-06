@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer;
  * 去粘性事件,同时做线程判断.
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.mvvm
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/26.
  */
 

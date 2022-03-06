@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 /**
  * context工具类
  *
- * @author : chenxiaowu
+ * @author : xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/09/15
  * desc   : 根据Context处理Resources

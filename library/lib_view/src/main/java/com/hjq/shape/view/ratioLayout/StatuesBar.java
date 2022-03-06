@@ -8,7 +8,7 @@ import android.view.View;
 
 /**
  * <p>
- * author : Android xwchen
+ *@author: Android xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/08/23
  * desc   : 顶部状态栏占位图,高度在测量时{@link StatuesBar#onMeasure(int, int)}直接定死为系统状态栏的高度

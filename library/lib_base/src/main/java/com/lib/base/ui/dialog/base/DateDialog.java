@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2018/12/17
  *    desc   : 日期选择对话框

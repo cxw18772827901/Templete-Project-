@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui.widget
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/11.
  */
 

@@ -50,7 +50,7 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2018/11/24
  * desc   : Dialog 技术基类

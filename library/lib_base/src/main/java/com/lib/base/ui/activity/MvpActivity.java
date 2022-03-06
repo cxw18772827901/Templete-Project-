@@ -18,7 +18,7 @@ import com.lib.base.ui.widget.HolderView;
  * <p>
  * 注：如果不需要使用mvp模式直接继承BaseActivity{@link BaseActivity}即可。
  * <p>
- * Author  chenxiaowu
+ * @author xwchen
  * Date on 2019/11/28.
  */
 @SuppressLint("NonConstantResourceId")
@@ -68,9 +68,7 @@ public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, Activit
 
     @Override
     public void initData() {
-        mPresenter.loadData1();
-        mPresenter.loadData2();
-        mPresenter.loadData3();
+        mPresenter.loadData();
     }
 
     @Override
@@ -79,17 +77,7 @@ public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, Activit
     }
 
     @Override
-    public void showData1() {
-
-    }
-
-    @Override
-    public void showData2() {
-
-    }
-
-    @Override
-    public void showData3() {
+    public void showData() {
 
     }
 

@@ -20,10 +20,10 @@ import com.templete.project.ui.activity.XTabActivity;
 /**
  * PackageName  com.templete.project.ui.fragment
  * ProjectName  TempleteProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         10/10/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class FirstFragment extends BaseFragment<FirstFragmentBinding> {

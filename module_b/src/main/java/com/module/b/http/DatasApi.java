@@ -6,7 +6,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019-11-27.
  */
 

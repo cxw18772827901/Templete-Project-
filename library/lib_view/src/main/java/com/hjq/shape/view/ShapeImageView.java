@@ -11,7 +11,7 @@ import com.hjq.shape.styleable.ShapeImageViewStyleable;
 import androidx.appcompat.widget.AppCompatImageView;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/07/17
  *    desc   : 支持直接定义 Shape 背景的 ImageView

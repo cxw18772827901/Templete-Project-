@@ -10,7 +10,7 @@ import com.templete.project.databinding.LoadingActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/1/1.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class LoadingActivity extends BaseActivity<LoadingActivityBinding> {

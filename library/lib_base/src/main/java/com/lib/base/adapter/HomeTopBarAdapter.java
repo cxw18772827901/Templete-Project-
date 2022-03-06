@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * PackageName  com.tiyu.zjwt.adapter
  * ProjectName  NumericalCodeAbilitiesPool
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         1/7/21.
  */
 

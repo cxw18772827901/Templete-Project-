@@ -7,7 +7,7 @@ import android.os.Bundle;
 /**
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.config
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/15.
  */
 

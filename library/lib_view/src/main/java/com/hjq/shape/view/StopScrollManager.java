@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
  * ProjectName  TempleteProject-java
  * Date         2022/1/22.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class StopScrollManager extends LinearLayoutManager {

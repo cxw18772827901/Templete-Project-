@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui.draw
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/25.
  */
 

@@ -6,7 +6,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2019/09/15
  *    desc   : 点击事件意图

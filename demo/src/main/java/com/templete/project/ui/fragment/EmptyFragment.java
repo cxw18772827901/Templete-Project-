@@ -11,7 +11,7 @@ import com.templete.project.databinding.EmptyLayoutBinding;
  * ProjectName  TempleteProject-java
  * Date         2021/12/29.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class EmptyFragment extends BaseFragment<EmptyLayoutBinding> {

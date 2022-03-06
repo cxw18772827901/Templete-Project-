@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/08/17
  *    desc   : 支持直接定义文本渐变色的 Span

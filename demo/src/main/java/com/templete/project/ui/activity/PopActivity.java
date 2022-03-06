@@ -13,7 +13,7 @@ import com.templete.project.databinding.PopActivityBinding;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/12/27.
  */
 

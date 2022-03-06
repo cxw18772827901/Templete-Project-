@@ -23,7 +23,7 @@ import androidx.annotation.NonNull;
 import okhttp3.Call;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/12/15
  * desc   : Glide 全局配置

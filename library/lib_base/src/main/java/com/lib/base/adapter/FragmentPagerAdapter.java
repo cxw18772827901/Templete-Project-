@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2018/10/18
  *    desc   : FragmentPagerAdapter 封装

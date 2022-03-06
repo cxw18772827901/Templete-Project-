@@ -22,7 +22,7 @@ import android.view.View;
 import androidx.core.graphics.ColorUtils;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/ShapeView
  * time   : 2021/08/14
  * desc   : 在 {@link android.graphics.drawable.GradientDrawable} 的基础上改造

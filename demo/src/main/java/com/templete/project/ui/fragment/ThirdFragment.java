@@ -26,7 +26,7 @@ import java.util.ArrayList;
  * ProjectName  TempleteProject
  * Date         10/10/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {

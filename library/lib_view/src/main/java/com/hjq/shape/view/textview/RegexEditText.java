@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 import androidx.appcompat.widget.AppCompatEditText;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2019/06/29
  *    desc   : 正则输入限制编辑框

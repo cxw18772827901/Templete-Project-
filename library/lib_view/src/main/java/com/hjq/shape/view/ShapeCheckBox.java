@@ -14,7 +14,7 @@ import com.hjq.shape.styleable.ShapeCheckBoxStyleable;
 import androidx.appcompat.widget.AppCompatCheckBox;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/07/17
  *    desc   : 支持直接定义 Shape 背景的 CheckBox

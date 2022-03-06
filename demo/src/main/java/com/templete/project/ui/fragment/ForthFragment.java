@@ -16,7 +16,7 @@ import com.templete.project.ui.activity.TxtActivity;
  * ProjectName  TempleteProject
  * Date         10/10/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ForthFragment extends BaseFragment<ForthFragmentBinding> {

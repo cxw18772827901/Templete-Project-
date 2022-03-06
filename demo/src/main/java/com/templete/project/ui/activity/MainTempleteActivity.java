@@ -17,7 +17,7 @@ import com.templete.project.ui.fragment.ThirdFragment;
 import com.templete.project.ui.widget.TabHost;
 
 /**
- * @author chenxiaowu
+ * @author xwchen
  */
 @Route(path = ArouteConfig.ACTIVITY_MAIN)
 public class MainTempleteActivity extends BaseMvvmActivity<MainTempleteActivityBinding, MainViewModel> {

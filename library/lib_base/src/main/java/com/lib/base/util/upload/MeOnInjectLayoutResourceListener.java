@@ -8,7 +8,7 @@ import com.luck.picture.lib.interfaces.OnInjectLayoutResourceListener;
  * 注入自定义布局UI，前提是布局View id 和 根目录Layout必须一致
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util.upload
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/9.
  */
 

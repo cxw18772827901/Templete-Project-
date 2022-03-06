@@ -6,8 +6,10 @@ import androidx.lifecycle.Lifecycle;
 /**
  * PackageName  com.bigheadhorse.xscat.presenter
  * ProjectName  NumericalCodeProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019-11-27.
+ *
+ * @author xwchen
  */
 public class DemoPresenter extends RxPresenter<DemoContract.View> implements DemoContract.Presenter {
 
@@ -16,41 +18,10 @@ public class DemoPresenter extends RxPresenter<DemoContract.View> implements Dem
     }
 
     @Override
-    public void loadData1() {
-        /*HttpUtil.getInstance()
-                .login("16621654324", "888888")
-                .compose(RxUtils::toSimpleSingle)
-                .subscribe(new SingleObserver<LoginRecord>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        addDisposable(d);
-                    }
-
-                    @Override
-                    public void onSuccess(LoginRecord loginRecord) {
-                        mView.showData1();
-                    }
-
-                    @Override
-                    public void onError(Throwable throwable) {
-                        mView.error();
-                    }
-                });*/
-
-    }
-
-    @Override
-    public void loadData2() {
+    public void loadData() {
         if (isLifecycleSurvive()) {
-            mView.showData2();
+            mView.showData();
         }
     }
-
-    @Override
-    public void loadData3() {
-        if (isLifecycleSurvive()) {
-            mView.showData3();
-            mView.error();
-        }
-    }
+    
 }

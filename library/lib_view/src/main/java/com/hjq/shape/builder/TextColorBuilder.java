@@ -11,7 +11,7 @@ import com.hjq.shape.styleable.ITextColorStyleable;
 import androidx.annotation.Nullable;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/08/28
  *    desc   : TextColor 构建类

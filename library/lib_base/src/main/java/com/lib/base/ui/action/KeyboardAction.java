@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 /**
- * author : chenxiaowu
+ *@author: xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2020/03/08
  * desc   : 软键盘相关意图

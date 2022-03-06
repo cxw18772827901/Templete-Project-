@@ -18,7 +18,7 @@ import java.io.File;
 import androidx.core.content.FileProvider;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2019/03/20
  *    desc   : 升级对话框

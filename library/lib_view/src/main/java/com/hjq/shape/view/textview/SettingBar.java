@@ -26,7 +26,7 @@ import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/01/23
  * desc   : 设置条自定义控件

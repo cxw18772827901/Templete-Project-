@@ -10,7 +10,7 @@ import androidx.lifecycle.LifecycleOwner;
  * <p>
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/12/1.
  */
 

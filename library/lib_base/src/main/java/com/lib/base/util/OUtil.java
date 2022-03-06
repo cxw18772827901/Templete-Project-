@@ -9,7 +9,7 @@ import java.util.Objects;
  * PackageName  com.bigheadhorse.xscat.utils
  * Date         2021/6/17.
  *
- * @author Administrator
+ * @author xwchen
  */
 
 public class OUtil {

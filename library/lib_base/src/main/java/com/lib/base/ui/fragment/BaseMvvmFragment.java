@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 /**
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.view.activity.common
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/16.
  */
 

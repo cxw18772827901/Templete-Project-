@@ -15,7 +15,7 @@ import java.util.List;
  * 判断当前进程是不是主进程
  * ProjectName  templete-project
  * PackageName  com.lib.base.util
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/11/26.
  */
 

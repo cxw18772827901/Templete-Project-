@@ -10,7 +10,7 @@ import androidx.multidex.MultiDex;
 /**
  * ProjectName  TempleteProject
  * PackageName  com.module.a
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/10/11.
  */
 public class MainApp extends App {

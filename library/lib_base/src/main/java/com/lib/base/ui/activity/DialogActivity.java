@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivitys/AndroidProject
  * time   : 2018/12/02
  * desc   : 对话框使用案例

@@ -9,7 +9,7 @@ import com.templete.project.databinding.SoftActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/2/20.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class SoftActivity extends BaseActivity<SoftActivityBinding> {

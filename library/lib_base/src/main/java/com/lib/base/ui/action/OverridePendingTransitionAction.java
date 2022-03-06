@@ -9,7 +9,7 @@ import com.lib.base.R;
  * ProjectName  TempleteProject-java
  * Date         2022/1/28.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public interface OverridePendingTransitionAction extends ContextAction {

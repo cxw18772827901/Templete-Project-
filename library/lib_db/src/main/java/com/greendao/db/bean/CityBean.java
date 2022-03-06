@@ -18,7 +18,7 @@ import java.util.List;
  * ProjectName  TempleteProject-java
  * Date         2022/2/24.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 @Entity
 public class CityBean {

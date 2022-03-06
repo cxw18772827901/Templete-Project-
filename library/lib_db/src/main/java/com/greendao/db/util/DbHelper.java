@@ -11,7 +11,7 @@ import org.greenrobot.greendao.database.Database;
 /**
  * PackageName  com.hycg.ee.dbHelper
  * ProjectName  HYCGCompanyProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019/5/17.
  */
 public class DbHelper extends DaoMaster.DevOpenHelper {

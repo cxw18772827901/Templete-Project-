@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
  * 官方嵌套布局,适用于无刷新悬浮UI,刷新的话存在问题
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/12.
  */
 

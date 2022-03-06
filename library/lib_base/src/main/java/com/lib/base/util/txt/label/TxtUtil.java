@@ -23,7 +23,7 @@ import androidx.annotation.NonNull;
  * txt工具类
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.utils
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/11.
  */
 public class TxtUtil {

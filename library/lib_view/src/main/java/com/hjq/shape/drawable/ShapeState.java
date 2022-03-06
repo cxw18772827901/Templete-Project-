@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/08/15
  *    desc   : ShapeDrawable 参数构建

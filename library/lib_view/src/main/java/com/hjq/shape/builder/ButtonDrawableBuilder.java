@@ -10,7 +10,7 @@ import com.hjq.shape.styleable.ICompoundButtonStyleable;
 import androidx.core.widget.CompoundButtonCompat;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/08/28
  *    desc   : ButtonDrawable  构建类

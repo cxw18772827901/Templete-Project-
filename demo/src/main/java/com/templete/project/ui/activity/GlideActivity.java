@@ -34,7 +34,7 @@ import com.templete.project.databinding.GlideActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/1/9.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class GlideActivity extends BaseActivity<GlideActivityBinding> {

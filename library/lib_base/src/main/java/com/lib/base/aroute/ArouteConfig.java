@@ -8,7 +8,7 @@ package com.lib.base.aroute;
  * 以上是使用样例demo,不同modele不能使用相同前缀
  * PackageName  com.lib.base.config
  * ProjectName  TempleteProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         10/10/21.
  */
 public interface ArouteConfig {

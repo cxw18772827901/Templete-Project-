@@ -5,7 +5,7 @@ import com.hjq.shape.view.xtabLayout.XTabLayout;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util.txt.txtflag
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/6.
  */
 

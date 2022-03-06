@@ -13,7 +13,7 @@ import androidx.lifecycle.LifecycleOwner;
  * ProjectName  TempleteProject-java
  * Date         2022/2/15.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ContextUtil {

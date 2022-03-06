@@ -22,7 +22,7 @@ import com.hjq.shape.R;
 import androidx.annotation.Nullable;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/AndroidProject
  *    time   : 2019/02/20
  *    desc   : 高仿 ios 开关按钮

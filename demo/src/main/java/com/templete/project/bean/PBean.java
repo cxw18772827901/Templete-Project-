@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
  * ProjectName  TempleteProject-java
  * Date         2022/2/11.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class PBean implements Parcelable {

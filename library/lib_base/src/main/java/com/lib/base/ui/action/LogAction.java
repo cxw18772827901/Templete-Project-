@@ -8,7 +8,7 @@ import androidx.annotation.StringRes;
 
 /**
  * 日志工具类
- * author : chenxiaowu
+ *@author: xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/12/08
  * desc   : 吐司意图

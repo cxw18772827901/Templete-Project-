@@ -19,7 +19,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * rxjava和rxview工具类
- * Created by chenxiaowu on 19-4-29.
+ * Created by xwchen on 19-4-29.
  */
 
 public class RxUtils {

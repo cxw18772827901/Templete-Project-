@@ -8,7 +8,7 @@ import com.templete.project.databinding.LottieActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2021/12/31.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class LottieActivity extends BaseActivity<LottieActivityBinding> {

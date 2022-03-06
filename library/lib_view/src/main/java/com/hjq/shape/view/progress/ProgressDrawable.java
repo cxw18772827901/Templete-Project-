@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
  * ProjectName  TempleteProject-java
  * Date         2022/1/2.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ProgressDrawable extends PaintDrawable implements Animatable, ValueAnimator.AnimatorUpdateListener {

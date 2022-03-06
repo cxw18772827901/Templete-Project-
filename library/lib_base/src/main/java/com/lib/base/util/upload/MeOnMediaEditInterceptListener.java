@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
  * 自定义编辑
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util.upload
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/9.
  */
 

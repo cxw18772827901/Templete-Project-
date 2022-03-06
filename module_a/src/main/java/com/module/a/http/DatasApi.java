@@ -11,7 +11,7 @@ import retrofit2.http.Query;
 /**
  * 1.api接口,定义接受数据bean类型;
  * 2.也可以使用ResponeBody来接收数据,responseBody.string()就是返回的数据.
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019-11-27.
  */
 

@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
  * ProjectName  TempleteProject-java
  * Date         2022/1/22.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public abstract class PaintDrawable extends Drawable {

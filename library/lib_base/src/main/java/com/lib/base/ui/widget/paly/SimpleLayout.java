@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2018/10/18
  * desc   : 简单的 Layout 容器，比 FrameLayout 更加轻量

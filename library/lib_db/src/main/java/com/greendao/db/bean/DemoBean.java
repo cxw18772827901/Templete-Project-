@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Generated;
 /**
  * PackageName  com.lib.db
  * ProjectName  TempleteProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         10/10/21.
  */
 @Entity

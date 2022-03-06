@@ -10,10 +10,10 @@ import com.templete.project.databinding.CollectionFragmentBinding;
 /**
  * PackageName  com.templete.project.ui.fragment
  * ProjectName  TempleteProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         10/10/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class CollectionFragment extends BaseFragment<CollectionFragmentBinding> {

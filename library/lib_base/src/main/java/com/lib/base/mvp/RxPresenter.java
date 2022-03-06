@@ -14,8 +14,8 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * 1、绑定、解绑view；
  * 2、可以将single{@link Single}添加到Disposable{@link CompositeDisposable}中，以便后续进行取消操作；
  * 3、感知生命周期.
- * <p>
- * Author       chenxiaowu
+ *
+ * @author xwchen
  * * Date on 2019/11/28.
  */
 
@@ -63,6 +63,9 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
         mDisposable.add(subscription);
     }
 
+    /**
+     * 解绑时取消rxjava
+     */
     @Override
     public void detachView() {
         unSubscribe();

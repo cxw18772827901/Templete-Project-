@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.mvvm
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/12/28.
  */
 

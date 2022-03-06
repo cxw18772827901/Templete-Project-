@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * Rxjava取消
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/27.
  */
 

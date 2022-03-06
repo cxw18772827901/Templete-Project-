@@ -14,7 +14,7 @@ import java.util.List;
  * ProjectName  TempleteProject-java
  * Date         2022/2/11.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class TargetActivity extends BaseActivity<TargetActivityBinding> {

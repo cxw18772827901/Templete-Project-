@@ -13,10 +13,10 @@ import com.greendao.db.helper.DemoBeanDao;
  * 处理所有数据库操作
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.db
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/17.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class LocalRepository {

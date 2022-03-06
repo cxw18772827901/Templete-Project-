@@ -9,7 +9,7 @@ import androidx.annotation.StringRes;
 /**
  * toast工具类
  * <p>
- * author : chenxiaowu
+ *@author: xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/12/08
  * desc   : 吐司意图

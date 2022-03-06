@@ -13,7 +13,7 @@ import com.lib.base.util.DebugUtil;
 import androidx.annotation.Nullable;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2020/02/06
  * desc   : 身份校验对话框

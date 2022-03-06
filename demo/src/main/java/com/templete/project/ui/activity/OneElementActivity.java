@@ -12,7 +12,7 @@ import com.templete.project.databinding.OneElementActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/2/13.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class OneElementActivity extends BaseActivity<OneElementActivityBinding> {

@@ -15,7 +15,7 @@ import androidx.core.widget.NestedScrollView;
  * ProjectName  TempleteProject-java
  * Date         2022/1/23.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class SheetActivity extends BaseActivity<BottomSheetActivityBinding> {

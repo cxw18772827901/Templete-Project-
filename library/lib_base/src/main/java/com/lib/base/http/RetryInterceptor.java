@@ -15,7 +15,7 @@ import okhttp3.Response;
  * ProjectName  TempleteProject-java
  * Date         2022/1/7.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 public class RetryInterceptor implements Interceptor {
     public static final String TAG = "RetryInterceptor";

@@ -6,7 +6,7 @@ import com.templete.project.databinding.PaintActivityBinding;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui.activity
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/25.
  */
 

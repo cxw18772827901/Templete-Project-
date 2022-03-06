@@ -26,7 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * ProjectName  TempleteProject-java
  * Date         2022/1/22.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class TransRecyclerView extends RecyclerView {

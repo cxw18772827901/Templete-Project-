@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * 存在两个导航:顶部导航+底部导航,最麻烦的地方在于两个导航之间的同步操作,屎山代码.
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/13.
  */
 

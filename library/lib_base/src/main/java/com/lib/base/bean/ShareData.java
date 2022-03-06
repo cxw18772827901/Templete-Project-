@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
  * ProjectName  TempleteProject-java
  * Date         2022/2/13.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ShareData {

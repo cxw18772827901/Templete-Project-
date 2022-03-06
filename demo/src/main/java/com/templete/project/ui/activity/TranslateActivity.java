@@ -13,7 +13,7 @@ import java.util.List;
  * ProjectName  TempleteProject-java
  * Date         2022/1/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class TranslateActivity extends BaseActivity<TranslateActivityBinding> {

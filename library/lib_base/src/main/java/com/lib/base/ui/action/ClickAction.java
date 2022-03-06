@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 /**
  * click工具类
  *
- * @author : chenxiaowu
+ * @author : xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/09/15
  * desc   : 点击事件意图

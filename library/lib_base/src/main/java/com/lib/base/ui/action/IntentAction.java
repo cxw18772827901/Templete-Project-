@@ -24,7 +24,7 @@ import androidx.annotation.Nullable;
  * ProjectName  TempleteProject-java
  * Date         2022/1/28.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public interface IntentAction extends OverridePendingTransitionAction {

@@ -18,10 +18,10 @@ import androidx.annotation.Nullable;
  * 三角形和倒三角形
  * ProjectName  TempleteProject-java
  * PackageName  com.hjq.shape.view
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/25.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class TriangleView extends View {

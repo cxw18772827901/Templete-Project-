@@ -3,7 +3,7 @@ package com.lib.base.ui.activity;
 /**
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.view.activity.base
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/10.F
  */
 public class AppTheme {

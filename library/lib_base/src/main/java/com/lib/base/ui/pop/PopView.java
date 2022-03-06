@@ -35,7 +35,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * ProjectName  Spot1-26-yoga
  * Date         6/27/21.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 public class PopView extends PopupWindow implements BaseAdapter.OnItemClickListener, DefaultLifecycleObserver {
     public static final String TAG = "PopView";

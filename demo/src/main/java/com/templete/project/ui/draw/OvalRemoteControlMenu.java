@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
  * ProjectName  TempleteProject-java
  * Date         2022/2/26.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class OvalRemoteControlMenu extends CustomView {

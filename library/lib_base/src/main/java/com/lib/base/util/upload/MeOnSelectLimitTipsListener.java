@@ -11,7 +11,7 @@ import com.luck.picture.lib.interfaces.OnSelectLimitTipsListener;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util.upload
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/9.
  */
 

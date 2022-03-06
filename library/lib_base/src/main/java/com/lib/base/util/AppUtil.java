@@ -19,7 +19,7 @@ import static android.content.Context.TELEPHONY_SERVICE;
 /**
  * PackageName  com.hycg.company.utils
  * ProjectName  HYCGCompanyProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019/4/16.
  */
 public class AppUtil {

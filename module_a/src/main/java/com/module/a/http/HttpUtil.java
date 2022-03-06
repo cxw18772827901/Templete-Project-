@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 /**
  * PackageName  com.hycg.company.http
  * ProjectName  HYCGCompanyProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2019/4/16.
  */
 public class HttpUtil {

@@ -12,7 +12,7 @@ import androidx.lifecycle.AndroidViewModel;
 /**
  * PackageName  com.lib.base.config
  * ProjectName  TempleteProject
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         10/10/21.
  */
 

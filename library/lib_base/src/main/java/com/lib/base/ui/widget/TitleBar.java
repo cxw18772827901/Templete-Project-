@@ -38,7 +38,7 @@ import static com.lib.base.ui.activity.AppTheme.THEME_NONE;
  * <p>
  * PackageName  com.hgd.hgdnovel.wedjet
  * ProjectName  Project
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2018/3/20.
  */
 

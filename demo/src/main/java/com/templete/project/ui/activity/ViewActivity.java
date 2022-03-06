@@ -13,7 +13,7 @@ import com.templete.project.databinding.AndratingBarActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/1/4.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class ViewActivity extends BaseActivity<AndratingBarActivityBinding> {

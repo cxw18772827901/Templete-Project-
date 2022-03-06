@@ -33,7 +33,7 @@ import androidx.viewbinding.ViewBinding;
  * 5.销毁时自动取消RxJava执行的任务;
  * 6.log,toast,intent...
  *
- * @author chenxiaowu
+ * @author xwchen
  * Date on 2019/11/28.
  */
 @SuppressLint("Registered")

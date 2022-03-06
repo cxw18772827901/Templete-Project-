@@ -18,7 +18,7 @@ import androidx.fragment.app.FragmentManager;
  * 自定义无按钮的Fragment导航容器,按照添加数据顺序索引切换Fragment
  * ProjectName  xuanshangmao
  * PackageName  com.shapojie.five.view
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/2/11.
  */
 

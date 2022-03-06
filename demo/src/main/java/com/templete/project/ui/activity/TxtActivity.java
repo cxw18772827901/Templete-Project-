@@ -11,7 +11,7 @@ import com.templete.project.databinding.TxtActivityBinding;
  * ProjectName  TempleteProject-java
  * Date         2022/2/15.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class TxtActivity extends BaseActivity<TxtActivityBinding> {

@@ -3,7 +3,7 @@ package com.hjq.shape.styleable;
 import com.hjq.shape.R;
 
 /**
- *    author : Android 轮子哥
+ *   @author: Android 轮子哥
  *    github : https://github.com/getActivity/ShapeView
  *    time   : 2021/08/28
  *    desc   : RadioButton 的 Shape 属性值

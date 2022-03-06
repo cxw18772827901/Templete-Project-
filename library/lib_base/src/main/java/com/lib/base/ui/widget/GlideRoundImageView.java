@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
  * ProjectName  TempleteProject-java
  * Date         2022/2/24.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class GlideRoundImageView extends RoundedImageView {

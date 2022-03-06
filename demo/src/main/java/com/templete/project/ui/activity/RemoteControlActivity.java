@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.core.Single;
  * ProjectName  TempleteProject-java
  * Date         2022/2/26.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class RemoteControlActivity extends BaseActivity<RemoteControlActivityBinding> {

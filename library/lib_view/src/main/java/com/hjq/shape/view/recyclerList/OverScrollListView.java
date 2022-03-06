@@ -10,7 +10,7 @@ import com.hjq.shape.R;
  * 仿ios弹性可以过拉的RecyclerView
  * PackageName  com.common.library.widget.listView
  * ProjectName  Project
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         2018/4/12.
  */
 public class OverScrollListView extends ListView {

@@ -41,7 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.adapter
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/12/30.
  */
 public class FloatingAdapter extends AppAdapter<String> {

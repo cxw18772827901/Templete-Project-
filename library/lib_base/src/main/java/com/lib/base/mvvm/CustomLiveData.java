@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
  * <p>
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.utils
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/6/16.
  */
 

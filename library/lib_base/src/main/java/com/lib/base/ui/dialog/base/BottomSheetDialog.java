@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
  * ProjectName  TempleteProject-java
  * Date         2022/1/23.
  *
- * @author chenxiaowu
+ * @author xwchen
  */
 
 public class BottomSheetDialog extends com.google.android.material.bottomsheet.BottomSheetDialog {

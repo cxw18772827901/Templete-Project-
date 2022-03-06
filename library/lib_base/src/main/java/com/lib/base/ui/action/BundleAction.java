@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import androidx.annotation.Nullable;
 
 /**
- * author : Android 轮子哥
+ *@author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/10/23
  * desc   : 参数意图

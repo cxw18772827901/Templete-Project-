@@ -17,7 +17,7 @@ import okhttp3.Response;
  * ok拦截器:项目中多域名切换,一个host对应一个url
  * PackageName  com.spot.jtt.util
  * ProjectName  Spot1-4
- * Author       chenxiaowu
+ *@author      xwchen
  * Date         1/30/21.
  */
 

@@ -15,7 +15,7 @@ import com.templete.project.mvvm.DemoViewModel;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- * Author       Administrator
+ *@author      xwchen
  * Date         2021/12/28.
  */
 

@@ -14,7 +14,7 @@ import java.io.File;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.bean
- * Author       Administrator
+ *@author      xwchen
  * Date         2022/1/14.
  */
 

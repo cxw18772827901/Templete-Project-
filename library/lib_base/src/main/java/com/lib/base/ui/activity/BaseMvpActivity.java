@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 /**
  * activity基类基础上增加mvp模式。
  * 出于规范性，一个项目中最好不要和{@link BaseMvvmActivity}混用。
- * Author       chenxiaowu
+ *@author      xwchen
  * Date          2019/11/28.
  */
 @SuppressLint("Registered")
