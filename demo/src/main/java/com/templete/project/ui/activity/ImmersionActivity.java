@@ -92,7 +92,7 @@ public class ImmersionActivity extends BaseActivity<ImmersionActivityBinding> {
     @Override
     public boolean actionTitleBackClick(boolean keyBack) {
         toast(keyBack ? "点击返回按钮" : "点击标题栏左侧返回按钮");
-        return true;
+        return false;
     }
 
     @Override
