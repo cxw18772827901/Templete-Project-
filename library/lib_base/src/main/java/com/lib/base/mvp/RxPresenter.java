@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
-import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 
@@ -12,7 +11,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
 /**
  * RxPresenter
  * 1、绑定、解绑view；
- * 2、可以将single{@link Single}添加到Disposable{@link CompositeDisposable}中，以便后续进行取消操作；
+ * 2、可以将RxJava任务添加到Disposable{@link CompositeDisposable}中，以便后续进行取消操作；
  * 3、感知生命周期.
  *
  * @author xwchen
