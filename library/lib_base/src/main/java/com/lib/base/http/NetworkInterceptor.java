@@ -6,7 +6,6 @@ import com.lib.base.config.App;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.AppUtil;
 import com.lib.base.util.LoginUtil;
-import com.lib.base.util.OUtil;
 import com.lib.base.util.SPUtil;
 
 import org.jetbrains.annotations.NotNull;
@@ -14,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import okhttp3.CacheControl;
@@ -53,7 +53,8 @@ import okhttp3.ResponseBody;
  * 3.判断登录态.
  * ProjectName  XSMNewProject
  * PackageName  com.datouma.newproject.http
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2021/9/14.
  */
 
@@ -98,7 +99,7 @@ public class NetworkInterceptor implements Interceptor {
         return response
                 .newBuilder()
                 .body(ResponseBody.create(
-                        OUtil.isNotNull(str) ? str : getDefaultStr(),
+                        str != null ? str : getDefaultStr(),
                         getMediaType(responseBody)))
                 .build();
     }
@@ -116,9 +117,9 @@ public class NetworkInterceptor implements Interceptor {
     @NonNull
     private MediaType getMediaType(ResponseBody responseBody) {
         if (responseBody != null && responseBody.contentType() != null) {
-            return responseBody.contentType();
+            return Objects.requireNonNull(responseBody.contentType());
         } else {
-            return MediaType.Companion.parse("application/json;charset=utf-8");
+            return Objects.requireNonNull(MediaType.Companion.parse("application/json;charset=utf-8"));
         }
     }
 

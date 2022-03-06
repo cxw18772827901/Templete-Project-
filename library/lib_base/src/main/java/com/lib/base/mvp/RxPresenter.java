@@ -1,5 +1,8 @@
 package com.lib.base.mvp;
 
+import com.lib.base.ui.action.LogAction;
+import com.lib.base.ui.action.ToastAction;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
@@ -18,7 +21,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * * Date on 2019/11/28.
  */
 
-public class RxPresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T>, DefaultLifecycleObserver {
+public class RxPresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T>, DefaultLifecycleObserver, LogAction, ToastAction {
 
     /**
      * mvp回调接口view,
