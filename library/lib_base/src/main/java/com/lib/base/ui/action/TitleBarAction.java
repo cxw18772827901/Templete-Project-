@@ -42,7 +42,7 @@ public interface TitleBarAction extends ImmersionAvtion {
         TitleBar titleBar = getTitleBar();
         titleBar.initView(context, theme);
         titleBar.setBackClickListener(v -> {
-            actionTitleBackClick();
+            actionTitleBackClick(false);
             if (!backClickIntercept()) {
                 actionFinish();
             }
@@ -50,10 +50,13 @@ public interface TitleBarAction extends ImmersionAvtion {
     }
 
     /**
-     * 标题栏返回按钮事件
+     * 返回键或标题栏返回按钮事件
+     *
+     * @param keyBack true返回键返回,false标题返回
+     * @return 注意return true时候, 如果是返回键返回会消费返回事件;标题返回无影响
      */
-    default void actionTitleBackClick() {
-
+    default boolean actionTitleBackClick(boolean keyBack) {
+        return false;
     }
 
     /**

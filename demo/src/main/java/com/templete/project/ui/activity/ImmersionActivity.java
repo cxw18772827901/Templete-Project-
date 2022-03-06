@@ -11,7 +11,8 @@ import com.templete.project.databinding.ImmersionActivityBinding;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2021/12/27.
  */
 
@@ -89,8 +90,9 @@ public class ImmersionActivity extends BaseActivity<ImmersionActivityBinding> {
     }
 
     @Override
-    public void actionTitleBackClick() {
-        toast("点击标题栏左侧返回按钮");
+    public boolean actionTitleBackClick(boolean keyBack) {
+        toast(keyBack ? "点击返回按钮" : "点击标题栏左侧返回按钮");
+        return true;
     }
 
     @Override

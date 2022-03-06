@@ -111,18 +111,12 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        boolean keyDown = onKeyDown(keyCode == KeyEvent.KEYCODE_BACK);
-        return keyDown || super.onKeyDown(keyCode, event);
-    }
-
-    /**
-     * 是否消费点击事件
-     *
-     * @param iskeyBack
-     * @return
-     */
-    protected boolean onKeyDown(boolean iskeyBack) {
-        return false;
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (actionTitleBackClick(true)) {
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     /**
