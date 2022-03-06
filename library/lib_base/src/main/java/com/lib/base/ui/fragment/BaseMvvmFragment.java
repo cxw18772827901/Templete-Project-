@@ -10,7 +10,8 @@ import androidx.viewbinding.ViewBinding;
 /**
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.view.activity.common
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2021/6/16.
  */
 
@@ -18,6 +19,11 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
     public static final String TAG = "BaseMvvmActivity";
     protected S mViewModel;
 
+    /**
+     * getViewModelClass
+     *
+     * @return
+     */
     protected abstract Class<S> getViewModelClass();
 
     /**
@@ -29,8 +35,6 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
      */
     public abstract boolean userParentViewModelStoreOwner();
 
-    public abstract void observeData();
-
     @Override
     public void setDevelopmentMode() {
         Class<S> viewModelClass = getViewModelClass();
@@ -39,7 +43,6 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
         }
         mViewModel = new ViewModelProvider(userParentViewModelStoreOwner() ? requireActivity() : this,
                 new ViewModelProvider.AndroidViewModelFactory(requireActivity().getApplication())).get(viewModelClass);
-        observeData();
     }
 
 

@@ -26,11 +26,13 @@ public interface BaseContract {
         /**
          * 默认完成回调
          */
-        void complete();
+        default void complete() {
+        }
 
         /**
          * 默认错误回调
          */
-        void error();
+        default void error() {
+        }
     }
 }

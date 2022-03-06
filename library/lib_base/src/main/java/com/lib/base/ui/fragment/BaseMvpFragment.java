@@ -8,14 +8,20 @@ import androidx.viewbinding.ViewBinding;
 
 /**
  * fragment基类增加mvp模式。
- * 出于规范性，一个项目中最好不要和{@link BaseMvvmFragment}混用。
- * @author      xwchen
+ * mvp和mvvm{@link BaseMvvmFragment}可选择性使用。
+ *
+ * @author xwchen
  * Date          2019/11/28.
  */
 @SuppressLint("Registered")
 public abstract class BaseMvpFragment<T extends BaseContract.BasePresenter, S extends ViewBinding> extends BaseFragment<S> {
     protected T mPresenter;
 
+    /**
+     * bind presenter
+     *
+     * @return
+     */
     protected abstract T bindPresenter();
 
     @Override

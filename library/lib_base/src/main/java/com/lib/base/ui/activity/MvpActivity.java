@@ -1,7 +1,6 @@
 package com.lib.base.ui.activity;
 
 import android.annotation.SuppressLint;
-import android.view.View;
 
 import com.lib.base.R;
 import com.lib.base.bean.BtnBean;
@@ -18,13 +17,14 @@ import com.lib.base.ui.widget.HolderView;
  * <p>
  * 注：如果不需要使用mvp模式直接继承BaseActivity{@link BaseActivity}即可。
  * <p>
+ *
  * @author xwchen
  * Date on 2019/11/28.
  */
 @SuppressLint("NonConstantResourceId")
 public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, ActivityDemoBinding> implements DemoContract.View {
-//    @ViewInject(id = R.id.tv_login, needClick = true)
-//    TextView tv_login;
+    //@ViewInject(id = R.id.tv_login, needClick = true)
+    //TextView tv_login;
 
     @Override
     protected DemoContract.Presenter bindPresenter() {
@@ -58,7 +58,7 @@ public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, Activit
 
     @Override
     public void initView() {
-//        mViewBinding.refreshLayout.getRoot().setFresh(true);//允许刷新
+        //mViewBinding.refreshLayout.getRoot().setFresh(true);//允许刷新
     }
 
     @Override
@@ -83,21 +83,6 @@ public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, Activit
 
     @Override
     public void loadError() {
-
-    }
-
-    @Override
-    public void error() {
-
-    }
-
-    @Override
-    public void complete() {
-
-    }
-
-    @Override
-    public void onClick(View v) {
 
     }
 }

@@ -21,6 +21,10 @@ import io.reactivex.rxjava3.disposables.Disposable;
 
 public class RxPresenter<T extends BaseContract.BaseView> implements BaseContract.BasePresenter<T>, DefaultLifecycleObserver {
 
+    /**
+     * mvp回调接口view,
+     * 使用前必须判断{@link RxPresenter#isLifecycleSurvive()}生命周期是否存活.
+     */
     protected T mView;
     private Lifecycle.Event currentState = Lifecycle.Event.ON_CREATE;
 
