@@ -6,7 +6,7 @@ package com.lib.base.mvp;
 
 public interface BaseContract {
 
-    interface BasePresenter<T> {
+    interface BasePresenter<T extends BaseView> {
 
         void attachView(T view);
 
