@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui.activity
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/15.
  */
 

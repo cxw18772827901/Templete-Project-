@@ -61,7 +61,7 @@ import io.reactivex.rxjava3.plugins.RxJavaPlugins;
  * application基类
  * PackageName  com.bigheadhorse.xscat.config
  * ProjectName  NumericalCodeProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-11-27.
  */
 public abstract class App extends Application implements ViewModelStoreOwner, LogAction, CameraXConfig.Provider {

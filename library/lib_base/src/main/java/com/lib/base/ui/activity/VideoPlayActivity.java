@@ -11,7 +11,7 @@ import com.lib.base.ui.widget.paly.PlayerView;
 import androidx.annotation.NonNull;
 
 /**
- *@author: Android 轮子哥
+ * @author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2020/02/16
  * desc   : 视频播放界面

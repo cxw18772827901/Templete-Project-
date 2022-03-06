@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
  * 三角形和倒三角形
  * ProjectName  TempleteProject-java
  * PackageName  com.hjq.shape.view
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/25.
  *
  * @author xwchen

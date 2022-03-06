@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
  * 可以跨进程通讯
  * PackageName  com.module.a
  * ProjectName  TempleteProject
- *@author      xwchen
+ * @author      xwchen
  * Date         10/11/21.
  */
 @Route(path = ArouteConfig.MODULE_SERVICE_A)

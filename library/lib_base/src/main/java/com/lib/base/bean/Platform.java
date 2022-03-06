@@ -2,7 +2,7 @@ package com.lib.base.bean;
 
 
 /**
- *@author: Android 轮子哥
+ * @author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/04/03
  * desc   : 友盟平台

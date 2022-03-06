@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
  * http请求基类,包含code和message和success判断
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.bean
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/22.
  */
 

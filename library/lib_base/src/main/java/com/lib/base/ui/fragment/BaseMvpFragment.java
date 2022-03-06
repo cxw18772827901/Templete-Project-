@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 /**
  * fragment基类增加mvp模式。
  * 出于规范性，一个项目中最好不要和{@link BaseMvvmFragment}混用。
- *@author      xwchen
+ * @author      xwchen
  * Date          2019/11/28.
  */
 @SuppressLint("Registered")

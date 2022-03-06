@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 /**
  * PackageName  com.bigheadhorse.xscat.config
  * ProjectName  NumericalCodeProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-11-27.
  */
 public interface AppConfig {

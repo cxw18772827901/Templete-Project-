@@ -11,7 +11,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * 官方建议不再使用注解方式回到生命周期
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.rxjava
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/14.
  */
 

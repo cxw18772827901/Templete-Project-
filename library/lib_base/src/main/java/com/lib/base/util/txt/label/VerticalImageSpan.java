@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
  * <p>
  * ProjectName  XSCat
  * PackageName  com.bigheadhorse.xscat.view.widget
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/6/15.
  */
 public class VerticalImageSpan extends ImageSpan {

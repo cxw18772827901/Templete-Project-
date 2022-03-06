@@ -19,7 +19,7 @@ import io.reactivex.rxjava3.core.SingleEmitter;
 /**
  * PackageName  com.templete.project.mvvm
  * ProjectName  TempleteProject
- *@author      xwchen
+ * @author      xwchen
  * Date         10/10/21.
  */
 

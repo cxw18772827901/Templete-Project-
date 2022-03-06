@@ -7,7 +7,7 @@ import com.module.login.config.ModuleLoginApp;
 /**
  * ProjectName  TempleteProject
  * PackageName  com.templete.project.config
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/11/17.
  */
 

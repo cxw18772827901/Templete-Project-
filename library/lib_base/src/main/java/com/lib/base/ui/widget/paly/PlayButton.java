@@ -19,7 +19,7 @@ import com.lib.base.R;
 import androidx.annotation.Nullable;
 
 /**
- *@author: codeestX & Android 轮子哥
+ * @author: codeestX & Android 轮子哥
  * github : https://github.com/codeestX/ENViews
  * time   : 2021/09/12
  * desc   : 播放暂停动效的按钮

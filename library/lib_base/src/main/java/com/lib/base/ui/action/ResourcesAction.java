@@ -13,7 +13,7 @@ import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 /**
- *@author: Android 轮子哥
+ * @author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/09/15
  * desc   : 根据Context处理Resources

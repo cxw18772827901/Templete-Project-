@@ -35,7 +35,7 @@ import androidx.annotation.NonNull;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.adapter
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/30.
  */
 public class DemoAdapter extends AppAdapter<Integer> {

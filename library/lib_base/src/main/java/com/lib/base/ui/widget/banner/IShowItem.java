@@ -3,7 +3,7 @@ package com.lib.base.ui.widget.banner;
 /**
  * PackageName  com.lib.base.ui.widget.banner
  * ProjectName  TempleteProject-java
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/3.
  */
 

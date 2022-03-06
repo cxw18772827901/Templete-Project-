@@ -8,7 +8,7 @@ import com.lib.base.config.App;
 /**
  * ProjectName  TempleteProject
  * PackageName  com.module.a
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/10/11.
  */
 public class ModuleAApp extends App {

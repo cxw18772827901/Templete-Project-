@@ -6,7 +6,7 @@ import android.content.Context;
 /**
  * PackageName  com.bigheadhorse.xscat
  * ProjectName  NumericalCodeProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-11-28.
  */
 public class DensityUtil {

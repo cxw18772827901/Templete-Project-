@@ -20,7 +20,7 @@ import com.templete.project.ui.activity.XTabActivity;
 /**
  * PackageName  com.templete.project.ui.fragment
  * ProjectName  TempleteProject
- *@author      xwchen
+ * @author      xwchen
  * Date         10/10/21.
  *
  * @author xwchen

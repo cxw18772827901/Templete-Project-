@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * 禁用RecyclerView的惯性滚动
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/1/14.
  */
 

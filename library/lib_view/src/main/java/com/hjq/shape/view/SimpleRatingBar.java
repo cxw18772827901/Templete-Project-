@@ -16,7 +16,7 @@ import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 
 /**
- *@author: Android 轮子哥
+ * @author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2021/07/11
  * desc   : 自定义评分控件（系统的 RatingBar 不好用）

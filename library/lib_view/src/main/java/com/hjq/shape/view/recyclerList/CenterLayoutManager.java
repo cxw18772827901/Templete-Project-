@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * <p>
  * PackageName  com.datouma.newproject.view.widget
  * ProjectName  xscat-android
- *@author      xwchen
+ * @author      xwchen
  * Date         6/20/21.
  */
 

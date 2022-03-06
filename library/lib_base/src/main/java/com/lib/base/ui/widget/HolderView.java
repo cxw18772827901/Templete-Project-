@@ -19,7 +19,7 @@ import androidx.annotation.Nullable;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.widget
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/31.
  */
 

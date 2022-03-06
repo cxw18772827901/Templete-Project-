@@ -20,7 +20,7 @@ import com.lib.base.databinding.DynamicLayoutBinding;
  * 动态添加/删除View(添加View时候以动画方式调整高度,使用场景很多)
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.widget.dynamicLayout
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/31.
  */
 

@@ -3,7 +3,7 @@ package com.module.a.bean;
 /**
  * PackageName  com.tiyu.zjwt.bean
  * ProjectName  NumericalCodeAbilitiesPool
- *@author      xwchen
+ * @author      xwchen
  * Date         1/9/21.
  */
 

@@ -10,7 +10,7 @@ import com.lib.base.R;
 import androidx.annotation.StringRes;
 
 /**
- *@author: Android 轮子哥
+ * @author: Android 轮子哥
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2018/12/2
  * desc   : 等待加载对话框

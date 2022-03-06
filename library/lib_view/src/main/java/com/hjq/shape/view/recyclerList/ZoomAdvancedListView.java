@@ -27,7 +27,7 @@ import androidx.core.view.GestureDetectorCompat;
 /**
  * PackageName  com.hgd.hgdcomic.wedjet
  * ProjectName  Project
- *@author      xwchen
+ * @author      xwchen
  * Date         2018/3/2.
  */
 

@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * PackageName  com.bigheadhorse.xscat.utils
  * ProjectName  XSCat
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-12-02.
  */
 public class LoginUtil {

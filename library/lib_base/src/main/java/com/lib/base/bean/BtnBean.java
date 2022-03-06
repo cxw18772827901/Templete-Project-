@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.bean
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/27.
  */
 

@@ -6,7 +6,7 @@ import com.lib.base.ui.activity.BaseActivity;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/1/19.
  */
 

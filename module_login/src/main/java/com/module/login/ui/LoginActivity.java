@@ -27,7 +27,7 @@ import androidx.annotation.NonNull;
 /**
  * PackageName  com.bigheadhorse.xscat.view.activity
  * ProjectName  XSCat
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-12-02.
  */
 

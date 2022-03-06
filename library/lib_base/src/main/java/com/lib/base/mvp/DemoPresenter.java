@@ -6,7 +6,7 @@ import androidx.lifecycle.Lifecycle;
 /**
  * PackageName  com.bigheadhorse.xscat.presenter
  * ProjectName  NumericalCodeProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-11-27.
  *
  * @author xwchen

@@ -6,7 +6,7 @@ import com.templete.project.databinding.CollectionActivityBinding;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/29.
  */
 public class CollectActivity extends BaseActivity<CollectionActivityBinding> {

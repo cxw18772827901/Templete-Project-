@@ -22,7 +22,7 @@ import androidx.viewpager.widget.ViewPager;
  * 自定义NavigationBar,可以选择关联ViewPager
  * ProjectName  xuanshangmao
  * PackageName  com.shapojie.five.view
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/11.
  */
 

@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 /**
  * PackageName  com.hycg.company.utils
  * ProjectName  HYCGCompanyProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019/4/17.
  */
 public class TxtListener implements TextWatcher {

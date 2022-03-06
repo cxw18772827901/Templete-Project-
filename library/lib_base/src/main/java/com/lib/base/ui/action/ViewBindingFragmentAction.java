@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
  * ViewBinding抽象类
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/2/8.
  */
 

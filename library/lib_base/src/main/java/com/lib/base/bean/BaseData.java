@@ -19,7 +19,7 @@ package com.lib.base.bean;
  * <p>
  * ProjectName  XSMNewProject
  * PackageName  com.datouma.newproject.model.bean
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/9/2.
  */
 

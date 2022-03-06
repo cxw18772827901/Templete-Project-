@@ -50,7 +50,7 @@ import com.templete.project.databinding.ElementTargetActivityBinding;
  * })
  * PackageName  com.templete.project.ui.activity
  * ProjectName  TempleteProject-java
- *@author      xwchen
+ * @author      xwchen
  * Date         2/13/22.
  */
 

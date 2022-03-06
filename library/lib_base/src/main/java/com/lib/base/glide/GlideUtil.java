@@ -15,7 +15,7 @@ import java.lang.ref.WeakReference;
 /**
  * Package  com.dave.project.util
  * Project  Project
- *@author  xwchen
+ * @author  xwchen
  * Date     2017/10/30.
  */
 

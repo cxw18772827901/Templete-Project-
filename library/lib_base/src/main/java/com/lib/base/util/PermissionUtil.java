@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 /**
  * PackageName  com.lib.base.util
  * ProjectName  TempleteProject-java
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/12/26.
  */
 

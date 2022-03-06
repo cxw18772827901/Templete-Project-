@@ -6,7 +6,7 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 /**
  * PackageName  com.hycg.ge.utils
  * ProjectName  HYCGGrvorenmentProject
- *@author      xwchen
+ * @author      xwchen
  * Date         2019-07-17.
  */
 public class FreshUtil {

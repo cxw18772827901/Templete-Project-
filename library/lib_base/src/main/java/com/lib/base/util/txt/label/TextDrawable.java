@@ -16,7 +16,7 @@ import android.graphics.drawable.shapes.RoundRectShape;
 /**
  * ProjectName  XSCat
  * PackageName  com.datouma.newproject.view.widget
- *@author      xwchen
+ * @author      xwchen
  * Date         2021/6/23.
  */
 

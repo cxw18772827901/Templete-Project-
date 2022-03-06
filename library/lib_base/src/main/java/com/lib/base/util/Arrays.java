@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.util
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/1/26.
  */
 

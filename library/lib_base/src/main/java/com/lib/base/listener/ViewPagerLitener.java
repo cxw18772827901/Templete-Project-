@@ -5,7 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.listener
- *@author      xwchen
+ * @author      xwchen
  * Date         2022/1/6.
  */
 
