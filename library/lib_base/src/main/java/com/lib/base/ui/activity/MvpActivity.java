@@ -22,7 +22,7 @@ import com.lib.base.ui.widget.HolderView;
  * Date on 2019/11/28.
  */
 @SuppressLint("NonConstantResourceId")
-public class MvpActivity extends BaseMvpActivity<DemoContract.Presenter, ActivityDemoBinding> implements DemoContract.View {
+public class MvpActivity extends BaseMvpActivity<ActivityDemoBinding, DemoContract.Presenter> implements DemoContract.View {
     //@ViewInject(id = R.id.tv_login, needClick = true)
     //TextView tv_login;
 

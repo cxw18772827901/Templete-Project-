@@ -14,15 +14,15 @@ import androidx.viewbinding.ViewBinding;
  * Date          2019/11/28.
  */
 @SuppressLint("Registered")
-public abstract class BaseMvpActivity<T extends BaseContract.BasePresenter, S extends ViewBinding> extends BaseActivity<S> {
-    protected T mPresenter;
+public abstract class BaseMvpActivity<T extends ViewBinding, S extends BaseContract.BasePresenter> extends BaseActivity<T> {
+    protected S mPresenter;
 
     /**
      * bind presenter
      *
      * @return
      */
-    protected abstract T bindPresenter();
+    protected abstract S bindPresenter();
 
     @Override
     public void setDevelopmentMode() {
