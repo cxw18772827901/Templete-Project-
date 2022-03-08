@@ -40,14 +40,19 @@ public class MvpActivity extends BaseMvpActivity<ActivityDemoBinding, DemoContra
     public void inits() {
         setTitleStr("mvp activity");
         setRightClickViews((position, view) -> {
-                    if (position == 0) {
-                        showLoadingView();
-                    } else if (position == 1) {
-                        showNoDataView();
-                    } else if (position == 2) {
-                        showErrorView();
-                    } else {
-                        hideView();
+                    switch (position) {
+                        case 0:
+                            showLoadingView();
+                            break;
+                        case 1:
+                            showNoDataView();
+                            break;
+                        case 2:
+                            showErrorView();
+                            break;
+                        default:
+                            hideView();
+                            break;
                     }
                 }, true,
                 new BtnBean("加载\u3000", R.drawable.ic_pop1),
