@@ -4,8 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.hjq.shape.view.ShapeTextView;
+
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  *   @author: Android 轮子哥
@@ -13,7 +14,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  *    time   : 2018/10/18
  *    desc   : 验证码倒计时
  */
-public final class CountdownView extends AppCompatTextView implements Runnable {
+public final class CountdownView extends ShapeTextView implements Runnable {
 
     /** 倒计时秒数 */
     private int mTotalSecond = 60;
