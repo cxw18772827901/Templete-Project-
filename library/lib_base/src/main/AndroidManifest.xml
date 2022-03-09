@@ -4,10 +4,6 @@
 
     <application>
         <activity
-            android:name=".ui.activity.DialogActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
             android:name=".ui.activity.MvpActivity"
             android:screenOrientation="portrait" />
         <!-- 播放视频（自适应方向） -->

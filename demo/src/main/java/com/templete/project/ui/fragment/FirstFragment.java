@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lib.base.bean.BtnBean;
-import com.lib.base.ui.activity.DialogActivity;
+import com.templete.project.ui.activity.DialogActivity;
 import com.lib.base.ui.fragment.BaseFragment;
 import com.templete.project.databinding.FirstFragmentBinding;
 import com.templete.project.ui.activity.CustomXTabActivity;

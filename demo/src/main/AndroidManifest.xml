@@ -176,11 +176,11 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.lib.base.ui.activity.SunFreshActivity"
+            android:name=".ui.activity.SunFreshActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.lib.base.ui.activity.GrassFreshActivity"
+            android:name=".ui.activity.GrassFreshActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -222,5 +222,9 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <!--android:theme="@style/Theme.Process"-->
+        <activity
+            android:name=".ui.activity.DialogActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 </manifest>

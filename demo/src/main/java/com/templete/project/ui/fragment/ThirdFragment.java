@@ -4,8 +4,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.lib.base.ui.activity.BaseActivity;
-import com.lib.base.ui.activity.GrassFreshActivity;
-import com.lib.base.ui.activity.SunFreshActivity;
+import com.templete.project.ui.activity.GrassFreshActivity;
+import com.templete.project.ui.activity.SunFreshActivity;
 import com.lib.base.ui.fragment.BaseFragment;
 import com.lib.base.util.intent.IntentData;
 import com.templete.project.bean.PBean;

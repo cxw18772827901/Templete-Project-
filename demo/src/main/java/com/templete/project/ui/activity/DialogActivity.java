@@ -1,11 +1,10 @@
-package com.lib.base.ui.activity;
+package com.templete.project.ui.activity;
 
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
-import com.lib.base.R;
-import com.lib.base.databinding.DialogActivityBinding;
+import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.ui.dialog.base.AddressDialog;
 import com.lib.base.ui.dialog.base.BaseDialog;
 import com.lib.base.ui.dialog.base.DateDialog;
@@ -22,6 +21,8 @@ import com.lib.base.ui.dialog.base.UpdateDialog;
 import com.lib.base.ui.dialog.base.WaitDialog;
 import com.lib.base.ui.dialog.manager.DialogManager;
 import com.lib.base.util.GlobalThreadPoolUtil;
+import com.templete.project.R;
+import com.templete.project.databinding.DialogActivityBinding;
 
 import java.util.ArrayList;
 import java.util.Calendar;

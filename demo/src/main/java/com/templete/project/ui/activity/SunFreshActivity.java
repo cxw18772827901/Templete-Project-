@@ -1,10 +1,11 @@
-package com.lib.base.ui.activity;
+package com.templete.project.ui.activity;
 
 import com.lib.base.adapter.DemoAdapter;
-import com.lib.base.databinding.SunFreshActivityBinding;
+import com.lib.base.ui.activity.BaseActivity;
 import com.lib.base.util.FreshUtil;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+import com.templete.project.databinding.SunFreshActivityBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.templete.project.ui.activity
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2022/2/15.
  */
 
