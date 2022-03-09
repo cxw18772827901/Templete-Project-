@@ -48,6 +48,9 @@ public final class CountdownView extends AppCompatTextView implements Runnable {
      * 开始倒计时
      */
     public void start() {
+        // 移除延迟任务，避免内存泄露
+        removeCallbacks(this);
+
         mRecordText = getText();
         setEnabled(false);
         mCurrentSecond = mTotalSecond;
