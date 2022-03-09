@@ -10,6 +10,7 @@ import com.templete.project.ui.activity.IndexActivity;
 import com.templete.project.ui.activity.CanvasActivity;
 import com.templete.project.ui.activity.SoftActivity;
 import com.templete.project.ui.activity.TxtActivity;
+import com.templete.project.ui.activity.WrapActivity;
 
 /**
  * PackageName  com.templete.project.ui.fragment
@@ -46,13 +47,16 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
                         clazz = SoftActivity.class;
                     } else if (v.equals(mViewBinding.tv4)) {
                         clazz = CanvasActivity.class;
+                    } else if (v.equals(mViewBinding.tv5)) {
+                        clazz = WrapActivity.class;
                     }
                     if (clazz != null) {
                         ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
                     }
                 },
                 mViewBinding.tv1, mViewBinding.tv2,
-                mViewBinding.tv3, mViewBinding.tv4);
+                mViewBinding.tv3, mViewBinding.tv4,
+                mViewBinding.tv5);
     }
 
     @Override

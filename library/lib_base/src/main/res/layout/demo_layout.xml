@@ -35,5 +35,6 @@
         app:layout_constraintTop_toTopOf="@id/tv"
         app:layout_constraintWidth_percent="0.1667"
         tools:ignore="HardcodedText"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.lib.base.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import com.lib.base.databinding.DemoLayoutBinding;
 import com.lib.base.util.DebugUtil;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 /*      mAdapter = new ImagePreviewAdapter(this);//AppAdapter
         mAdapter.setData(images);
@@ -35,7 +37,8 @@ import androidx.annotation.NonNull;
 /**
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.adapter
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2021/12/30.
  */
 public class DemoAdapter extends AppAdapter<Integer> {
@@ -65,11 +68,17 @@ public class DemoAdapter extends AppAdapter<Integer> {
             this.binding = binding;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         public void onBindView(int position) {
             binding.tv1.setOnClickListener(v -> DebugUtil.toast("影藏item点击"));
-            if (show) {
-                binding.tv1.setVisibility(View.VISIBLE);
+            binding.tv1.setVisibility(show ? View.VISIBLE : View.GONE);
+
+            binding.tv.setText("item" + position);
+            if (!show) {
+                ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) binding.tv.getLayoutParams();
+                params.matchConstraintPercentWidth = 1;
+                binding.tv.setLayoutParams(params);
             }
         }
     }

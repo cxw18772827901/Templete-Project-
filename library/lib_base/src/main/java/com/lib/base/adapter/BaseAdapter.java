@@ -71,7 +71,10 @@ public abstract class BaseAdapter<VH extends BaseAdapter.ViewHolder> extends Rec
         // 根据 ViewHolder 绑定的位置和传入的位置进行对比
         // 一般情况下这两个位置值是相等的，但是有一种特殊的情况
         // 在外层添加头部 View 的情况下，这两个位置值是不对等的
-        mPositionOffset = position - holder.getBindingAdapterPosition();
+        //mPositionOffset = position - holder.getAdapterPosition();//老版本是getAdapterPosition()
+        //mPositionOffset = position - holder.getBindingAdapterPosition();//新版本改成这样出现了错误情况
+        //mPositionOffset = position - holder.getViewHolderPosition();//添加header或者footer后索引也有问题
+        mPositionOffset = position - holder.getAbsoluteAdapterPosition();
         holder.onBindView(position);
     }
 
