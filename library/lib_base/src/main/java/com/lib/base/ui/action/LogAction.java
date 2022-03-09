@@ -7,7 +7,8 @@ import com.lib.base.util.DebugUtil;
 import androidx.annotation.StringRes;
 
 /**
- * 日志工具类
+ * 日志
+ *
  * @author: xwchen
  * github : https://github.com/getActivity/AndroidProject
  * time   : 2019/12/08

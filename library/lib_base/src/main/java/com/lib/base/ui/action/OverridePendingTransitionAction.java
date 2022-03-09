@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.lib.base.R;
 
 /**
+ * 常规转场动画,包括常规跳转转场/login上拉动画/finish转场/
  * PackageName  com.lib.base.ui.action
  * ProjectName  TempleteProject-java
  * Date         2022/1/28.

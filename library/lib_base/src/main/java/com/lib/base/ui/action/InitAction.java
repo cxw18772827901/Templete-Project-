@@ -1,11 +1,12 @@
 package com.lib.base.ui.action;
 
 /**
- * 初始化工具类
+ * 初始化
  * <p>
  * PackageName  com.test.novel.ui.base
  * ProjectName  Project
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2018/3/5.
  */
 

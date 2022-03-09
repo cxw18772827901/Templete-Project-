@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
 /**
- * toast工具类
+ * toast
  * <p>
  *
  * @author: xwchen

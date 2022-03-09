@@ -18,8 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * 1.activity跳转+intent添加数据;
- * 2.quchuintent数据.
+ * 1.activity跳转+intent添加数据,让开发者不再处理intent和数据添加的过程;
+ * 2.结合OverridePendingTransitionAction实现常见的转场动画.
  * PackageName  com.lib.base.ui.action
  * ProjectName  TempleteProject-java
  * Date         2022/1/28.

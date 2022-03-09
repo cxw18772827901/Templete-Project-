@@ -3,11 +3,12 @@ package com.lib.base.ui.action;
 import com.lib.base.ui.widget.HolderView;
 
 /**
- * 基于{@link HolderView}工具类
+ * 处理加载中/无数据/网络异常等状态,基于{@link HolderView}
  * <p>
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
- * @author       xwchen
+ *
+ * @author xwchen
  * Date         2022/1/27.
  */
 

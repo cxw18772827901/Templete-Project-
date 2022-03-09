@@ -8,6 +8,7 @@ import com.lib.base.ui.activity.AppTheme;
 import com.lib.base.ui.widget.TitleBar;
 
 /**
+ * 处理TitleBar{@link TitleBar}
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
  *

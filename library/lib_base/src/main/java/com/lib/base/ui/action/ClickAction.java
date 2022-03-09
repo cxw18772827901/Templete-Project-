@@ -7,7 +7,7 @@ import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 
 /**
- * click工具类
+ * view/click
  *
  * @author : xwchen
  * github : https://github.com/getActivity/AndroidProject
