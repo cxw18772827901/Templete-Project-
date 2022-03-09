@@ -52,7 +52,6 @@ public class DemoAdapter extends AppAdapter<Integer> {
         super(context);
     }
 
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

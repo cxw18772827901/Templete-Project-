@@ -10,6 +10,8 @@ import com.templete.project.databinding.WrapActivityBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 /**
  * 可以添加多个header,footer,结合刷新==
  * ProjectName  TempleteProject-java
@@ -29,7 +31,7 @@ public class WrapActivity extends BaseActivity<WrapActivityBinding> {
 
     @Override
     public void initView() {
-        //mViewBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mViewBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         demoAdapter = new DemoAdapter(this);
         demoAdapter.setOnItemClickListener((recyclerView, itemView, position) -> toast("我是item" + position));
         mViewBinding.recyclerView.setAdapter(demoAdapter);
