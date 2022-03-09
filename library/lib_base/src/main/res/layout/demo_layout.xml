@@ -9,6 +9,7 @@
         android:id="@+id/tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/white_selector"
         android:gravity="center"
         android:padding="@dimen/x30"
         android:text="item"
