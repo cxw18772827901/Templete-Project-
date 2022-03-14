@@ -65,7 +65,7 @@ public class GlobalThreadPoolUtil {
                 KEEP_ALIVE_TIME, TimeUnit.SECONDS,
                 workQueue, threadFactory,
                 new ThreadPoolExecutor.DiscardPolicy());
-        sExecutor.allowCoreThreadTimeOut(true);//不设置,即使可空闲线程闲置也会一直保持
+        sExecutor.allowCoreThreadTimeOut(true);//不设置,即使核心线程闲置也会一直保持
     }
 
     public static void postOnUiThread(Runnable runnable) {

@@ -8,6 +8,7 @@ import com.lib.base.ui.fragment.BaseFragment;
 import com.templete.project.databinding.ForthFragmentBinding;
 import com.templete.project.ui.activity.IndexActivity;
 import com.templete.project.ui.activity.CanvasActivity;
+import com.templete.project.ui.activity.ProgrammingActivity;
 import com.templete.project.ui.activity.SoftActivity;
 import com.templete.project.ui.activity.TxtActivity;
 import com.templete.project.ui.activity.WrapActivity;
@@ -49,6 +50,8 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
                         clazz = CanvasActivity.class;
                     } else if (v.equals(mViewBinding.tv5)) {
                         clazz = WrapActivity.class;
+                    } else if (v.equals(mViewBinding.tv6)) {
+                        clazz = ProgrammingActivity.class;
                     }
                     if (clazz != null) {
                         ((BaseActivity<?>) requireActivity()).startAty(requireActivity(), clazz);
@@ -56,7 +59,7 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
                 },
                 mViewBinding.tv1, mViewBinding.tv2,
                 mViewBinding.tv3, mViewBinding.tv4,
-                mViewBinding.tv5);
+                mViewBinding.tv5, mViewBinding.tv6);
     }
 
     @Override
