@@ -18,9 +18,9 @@ import androidx.annotation.Nullable;
  * 三角形和倒三角形
  * ProjectName  TempleteProject-java
  * PackageName  com.hjq.shape.view
- * @author      xwchen
- * Date         2022/2/25.
  *
+ * @author xwchen
+ * Date         2022/2/25.
  * @author xwchen
  */
 
@@ -70,14 +70,14 @@ public class TriangleView extends View {
         Path path = new Path();
         if (isTop) {
             //尖叫朝上
-            path.moveTo(width / 2, 0f);
+            path.moveTo(width >> 1, 0f);
             path.lineTo(width, height);
             path.lineTo(0f, height);
         } else {
             //尖叫朝下
             path.moveTo(0f, 0f);
             path.lineTo(width, 0f);
-            path.lineTo(width / 2, height);
+            path.lineTo(width >> 1, height);
         }
         path.close();
         canvas.drawPath(path, mPaint);

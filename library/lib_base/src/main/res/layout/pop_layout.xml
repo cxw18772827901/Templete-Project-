@@ -27,8 +27,8 @@
         android:id="@+id/recycle_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="@dimen/x260"
-        android:minHeight="@dimen/x320"
+        android:minWidth="@dimen/x200"
+        android:minHeight="@dimen/x300"
         app:shape_radius="@dimen/x15"
         app:shape_solidColor="@color/cl_333333"
         tools:ignore="SpeakableTextPresentCheck" />

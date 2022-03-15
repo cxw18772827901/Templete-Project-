@@ -33,6 +33,6 @@ public class ProgrammingActivity extends BaseActivity<ProgrammingActivityBinding
 
     @Override
     protected ProgrammingActivityBinding viewBinding() {
-        return null;
+        return ProgrammingActivityBinding.inflate(getLayoutInflater());
     }
 }
