@@ -20,7 +20,7 @@ public interface InitAction {
     /**
      * setContentView之前
      */
-    default void preSetContent() {
+    default void setContentBefore() {
 
     }
 
