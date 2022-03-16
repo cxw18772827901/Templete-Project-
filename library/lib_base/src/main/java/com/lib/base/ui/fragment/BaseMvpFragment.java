@@ -14,7 +14,7 @@ import androidx.viewbinding.ViewBinding;
  * Date          2019/11/28.
  */
 @SuppressLint("Registered")
-public abstract class BaseMvpFragment<T extends BaseContract.BasePresenter, S extends ViewBinding> extends BaseFragment<S> {
+public abstract class BaseMvpFragment<S extends ViewBinding, T extends BaseContract.BasePresenter> extends BaseFragment<S> {
     protected T mPresenter;
 
     /**
