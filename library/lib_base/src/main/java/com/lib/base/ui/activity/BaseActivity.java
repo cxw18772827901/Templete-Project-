@@ -51,9 +51,9 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        initBundle(bundle);
         initContentBefore();
         initContentLayout();
-        initBundle(bundle);
         initDevelopmentMode();
         initS();
         initView();
