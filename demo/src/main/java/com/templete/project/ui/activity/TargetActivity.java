@@ -24,7 +24,7 @@ public class TargetActivity extends BaseActivity<TargetActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("超级Intent");
 
         int value1 = getIntExtra("key1");

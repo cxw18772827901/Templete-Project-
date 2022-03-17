@@ -24,7 +24,7 @@ public class OneElementActivity extends BaseActivity<OneElementActivityBinding> 
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("A activity");
     }
 

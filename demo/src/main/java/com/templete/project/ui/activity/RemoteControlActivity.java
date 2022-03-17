@@ -23,7 +23,7 @@ import io.reactivex.rxjava3.core.Single;
 
 public class RemoteControlActivity extends BaseActivity<RemoteControlActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("复杂控件点击事件处理");
     }
 

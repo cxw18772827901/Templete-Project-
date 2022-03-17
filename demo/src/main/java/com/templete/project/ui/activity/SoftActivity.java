@@ -20,7 +20,7 @@ public class SoftActivity extends BaseActivity<SoftActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("输入法");
     }
 

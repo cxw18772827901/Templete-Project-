@@ -40,7 +40,7 @@ public class FloatingActivity extends BaseActivity<FloatingActivityBinding> {
 
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("tablayout(悬浮) + 刷新列表");
         dimensiony1 = getDimen(R.dimen.x130) + ScreenUtil.getStatusBarSize();
         dimensiony2 = getDimen(R.dimen.x600);

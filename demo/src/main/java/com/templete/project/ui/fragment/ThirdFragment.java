@@ -36,7 +36,7 @@ public class ThirdFragment extends BaseFragment<ThirdFragmentBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
 
     }
 

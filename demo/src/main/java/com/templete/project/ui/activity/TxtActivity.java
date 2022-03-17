@@ -16,7 +16,7 @@ import com.templete.project.databinding.TxtActivityBinding;
 
 public class TxtActivity extends BaseActivity<TxtActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("繁琐的文本标签");
     }
 

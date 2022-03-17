@@ -28,7 +28,7 @@ public class SheetActivity extends BaseActivity<BottomSheetActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         //setTitleBGResource(R.color.cl_1692DB);
 
         setTitleStr("BottomSheet");

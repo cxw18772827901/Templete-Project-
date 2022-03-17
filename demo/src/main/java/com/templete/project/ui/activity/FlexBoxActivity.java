@@ -40,7 +40,7 @@ public class FlexBoxActivity extends BaseActivity<FlexBoxActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("官方流式布局解决方案");
     }
 

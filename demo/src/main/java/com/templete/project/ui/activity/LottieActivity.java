@@ -18,7 +18,7 @@ public class LottieActivity extends BaseActivity<LottieActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("Lottie动画");
     }
 

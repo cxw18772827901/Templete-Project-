@@ -12,7 +12,7 @@ import com.templete.project.databinding.ProgrammingActivityBinding;
 
 public class ProgrammingActivity extends BaseActivity<ProgrammingActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("编程题练习");
     }
 

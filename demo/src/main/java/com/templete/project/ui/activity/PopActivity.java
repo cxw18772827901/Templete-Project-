@@ -22,7 +22,7 @@ public class PopActivity extends BaseActivity<PopActivityBinding> {
     private PopMenuView popMenuView;
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("智能popView");
         setRightClickViews((position, view) -> togoMenu(), false, new BtnBean("菜单"));
     }

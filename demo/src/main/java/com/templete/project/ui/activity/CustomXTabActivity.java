@@ -42,7 +42,7 @@ public class CustomXTabActivity extends BaseActivity<CustomTabActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setImmersionBar(R.color.common_accent_color);
     }
 

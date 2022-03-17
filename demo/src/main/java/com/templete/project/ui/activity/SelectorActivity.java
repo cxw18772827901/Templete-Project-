@@ -26,7 +26,7 @@ public class SelectorActivity extends BaseActivity<SelectorActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("图片选择器");
     }
 

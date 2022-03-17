@@ -6,7 +6,7 @@ import com.templete.project.databinding.ShapeDemoActivityBinding;
 public class ShapeActivity extends BaseActivity<ShapeDemoActivityBinding> {
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("最强shape");
     }
 

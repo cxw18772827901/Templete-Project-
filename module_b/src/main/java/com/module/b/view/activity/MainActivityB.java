@@ -14,7 +14,7 @@ public class MainActivityB extends BaseActivity<MbActivityMainBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("module b");
     }
 

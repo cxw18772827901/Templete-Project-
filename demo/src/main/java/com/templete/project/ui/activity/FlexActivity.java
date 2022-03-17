@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class FlexActivity extends BaseActivity<FlexActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("流式布局解决方案");
     }
 

@@ -41,7 +41,7 @@ public class XTabActivity extends BaseActivity<XTabActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setImmersionBar(R.color.common_accent_color);
         getLifecycle().addObserver(new LifecycleImp());
     }

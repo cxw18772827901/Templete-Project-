@@ -12,7 +12,7 @@ import com.templete.project.databinding.BasicActivityBinding;
 
 public class BasicActivity extends BaseActivity<BasicActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("基础绘制");
     }
 

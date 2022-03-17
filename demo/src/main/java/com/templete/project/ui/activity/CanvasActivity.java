@@ -12,7 +12,7 @@ import com.templete.project.databinding.PaintActivityBinding;
 
 public class CanvasActivity extends BaseActivity<PaintActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("绘制回顾");
     }
 

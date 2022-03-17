@@ -49,7 +49,7 @@ public class MainTempleteActivity extends BaseMvvmActivity<MainTempleteActivityB
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         //使用正常主题覆盖闪屏主题
         setTheme(R.style.AppTheme);
         setImmersionBar();

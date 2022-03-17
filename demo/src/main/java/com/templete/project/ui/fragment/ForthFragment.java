@@ -28,7 +28,7 @@ public class ForthFragment extends BaseFragment<ForthFragmentBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
 
     }
 

@@ -32,7 +32,7 @@ public class ScrollActivity extends BaseActivity<ScrollActivityBBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("嵌套滚动");
     }
 

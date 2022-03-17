@@ -25,7 +25,7 @@ public abstract class BaseMvpFragment<S extends ViewBinding, T extends BaseContr
     protected abstract T bindPresenter();
 
     @Override
-    public void setDevelopmentMode() {
+    public void initDevelopmentMode() {
         mPresenter = bindPresenter();
         mPresenter.attachView((BaseContract.BaseView) this);
     }

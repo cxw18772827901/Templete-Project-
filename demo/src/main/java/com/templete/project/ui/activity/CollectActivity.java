@@ -16,7 +16,7 @@ public class CollectActivity extends BaseActivity<CollectionActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("安卓开发中台");
     }
 

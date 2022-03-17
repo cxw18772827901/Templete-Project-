@@ -20,7 +20,7 @@ public class MainActivityA extends BaseActivity<MaActivityMainBinding> {
     private Disposable disposable;
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("module a");
     }
 

@@ -25,7 +25,7 @@ public class WrapActivity extends BaseActivity<WrapActivityBinding> {
     private DemoAdapter demoAdapter;
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("WrapRecyclerView");
     }
 

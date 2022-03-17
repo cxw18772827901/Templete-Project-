@@ -44,24 +44,24 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
     protected Bundle bundle;
     private TitleBar titleBar;
 
-    private void setBundle(Bundle bundle) {
+    private void initBundle(Bundle bundle) {
         this.bundle = bundle;
     }
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentBefore();
-        setContentLayout();
-        setBundle(bundle);
-        setDevelopmentMode();
-        inits();
+        initContentBefore();
+        initContentLayout();
+        initBundle(bundle);
+        initDevelopmentMode();
+        initS();
         initView();
         initEvent();
         initData();
     }
 
-    private void setContentLayout() {
+    private void initContentLayout() {
         T mViewBinding = viewBinding();
         if (mViewBinding == null) {
             throw new RuntimeException("viewBinding() must not return null!");

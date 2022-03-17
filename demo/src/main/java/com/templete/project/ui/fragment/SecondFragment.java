@@ -41,7 +41,7 @@ public class SecondFragment extends BaseFragment<SecondFragmentBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
     }
 
     @Override

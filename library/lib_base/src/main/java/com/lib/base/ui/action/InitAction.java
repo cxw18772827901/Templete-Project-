@@ -14,20 +14,20 @@ public interface InitAction {
     /**
      * 初始化开发模式
      */
-    default void setDevelopmentMode() {
+    default void initDevelopmentMode() {
     }
 
     /**
      * setContentView之前
      */
-    default void setContentBefore() {
+    default void initContentBefore() {
 
     }
 
     /**
      * inits,注意不能叫init,会跟FragmentActivity中的init方法冲突,这个问题标记一下
      */
-    void inits();
+    void initS();
 
     /**
      * initView

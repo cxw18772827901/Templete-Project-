@@ -26,7 +26,7 @@ public class HorizontalFreshActivity extends BaseActivity<FreshActivityBinding> 
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("横向刷新");
     }
 

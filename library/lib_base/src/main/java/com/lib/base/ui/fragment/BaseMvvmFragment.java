@@ -36,7 +36,7 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
     public abstract boolean userParentViewModelStoreOwner();
 
     @Override
-    public void setDevelopmentMode() {
+    public void initDevelopmentMode() {
         Class<S> viewModelClass = getViewModelClass();
         if (viewModelClass == null) {
             throw new MyException("getViewModelClass() return mustn't be null!");

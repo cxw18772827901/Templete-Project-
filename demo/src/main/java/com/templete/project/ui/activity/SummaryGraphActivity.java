@@ -12,7 +12,7 @@ import com.templete.project.databinding.SummaryGraphActivityBinding;
 
 public class SummaryGraphActivity extends BaseActivity<SummaryGraphActivityBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("统计图");
     }
 

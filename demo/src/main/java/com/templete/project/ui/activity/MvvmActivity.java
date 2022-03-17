@@ -35,7 +35,7 @@ public class MvvmActivity extends BaseMvvmActivity<DemoMvvmActivityBinding, Demo
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("mvvm activity");
         dimension210 = getDimen(com.lib.base.R.dimen.x210);
     }

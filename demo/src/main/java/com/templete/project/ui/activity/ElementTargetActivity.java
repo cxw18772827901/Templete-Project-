@@ -65,7 +65,7 @@ public class ElementTargetActivity extends BaseActivity<ElementTargetActivityBin
 
     @SuppressLint("ObsoleteSdkInt")
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("B activity");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             type = ANIM_NO;

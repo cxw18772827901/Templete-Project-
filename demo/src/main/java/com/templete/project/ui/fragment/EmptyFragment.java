@@ -23,7 +23,7 @@ public class EmptyFragment extends BaseFragment<EmptyLayoutBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
 
     }
 

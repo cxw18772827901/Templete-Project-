@@ -17,7 +17,7 @@ public class RatioActivity extends BaseActivity<RatioActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("百分比布局");
     }
 

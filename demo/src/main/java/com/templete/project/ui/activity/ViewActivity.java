@@ -25,7 +25,7 @@ public class ViewActivity extends BaseActivity<AndratingBarActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("AndratingBar");
     }
 

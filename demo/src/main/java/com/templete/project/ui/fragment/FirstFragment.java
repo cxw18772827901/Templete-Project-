@@ -35,7 +35,7 @@ public class FirstFragment extends BaseFragment<FirstFragmentBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         //mViewBinding.titleBar.setRightClickListener((position, view) -> DebugUtil.toast("right click"));
         mViewBinding.titleBar.setRightClickViews((position, view) -> {
             //

@@ -44,7 +44,7 @@ public class GlideActivity extends BaseActivity<GlideActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("glide transform 大全");
     }
 

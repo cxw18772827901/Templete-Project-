@@ -20,7 +20,7 @@ public class LoadingActivity extends BaseActivity<LoadingActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("activity dialog");
     }
 

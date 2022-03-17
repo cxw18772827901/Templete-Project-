@@ -56,15 +56,15 @@ public abstract class BaseFragment<T extends ViewBinding> extends ViewBindingFra
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle bundle) {
         super.onViewCreated(view, bundle);
-        setBundle(bundle);
-        setDevelopmentMode();
-        inits();
+        initBundle(bundle);
+        initDevelopmentMode();
+        initS();
         initView();
         initEvent();
         initData();
     }
 
-    private void setBundle(@Nullable Bundle bundle) {
+    private void initBundle(@Nullable Bundle bundle) {
         this.bundle = bundle;
     }
 

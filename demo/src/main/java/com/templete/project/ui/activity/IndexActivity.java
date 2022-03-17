@@ -29,7 +29,7 @@ public class IndexActivity extends BaseActivity<IndexActivityBinding> {
     private DemoAdapter demoAdapter;
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("索引");
     }
 

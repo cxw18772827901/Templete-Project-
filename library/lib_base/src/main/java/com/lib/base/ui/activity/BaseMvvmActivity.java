@@ -29,7 +29,7 @@ public abstract class BaseMvvmActivity<T extends ViewBinding, S extends BaseView
      * 初始化默认viewmodel实例
      */
     @Override
-    public void setDevelopmentMode() {
+    public void initDevelopmentMode() {
         Class<S> viewModelClass = getViewModelClass();
         if (viewModelClass == null) {
             throw new RuntimeException("getViewModelClass() return must not be null!");

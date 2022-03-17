@@ -25,7 +25,7 @@ public class CollectionFragment extends BaseFragment<CollectionFragmentBinding> 
     }
 
     @Override
-    public void inits() {
+    public void initS() {
 
     }
 

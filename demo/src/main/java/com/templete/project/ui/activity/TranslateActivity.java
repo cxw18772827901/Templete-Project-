@@ -26,7 +26,7 @@ public class TranslateActivity extends BaseActivity<TranslateActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("列表横移");
         setRightClickViews((position, view) -> trans(), false, new BtnBean("平移"));
     }

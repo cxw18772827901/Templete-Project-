@@ -23,7 +23,7 @@ public class ImmersionActivity extends BaseActivity<ImmersionActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("沉浸式UI");
     }
 

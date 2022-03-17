@@ -5,7 +5,7 @@ import com.lib.base.ui.activity.BaseActivity;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("首页");
     }
 

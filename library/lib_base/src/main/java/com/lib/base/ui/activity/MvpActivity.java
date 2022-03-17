@@ -37,7 +37,7 @@ public class MvpActivity extends BaseMvpActivity<ActivityDemoBinding, DemoContra
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("mvp activity");
         setRightClickViews((position, view) -> {
                     switch (position) {

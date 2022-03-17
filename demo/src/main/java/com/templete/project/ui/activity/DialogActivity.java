@@ -48,7 +48,7 @@ public final class DialogActivity extends BaseActivity<DialogActivityBinding> {
     }
 
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("史上最强Dialog");
     }
 

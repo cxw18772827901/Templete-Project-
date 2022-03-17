@@ -65,7 +65,7 @@ public class LoginActivity extends BaseMvvmActivity<MlLoginActivityBinding, Logi
 
     @SuppressLint("InflateParams")
     @Override
-    public void inits() {
+    public void initS() {
         setTitleStr("登录");
         ARouter.getInstance().inject(this);
         /*setRightClickViews((position, view) -> {
