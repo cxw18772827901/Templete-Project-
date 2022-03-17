@@ -56,7 +56,7 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
      */
     public <U extends BaseViewModel> U createViewModel(Class<U> clazz, boolean userParentViewModelStoreOwner) {
         if (clazz == null) {
-            throw new MyException("clazz must not return null!");
+            throw new MyException("clazz mustn't be null!");
         }
         ViewModelStoreOwner owner = userParentViewModelStoreOwner ? requireActivity() : this;
         return new ViewModelProvider(owner, new ViewModelProvider.AndroidViewModelFactory(requireActivity().getApplication())).get(clazz);

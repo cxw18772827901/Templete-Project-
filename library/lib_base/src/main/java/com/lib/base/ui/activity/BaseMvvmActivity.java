@@ -32,7 +32,7 @@ public abstract class BaseMvvmActivity<T extends ViewBinding, S extends BaseView
     public void initDevelopmentMode() {
         Class<S> viewModelClass = getViewModelClass();
         if (viewModelClass == null) {
-            throw new RuntimeException("getViewModelClass() return must not be null!");
+            throw new RuntimeException("getViewModelClass() return mustn't be null!");
         }
         mViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(viewModelClass);
     }
