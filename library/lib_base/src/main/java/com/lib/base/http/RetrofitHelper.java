@@ -1,6 +1,6 @@
 package com.lib.base.http;
 
-import com.hjq.gson.factory.GsonFactory;
+import com.greendao.db.util.GsonUtil;
 import com.lib.base.config.AppConfig;
 import com.lib.base.util.DebugUtil;
 
@@ -15,7 +15,6 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- *
  * @author xwchen
  * @date 19-4-20
  */
@@ -54,7 +53,8 @@ public class RetrofitHelper {
                 .client(mOkHttpClient)
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 //.addConverterFactory(GsonConverterFactory.create())//--------------------------常规gson,异常解析会直接回调error
-                .addConverterFactory(GsonConverterFactory.create(GsonFactory.getSingletonGson()))//解析容错gson,异常解析自动忽略
+                //GsonFactory.getSingletonGson()
+                .addConverterFactory(GsonConverterFactory.create(GsonUtil.getInstance()))//解析容错gson,异常解析自动忽略
                 .baseUrl(AppConfig.getUrl())
                 .build();
     }
