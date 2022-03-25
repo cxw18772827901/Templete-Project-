@@ -16,7 +16,8 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * 防止Fragment重叠和Rxjava取消
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2022/1/27.
  */
 
@@ -70,5 +71,11 @@ public class RxjavaFragment extends Fragment {
             rxHelper = new RxHelper(getLifecycle());
         }
         return rxHelper;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        rxHelper = null;
     }
 }

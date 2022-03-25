@@ -12,7 +12,8 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * Rxjava取消
  * ProjectName  TempleteProject-java
  * PackageName  com.lib.base.ui.action
- * @author      xwchen
+ *
+ * @author xwchen
  * Date         2022/1/27.
  */
 
@@ -45,5 +46,11 @@ public class RxjavaActivity extends DialogsActivity {
             rxHelper = new RxHelper(getLifecycle());
         }
         return rxHelper;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        rxHelper = null;
     }
 }

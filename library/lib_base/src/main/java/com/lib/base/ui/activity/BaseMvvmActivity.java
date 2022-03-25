@@ -50,4 +50,10 @@ public abstract class BaseMvvmActivity<T extends ViewBinding, S extends BaseView
         }
         return new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(clazz);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mViewModel = null;
+    }
 }

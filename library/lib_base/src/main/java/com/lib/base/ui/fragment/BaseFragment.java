@@ -107,4 +107,10 @@ public abstract class BaseFragment<T extends ViewBinding> extends ViewBindingFra
     protected GlobalViewModel getGlobalUserStateViewModel() {
         return ((App) requireActivity().getApplication()).getGlobalViewModel();
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        bundle = null;
+    }
 }

@@ -119,6 +119,13 @@ public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingAct
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        bundle = null;
+        titleBar = null;
+    }
+
     /**
      * action
      *

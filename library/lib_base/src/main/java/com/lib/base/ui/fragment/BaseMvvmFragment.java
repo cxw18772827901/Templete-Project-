@@ -61,4 +61,10 @@ public abstract class BaseMvvmFragment<T extends ViewBinding, S extends BaseView
         ViewModelStoreOwner owner = userParentViewModelStoreOwner ? requireActivity() : this;
         return new ViewModelProvider(owner, new ViewModelProvider.AndroidViewModelFactory(requireActivity().getApplication())).get(clazz);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mViewModel = null;
+    }
 }
