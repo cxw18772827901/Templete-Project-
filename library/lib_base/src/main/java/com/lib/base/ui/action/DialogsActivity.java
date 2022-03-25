@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Date         2022/1/27.
  */
 
-public class DialogAction extends AppCompatActivity {
+public class DialogsActivity extends AppCompatActivity {
     //private static final int DIALOG_DURATION = 1000;
     public static final int DIALOG_OK = 0;
     public static final int DIALOG_ERROR = 1;

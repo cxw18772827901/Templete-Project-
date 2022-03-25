@@ -16,7 +16,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * Date         2022/1/27.
  */
 
-public class RxjavaActivityAction extends DialogAction {
+public class RxjavaActivity extends DialogsActivity {
     protected GlobalViewModel getGlobalViewModel() {
         return ((App) getApplication()).getGlobalViewModel();
     }

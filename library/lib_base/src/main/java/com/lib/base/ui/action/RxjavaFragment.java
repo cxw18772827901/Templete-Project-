@@ -20,7 +20,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
  * Date         2022/1/27.
  */
 
-public class RxjavaFragmentAction extends Fragment {
+public class RxjavaFragment extends Fragment {
     private static final String STATE_FOR_FRAGMENT = "state_save_is_hidden";
 
     protected GlobalViewModel getGlobalViewModel() {

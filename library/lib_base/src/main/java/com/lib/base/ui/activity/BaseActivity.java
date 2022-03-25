@@ -19,7 +19,7 @@ import com.lib.base.ui.action.LogAction;
 import com.lib.base.ui.action.StatusAction;
 import com.lib.base.ui.action.TitleBarAction;
 import com.lib.base.ui.action.ToastAction;
-import com.lib.base.ui.action.ViewBindingActivityAction;
+import com.lib.base.ui.action.ViewBindingActivity;
 import com.lib.base.ui.widget.TitleBar;
 
 import androidx.annotation.NonNull;
@@ -37,7 +37,7 @@ import androidx.viewbinding.ViewBinding;
  * Date on 2019/11/28.
  */
 @SuppressLint("Registered")
-public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingActivityAction<T>
+public abstract class BaseActivity<T extends ViewBinding> extends ViewBindingActivity<T>
         implements InitAction, TitleBarAction, /*ImmersionAvtion,*/ LogAction, ToastAction,
         KeyboardAction, ClickAction, StatusAction, IntentAction/*, OverridePendingTransitionAction*/ {
     public static final String TAG = "BaseActivity";

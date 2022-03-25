@@ -1,8 +1,5 @@
 package com.lib.base.ui.action;
 
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-
 import androidx.viewbinding.ViewBinding;
 
 /**
@@ -13,9 +10,9 @@ import androidx.viewbinding.ViewBinding;
  * Date         2022/2/8.
  */
 
-public abstract class ViewBindingFragmentAction<T extends ViewBinding> extends RxjavaFragmentAction {
+public abstract class ViewBindingActivity<T extends ViewBinding> extends RxjavaActivity {
     protected T mViewBinding;
 
-    protected abstract T viewBinding(LayoutInflater inflater, ViewGroup container);
+    protected abstract T viewBinding();
 
 }
