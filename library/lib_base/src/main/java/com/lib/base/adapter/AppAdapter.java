@@ -68,8 +68,8 @@ public abstract class AppAdapter<T> extends BaseAdapter<BaseAdapter.ViewHolder> 
             DebugUtil.logD(TAG, "pop onDestroy");
             if (mDataSet != null && mDataSet instanceof ArrayList) {
                 mDataSet.clear();
-                mDataSet = null;
             }
+            mDataSet = null;
         } catch (Exception e) {
             e.printStackTrace();
         }
