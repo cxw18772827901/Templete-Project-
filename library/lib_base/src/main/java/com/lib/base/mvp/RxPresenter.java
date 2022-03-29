@@ -3,6 +3,9 @@ package com.lib.base.mvp;
 import com.lib.base.ui.action.LogAction;
 import com.lib.base.ui.action.ToastAction;
 
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
@@ -26,8 +29,10 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
     /**
      * mvp回调接口view,
      * 使用前必须判断{@link RxPresenter#isLifecycleSurvive()}生命周期是否存活.
+     * 注意:使用WeakReference,进一步降低内存泄漏的可能性.
      */
-    protected T mView;
+    //protected T mView;
+    protected Reference<T> mView;
     private Lifecycle.Event currentState = Lifecycle.Event.ON_CREATE;
 
     private RxPresenter() {
@@ -43,7 +48,7 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
      * @return
      */
     protected boolean isLifecycleResume() {
-        return mView != null && currentState != null && currentState == Lifecycle.Event.ON_RESUME;
+        return mView != null && mView.get() != null && currentState != null && currentState == Lifecycle.Event.ON_RESUME;
     }
 
     /**
@@ -52,12 +57,13 @@ public class RxPresenter<T extends BaseContract.BaseView> implements BaseContrac
      * @return
      */
     protected boolean isLifecycleSurvive() {
-        return mView != null && currentState != null && currentState != Lifecycle.Event.ON_DESTROY;
+        return mView != null && mView.get() != null && currentState != null && currentState != Lifecycle.Event.ON_DESTROY;
     }
 
     @Override
     public void attachView(T view) {
-        this.mView = view;
+        //this.mView = view;
+        this.mView = new WeakReference<>(view);
     }
 
     protected CompositeDisposable mDisposable;

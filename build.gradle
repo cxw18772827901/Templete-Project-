@@ -5,13 +5,14 @@ buildscript {
 //        kotlin_version = '1.4.32'
 //    }
     repositories {
+        //noinspection JcenterRepositoryObsolete
         jcenter()
         mavenCentral()
         google()
         maven { url "https://www.jitpack.io" }
     }
     dependencies {
-        //noinspection GradleDependency
+        //noinspection AndroidGradlePluginVersion,GradleDependency
         classpath 'com.android.tools.build:gradle:3.6.0'
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -22,6 +23,7 @@ buildscript {
 }
 allprojects {
     repositories {
+        //noinspection JcenterRepositoryObsolete
         jcenter()
         mavenCentral()
         google()

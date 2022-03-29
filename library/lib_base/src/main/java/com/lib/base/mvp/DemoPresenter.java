@@ -20,7 +20,7 @@ public class DemoPresenter extends RxPresenter<DemoContract.View> implements Dem
     @Override
     public void loadData() {
         if (isLifecycleSurvive()) {
-            mView.showData();
+            mView.get().showData();
         }
     }
     
